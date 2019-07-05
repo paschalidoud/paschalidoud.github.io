@@ -1,0 +1,60 @@
+/* Whole document styles */
+body {
+    padding-top: 30px;
+    background-color: #f8f8f8;
+    text-align: justify;
+    font-family: "Arvo", serif;
+    color: #1a1a1a;
+    font-size: 0.8em;
+    line-height: 1.8em;
+    -moz-hyphens: auto;
+    -webkit-hyphens: auto;
+    hyphens: auto;
+}
+h1, h2, h3 {
+    font-family: "Dosis", sans-serif;
+    color: #313436;
+}
+h1, h2 {
+    border-bottom: 1px solid #313436;
+    padding-bottom: 0.2em;
+    margin-bottom: 0.8em;
+}
+a {color: #0c3ba7;}
+a:hover, a:visited {color: #0c3ba7;}
+div.section {
+    padding-left: 100px;
+    padding-right: 100px;
+    width: 70%;
+    display:inline-block;
+}
+
+div.publications {
+    padding-left: 100px;
+    padding-right: 100px;
+    width: 70%;
+    display:inline-block;
+}
+
+div.paper img {
+    margin-right: 2em;
+    margin-bottom: 2em;
+    width: 200px;
+    float: left;
+}
+
+div.paper a {
+    text-decoration: none;
+}
+
+div.papermeta {
+    clear: both;
+    margin-left: 200px;
+}
+
+div.papermeta pre {
+	font-family: 'Lucida Console', 'Andale Mono', 'Courier', monospaced;
+	font-size: 11px;
+	line-height: 14px;
+}
+
