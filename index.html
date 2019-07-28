@@ -1,252 +1,85 @@
-<!DOCTYPE HTML>
+<!Doctype html>
 <html lang="en">
+    <head>
+        <title>Despoina Paschalidou</title>
 
-<head>
-    <title>Despoina Paschalidou</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <meta name="author" content="Despoina Paschalidou">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <meta name="author" content="Despoina Paschalidou">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    <script type="text/javascript" src="js/hidebib.js"></script>
-    <link rel="stylesheet" type="text/css" href="style.css">
-</head>
-
-<body>
-    <div class="section">
-        <table>
-        <tr style="padding:0px">
-        <td style="padding:2.5%;width:60%;">
-        <h1> Despoina Paschalidou </h1>
-        <p> I am a third year PhD student at the
-            <a href=https://learning-systems.org/>
-            Max Planck ETH Center for Learning Systems </a>
-            working with <a href=http://www.cvlibs.net/>Andreas Geiger</a>
-            from Max Planck Institute for Intelligent Systems in Tubingen 
-            and <a href=https://www.vision.ee.ethz.ch/en/members/get_member.cgi?id=1>
-            Luc van Gool </a> from ETH Zurich.
-            Prior to this, I did my bachelors in the School of Electrical and
-            Computer Engineering in the
-            <a href=https://www.auth.gr/en/ee>Aristotle University of Thessaloniki</a>
-            in Greece, where I worked with 
-            <a href=https://mug.ee.auth.gr/people/anastasios-delopoulos/>
-            Prof. Anastasios Delopoulos</a> and
-            <a href=https://mug.ee.auth.gr/people/christos-diou/>
-            Christos Diou</a>.
-        </p>
-        <p>
-            The main research question that I want to answer during my PhD, is what
-            is the most suitable representation that would allow us to endow computers
-            with similar visual capabilities like humans?
-        </p>
-        <p style="text-align:center">
-            <a href=mailto:despoina.paschalidou@tue.mpg.de>Email</a> &nbsp/&nbsp
-            <a href=https://scholar.google.de/citations?user=zxFlR6sAAAAJ&hl=en&oi=ao>
-            Google Scholar
-            </a> &nbsp/&nbsp
-            <a href=https://github.com/paschalidoud>
-            GitHub
-            </a>
-        </p>
-        </td>
-        <td style="padding:2.5%;width:40%;max-width:40%">
-            <a href="figures/icon.jpeg"><img style="width:60%;" alt="profile photo" src="figures/icon.jpeg" class="hoverZoomLink"></a>
-        </td>
-        </tr>
-        </table>
-    </div>
-    
-    <div class="section">
-        <h1> Publications </h1>
-
-        <div class="paper" id="cvpr2019_sqs">
-        <img class="paper" title="Superquadrics Revisited Learning 3D Shape Parsing beyond Cuboids" src="teasers/superquadrics_revisited.png" />
-        <p><b id="papertitle">
-        <a href=https://arxiv.org/pdf/1904.09970.pdf>
-        Superquadrics Revisited: Learning 3D Shape Parsing beyond Cuboids
-        </a></b> <br/>
-        <strong> Despoina Paschalidou </strong>,
-        <a href=https://scholar.google.de/citations?user=fkqdDEEAAAAJ&hl=en>
-        Ali Osman Ulusoy</a>,
-        <a href=http://www.cvlibs.net/>Andreas Geiger</a><br/>
-        <em>Computer Vision and Pattern Recognition (CVPR) 2019 </em>
-        <br/>
-
-        <a href="javascript:toggleblock('cvpr2019_sqs_abstract')">abstract </a>  &nbsp/&nbsp
-        <a href="https://avg.is.tuebingen.mpg.de/publications/paschalidou2019cvpr">
-        project page </a> &nbsp/&nbsp
-        <a href="https://arxiv.org/pdf/1906.02729">pdf </a> &nbsp/&nbsp
-        <a href="https://github.com/paschalidoud/superquadric_parsing">
-        code </a> &nbsp/&nbsp
-        <a href="https://www.youtube.com/watch?v=eaZHYOsv9Lw">
-        video </a> &nbsp/&nbsp
-        <a href="javascript:toggleblock('cvpr2019_sqs_bib')">bibtex </a> </p>
-        <div class="papermeta" id="arxiv19relnetMeta">
-        <em id="cvpr2019_sqs_abstract">Abstracting complex 3D shapes with parsimonious part-based representations has been a long standing goal in computer vision. This paper presents a learning-based solution to this problem which goes beyond the traditional 3D cuboid representation by exploiting superquadrics as atomic elements. We demonstrate that superquadrics lead to more expressive 3D scene parses while being easier to learn than 3D cuboid representations. Moreover, we provide an analytical solution to the Chamfer loss which avoids the need for computational expensive reinforcement learning or iterative prediction. Our model learns to parse 3D objects into consistent superquadric representations without supervision. Results on various ShapeNet categories as well as the SURREAL human body dataset demonstrate the flexibility of our model in capturing fine details and complex poses that could not have been modelled using cuboids.
-        </em>
-        <pre xml:space="preserve" id="cvpr2019_sqs_bib">
-        @inproceedings{Paschalidou2019CVPR,
-          title = {Superquadrics Revisited: Learning 3D Shape Parsing beyond Cuboids},
-          author = {Paschalidou, Despoina and Ulusoy, Ali Osman and Geiger, Andreas},
-          booktitle = {Proceedings IEEE Conf. on Computer Vision and Pattern Recognition (CVPR)},
-          month = jun,
-          year = {2019},
-        }
-        </pre></td>
-        <script language="javascript" type="text/javascript" xml:space="preserve">
-        hideblock('cvpr2019_sqs_abstract');
-        hideblock('cvpr2019_sqs_bib');
-        </script>
-        </div>
-        </div>
-
-
-    <div class="paper" id="cvpr2019_pointflownet">
-    <img class="paper" title="PointFlowNet: Learning Representations for Rigid Motion Estimation from Point Clouds" src="teasers/pointflownet.png" />
-    <p><b id="papertitle">
-    <a href=http://www.cvlibs.net/publications/Behl2019CVPR.pdf>
-    PointFlowNet: Learning Representations for Rigid Motion Estimation from Point Clouds
-    </a></b> <br/>
-    <a href=http://aseembehl.github.io/>Aseem Behl</a>,
-    <strong> Despoina Paschalidou </strong>,
-    <a href=https://donnessime.github.io/>Simon Donne</a>,
-    <a href=http://www.cvlibs.net/>Andreas Geiger</a><br/>
-    <em>Computer Vision and Pattern Recognition (CVPR) 2019 </em>
-    <br/>
-
-    <a href="javascript:toggleblock('cvpr2019_pointflownet_abstract')">abstract </a>
-    &nbsp/&nbsp
-    <a href="https://www.is.mpg.de/publications/behl2019cvpr">
-    project page </a> &nbsp/&nbsp
-    <a href="http://www.cvlibs.net/publications/Behl2019CVPR.pdf">pdf</a> &nbsp/&nbsp
-    <a href="https://github.com/aseembehl/pointflownet">
-    code </a> &nbsp/&nbsp
-    <a href="https://youtu.be/cjJhzYCUNTY">
-    video </a> &nbsp/&nbsp
-    <a href="javascript:toggleblock('cvpr2019_pointflownet_bib')">bibtex </a> </p>
-    <div class="papermeta" id="arxiv19relnetMeta">
-    <em id="cvpr2019_pointflownet_abstract">Despite significant progress in image-based 3D scene flow estimation, the performance of such approaches has not yet reached the fidelity required by many applications. Simultaneously, these applications are often not restricted to image-based estimation: laser scanners provide a popular alternative to traditional cameras, for example in the context of self-driving cars, as they directly yield a 3D point cloud. In this paper, we propose to estimate 3D motion from such unstructured point clouds using a deep neural network. In a single forward pass, our model jointly predicts 3D scene flow as well as the 3D bounding box and rigid body motion of objects in the scene. While the prospect of estimating 3D scene flow from unstructured point clouds is promising, it is also a challenging task. We show that the traditional global representation of rigid body motion prohibits inference by CNNs, and propose a translation equivariant representation to circumvent this problem. For training our deep network, a large dataset is required. Because of this, we augment real scans from KITTI with virtual objects, realistically modeling occlusions and simulating sensor noise. A thorough comparison with classic and learning-based techniques highlights the robustness of the proposed approach.
-    </em>
-    <pre xml:space="preserve" id="cvpr2019_pointflownet_bib">
-    @inproceedings{Behl2019CVPR,
-      title = {PointFlowNet: Learning Representations for Rigid Motion Estimation from Point Clouds },
-      author = {Behl, Aseem and Paschalidou, Despoina and Donne, Simon and Geiger, Andreas},
-      booktitle = {Proceedings IEEE Conf. on Computer Vision and Pattern Recognition (CVPR)},
-      month = jun,
-      year = {2019},
-    }
-    </pre></td>
-    <script language="javascript" type="text/javascript" xml:space="preserve">
-    hideblock('cvpr2019_pointflownet_abstract');
-    hideblock('cvpr2019_pointflownet_bib');
-    </script>
-    </div>
-    </div>
-
-    <div class="paper" id="cvpr2018_raynet">
-    <img class="paper" title="RayNet: Learning Volumetric 3D Reconstruction with Ray Potentials" src="teasers/raynet.png" />
-    <p><b id="papertitle">
-    <a href=http://openaccess.thecvf.com/content_cvpr_2018/papers/Paschalidou_RayNet_Learning_Volumetric_CVPR_2018_paper.pdf>
-    RayNet: Learning Volumetric 3D Reconstruction with Ray Potentials
-    </a></b> <br/>
-    <strong> Despoina Paschalidou </strong>,
-    <a href=https://scholar.google.de/citations?user=fkqdDEEAAAAJ&hl=en>
-    Ali Osman Ulusoy</a>,
-    Carolin Schmitt,
-    <a href=https://www.vision.ee.ethz.ch/en/members/get_member.cgi?id=1>Luc van Gool </a>,
-    <a href=http://www.cvlibs.net/>Andreas Geiger</a><br/>
-    <em>Computer Vision and Pattern Recognition (CVPR) 2018 </em> 
-    <strong style="color:red">(Spotlight Presentation)</strong>
-    <br/>
-
-    <a href="javascript:toggleblock('cvpr2018_raynet_abstract')">abstract </a>  &nbsp/&nbsp
-    <a href="http://raynet-mvs.com/">project page </a> &nbsp/&nbsp
-    <a href="https://arxiv.org/pdf/1906.02729">pdf </a> &nbsp/&nbsp
-    <a href="https://github.com/paschalidoud/superquadric_parsing">
-    code </a> &nbsp/&nbsp
-    <a href="https://www.youtube.com/watch?v=eaZHYOsv9Lw">
-    video </a> &nbsp/&nbsp
-    <a href="javascript:toggleblock('cvpr2018_raynet_bib')">bibtex </a> </p>
-    <div class="papermeta">
-    <em id="cvpr2018_raynet_abstract">In this paper, we consider the problem of reconstructing a dense 3D model using images captured from different views. Recent methods based on convolutional neural networks (CNN) allow learning the entire task from data. However, they do not incorporate the physics of image formation such as perspective geometry and occlusion. Instead, classical approaches based on Markov Random Fields (MRF) with ray-potentials explicitly model these physical processes, but they cannot cope with large surface appearance variations across different viewpoints. In this paper, we propose RayNet, which combines the strengths of both frameworks. RayNet integrates a CNN that learns view-invariant feature representations with an MRF that explicitly encodes the physics of perspective projection and occlusion. We train RayNet end-to-end using empirical risk minimization. We thoroughly evaluate our approach on challenging real-world datasets and demonstrate its benefits over a piece-wise trained baseline, hand-crafted models as well as other learning-based approaches.</em>
-    <pre xml:space="preserve" id="cvpr2018_raynet_bib">
-    @inproceedings{Paschalidou2018CVPR,
+        <link rel="stylesheet" type="text/css" href="style.css">
+        <link href="https://fonts.googleapis.com/css?family=Arvo|Roboto&display=swap" rel="stylesheet">
+    </head>
+    <body>
+        <div class="section">
+            <div class="title">
+                Despoina Paschalidou
+            </div>
+            <div class="row">
+                <div class="image" id="profile-photo">
+                    <img alt="Profile photo" src="figures/icon.jpeg" />
+                </div>
+                <div class="content">
+                    <p>
+                        I am a third year PhD student at the
+                        <a href=https://learning-systems.org/>
+                        Max Planck ETH Center for Learning Systems </a>
+                        working with <a href=http://www.cvlibs.net/>Andreas Geiger</a>
+                        from Max Planck Institute for Intelligent Systems in Tubingen 
+                        and <a href=https://www.vision.ee.ethz.ch/en/members/get_member.cgi?id=1>
+                        Luc van Gool </a> from ETH Zurich.
+                        Prior to this, I did my bachelors in the School of Electrical and
+                        Computer Engineering in the
+                        <a href=https://www.auth.gr/en/ee>Aristotle University of Thessaloniki</a>
+                        in Greece, where I worked with 
+                        <a href=https://mug.ee.auth.gr/people/anastasios-delopoulos/>
+                        Prof. Anastasios Delopoulos</a> and
+                        <a href=https://mug.ee.auth.gr/people/christos-diou/>
+                        Christos Diou</a>.
+                        The main research question that I want to answer during my PhD, is what
+                        is the most suitable representation that would allow us to endow computers
+                        with similar visual capabilities like humans?
+                    </p>
+                    <p style="text-align:center">
+                        <a href=mailto:despoina.paschalidou@tue.mpg.de>Email</a> &nbsp/&nbsp
+                        <a href=https://scholar.google.de/citations?user=zxFlR6sAAAAJ&hl=en&oi=ao>
+                        Google Scholar
+                        </a> &nbsp/&nbsp
+                        <a href=https://github.com/paschalidoud>
+                        GitHub
+                        </a>
+                    </p>
+                </div>
+            </div>
+            <div class="title">
+                Publications
+            </div>
+            <!-- start publication list --><div class="row paper"><div class="image"><img src="teasers/superquadrics_revisited.png" alt="Superquadrics Revisited: Learning 3D Shape Parsing beyond Cuboids" /></div><div class="content"><div class="paper-title"><a href="https://arxiv.org/pdf/1904.09970.pdf">Superquadrics Revisited: Learning 3D Shape Parsing beyond Cuboids</a></div><div class="authors"><strong class="author">Despoina Paschalidou</strong>, <a href="https://scholar.google.de/citations?user=fkqdDEEAAAAJ&hl=en" class="author">Ali Osman Ulusoy</a>, <a href="http://www.cvlibs.net/" class="author">Andreas Geiger</a></div><div class="conference">Computer Vision and Pattern Recognition (CVPR) 2019</div><div class="links"><a href="#" data-index="0">abstract</a>/<a href="https://avg.is.tuebingen.mpg.de/publications/paschalidou2019cvpr">project page</a>/<a href="https://arxiv.org/pdf/1904.09970.pdf">pdf</a>/<a href="data/Paschalidou2019CVPR_poster.pdf">poster</a>/<a href="https://github.com/paschalidoud/superquadric_parsing">code</a>/<a href="https://autonomousvision.github.io/superquadrics-revisited/">blog post</a>/<a href="https://www.youtube.com/watch?v=eaZHYOsv9Lw">video</a>/<a href="#" data-index="7">bibtex</a><div class="link-content" data-index="0">Abstracting complex 3D shapes with parsimonious part-based representations has been a long standing goal in computer vision. This paper presents a learning-based solution to this problem which goes beyond the traditional 3D cuboid representation by exploiting superquadrics as atomic elements. We demonstrate that superquadrics lead to more expressive 3D scene parses while being easier to learn than 3D cuboid representations. Moreover, we provide an analytical solution to the Chamfer loss which avoids the need for computational expensive reinforcement learning or iterative prediction. Our model learns to parse 3D objects into consistent superquadric representations without supervision. Results on various ShapeNet categories as well as the SURREAL human body dataset demonstrate the flexibility of our model in capturing fine details and complex poses that could not have been modelled using cuboids.</div><div class="link-content" data-index="7"><pre>@inproceedings{Paschalidou2019CVPR,
+    title = {Superquadrics Revisited: Learning 3D Shape Parsing beyond Cuboids},
+    author = {Paschalidou, Despoina and Ulusoy, Ali Osman and Geiger, Andreas},
+    booktitle = {Proceedings IEEE Conf. on Computer Vision and Pattern Recognition (CVPR)},
+    month = jun,
+    year = {2019},
+}</pre></div></div></div></div><div class="row paper"><div class="image"><img src="teasers/pointflownet.png" alt="PointFlowNet: Learning Representations for Rigid Motion Estimation from Point Clouds" /></div><div class="content"><div class="paper-title"><a href="http://www.cvlibs.net/publications/Behl2019CVPR.pdf">PointFlowNet: Learning Representations for Rigid Motion Estimation from Point Clouds</a></div><div class="authors"><a href="http://aseembehl.github.io/" class="author">Aseem Behl</a>, <strong class="author">Despoina Paschalidou</strong>, <a href="https://donnessime.github.io/" class="author">Simon Donné</a>, <a href="http://www.cvlibs.net/" class="author">Andreas Geiger</a></div><div class="conference">Computer Vision and Pattern Recognition (CVPR) 2019</div><div class="links"><a href="#" data-index="0">abstract</a>/<a href="https://avg.is.tuebingen.mpg.de/publications/behl2019cvpr">project page</a>/<a href="http://www.cvlibs.net/publications/Behl2019CVPR.pdf">pdf</a>/<a href="https://github.com/aseembehl/pointflownet">code</a>/<a href="https://youtu.be/cjJhzYCUNTY">video</a>/<a href="#" data-index="5">bibtex</a><div class="link-content" data-index="0">Despite significant progress in image-based 3D scene flow estimation, the performance of such approaches has not yet reached the fidelity required by many applications. Simultaneously, these applications are often not restricted to image-based estimation: laser scanners provide a popular alternative to traditional cameras, for example in the context of self-driving cars, as they directly yield a 3D point cloud. In this paper, we propose to estimate 3D motion from such unstructured point clouds using a deep neural network. In a single forward pass, our model jointly predicts 3D scene flow as well as the 3D bounding box and rigid body motion of objects in the scene. While the prospect of estimating 3D scene flow from unstructured point clouds is promising, it is also a challenging task. We show that the traditional global representation of rigid body motion prohibits inference by CNNs, and propose a translation equivariant representation to circumvent this problem. For training our deep network, a large dataset is required. Because of this, we augment real scans from KITTI with virtual objects, realistically modeling occlusions and simulating sensor noise. A thorough comparison with classic and learning-based techniques highlights the robustness of the proposed approach.</div><div class="link-content" data-index="5"><pre>@inproceedings{Behl2019CVPR,
+    title = {PointFlowNet: Learning Representations for Rigid Motion Estimation from Point Clouds },
+    author = {Behl, Aseem and Paschalidou, Despoina and Donne, Simon and Geiger, Andreas},
+    booktitle = {Proceedings IEEE Conf. on Computer Vision and Pattern Recognition (CVPR)},
+    month = jun,
+    year = {2019},
+}</pre></div></div></div></div><div class="row paper"><div class="image"><img src="teasers/raynet.png" alt="RayNet: Learning Volumetric 3D Reconstruction with Ray Potentials" /></div><div class="content"><div class="paper-title"><a href="http://openaccess.thecvf.com/content_cvpr_2018/papers/Paschalidou_RayNet_Learning_Volumetric_CVPR_2018_paper.pdf">RayNet: Learning Volumetric 3D Reconstruction with Ray Potentials</a></div><div class="authors"><strong class="author">Despoina Paschalidou</strong>, <a href="https://scholar.google.de/citations?user=fkqdDEEAAAAJ&hl=en" class="author">Ali Osman Ulusoy</a>, <a href="https://avg.is.tuebingen.mpg.de/person/cschmitt" class="author">Carolin Schmitt</a>, <a href="https://www.vision.ee.ethz.ch/en/members/get_member.cgi?id=1" class="author">Luc van Gool</a>, <a href="http://www.cvlibs.net/" class="author">Andreas Geiger</a></div><div class="conference">Computer Vision and Pattern Recognition (CVPR) 2018</div><div class="links"><a href="#" data-index="0">abstract</a>/<a href="http://raynet-mvs.com">project page</a>/<a href="http://openaccess.thecvf.com/content_cvpr_2018/papers/Paschalidou_RayNet_Learning_Volumetric_CVPR_2018_paper.pdf">pdf</a>/<a href="data/Paschalidou2018CVPR_poster.pdf">poster</a>/<a href="http://github.com/paschalidoud/raynet">code</a>/<a href="https://www.youtube.com/watch?v=PZ0u1VZLLkU&feature=youtu.be">video</a>/<a href="#" data-index="6">bibtex</a><div class="link-content" data-index="0">In this paper, we consider the problem of reconstructing a dense 3D model using images captured from different views. Recent methods based on convolutional neural networks (CNN) allow learning the entire task from data. However, they do not incorporate the physics of image formation such as perspective geometry and occlusion. Instead, classical approaches based on Markov Random Fields (MRF) with ray-potentials explicitly model these physical processes, but they cannot cope with large surface appearance variations across different viewpoints. In this paper, we propose RayNet, which combines the strengths of both frameworks. RayNet integrates a CNN that learns view-invariant feature representations with an MRF that explicitly encodes the physics of perspective projection and occlusion. We train RayNet end-to-end using empirical risk minimization. We thoroughly evaluate our approach on challenging real-world datasets and demonstrate its benefits over a piece-wise trained baseline, hand-crafted models as well as other learning-based approaches.</div><div class="link-content" data-index="6"><pre>@inproceedings{Paschalidou2018CVPR,
       title = {RayNet: Learning Volumetric 3D Reconstruction with Ray Potentials},
       author = {Paschalidou, Despoina and Ulusoy, Ali Osman and Schmitt, Carolin and Gool, Luc and Geiger, Andreas},
       booktitle = {IEEE Conference on Computer Vision and Pattern Recognition (CVPR)},
-      publisher = {IEEE Computer Society},
+      month = jun,
       year = {2018}
-    }
-    </pre></td>
-    <script language="javascript" type="text/javascript" xml:space="preserve">
-    hideblock('cvpr2018_raynet_abstract');
-    hideblock('cvpr2018_raynet_bib');
-    </script>
-    </div>
-    </div>
-
-    <div class="paper" id="eusipco2017_lfa">
-    <img class="paper" title="Learning local feature aggregation functions with backpropagation" src="teasers/local_feature_aggregation.png" />
-    <p><b id="papertitle">
-    <a href=https://arxiv.org/pdf/1706.08580.pdf>
-    Learning local feature aggregation functions with backpropagation
-    </a></b> <br/>
-    <strong> Despoina Paschalidou </strong>,
-    <a href=https://www.idiap.ch/~katharas/>Angelos Katharopoulos</a>,
-    <a href=https://mug.ee.auth.gr/people/christos-diou/>
-    Christos Diou</a>,
-    <a href=https://mug.ee.auth.gr/people/anastasios-delopoulos/>
-    Anastasios Delopoulos</a><br />
-    <em>European Signal Processing Conference (EUSIPCO) 2017 </em> 
-    <br/>
-
-    <a href="javascript:toggleblock('eusipco2017_lfa_abstract')">abstract </a>  &nbsp/&nbsp
-    <a href="https://arxiv.org/pdf/1706.08580.pdf">pdf </a> &nbsp/&nbsp
-    <a href="https://github.com/paschalidoud/feature-aggregation">code </a> &nbsp/&nbsp
-    <a href="javascript:toggleblock('eusipco2017_lfa_bib')">bibtex </a> </p>
-    <div class="papermeta">
-    <em id="eusipco2017_lfa_abstract">This paper introduces a family of local feature aggregation functions and a novel method to estimate their parameters, such that they generate optimal representations for classification (or any task that can be expressed as a cost function minimization problem). To achieve that, we compose the local feature aggregation function with the classifier cost function and we backpropagate the gradient of this cost function in order to update the local feature aggregation function parameters. Experiments on synthetic datasets indicate that our method discovers parameters that model the class-relevant information in addition to the local feature space. Further experiments on a variety of motion and visual descriptors, both on image and video datasets, show that our method outperforms other state-of-the-art local feature aggregation functions, such as Bag of Words, Fisher Vectors and VLAD, by a large margin.</em>
-    <pre xml:space="preserve" id="eusipco2017_lfa_bib">
-    @inproceedings{katharopoulos2017learning,
+}</pre></div></div></div></div><div class="row paper"><div class="image"><img src="teasers/local_feature_aggregation.png" alt="Learning local feature aggregation functions with backpropagation" /></div><div class="content"><div class="paper-title"><a href="https://arxiv.org/pdf/1706.08580.pdf">Learning local feature aggregation functions with backpropagation</a></div><div class="authors"><strong class="author">Despoina Paschalidou</strong>, <a href="https://www.idiap.ch/~katharas/" class="author">Angelos Katharopoulos</a>, <a href="https://mug.ee.auth.gr/people/christos-diou/" class="author">Christos Diou</a>, <a href="https://mug.ee.auth.gr/people/anastasios-delopoulos/" class="author">Anastasios Delopoulos</a></div><div class="conference">European Signal Processing Conference (EUSIPCO) 2017</div><div class="links"><a href="#" data-index="0">abstract</a>/<a href="https://arxiv.org/pdf/1706.08580.pdf">pdf</a>/<a href="data/eusipco_poster.pdf">poster</a>/<a href="https://github.com/paschalidoud/feature-aggregation">code</a>/<a href="#" data-index="4">bibtex</a><div class="link-content" data-index="0">This paper introduces a family of local feature aggregation functions and a novel method to estimate their parameters, such that they generate optimal representations for classification (or any task that can be expressed as a cost function minimization problem). To achieve that, we compose the local feature aggregation function with the classifier cost function and we backpropagate the gradient of this cost function in order to update the local feature aggregation function parameters. Experiments on synthetic datasets indicate that our method discovers parameters that model the class-relevant information in addition to the local feature space. Further experiments on a variety of motion and visual descriptors, both on image and video datasets, show that our method outperforms other state-of-the-art local feature aggregation functions, such as Bag of Words, Fisher Vectors and VLAD, by a large margin.</div><div class="link-content" data-index="4"><pre>@inproceedings{katharopoulos2017learning
       title = {Learning local feature aggregation functions with backpropagation},
       author = {Paschalidou, Despoina and Katharopoulos, Angelos and Diou, Christos and Delopoulos, Anastasios},
       publisher = {IEEE},
       month = aug,
       year = {2017},
       url = {http://ieeexplore.ieee.org/abstract/document/8081307/},
-    }
-    </pre></td>
-    <script language="javascript" type="text/javascript" xml:space="preserve">
-    hideblock('eusipco2017_lfa_abstract');
-    hideblock('eusipco2017_lfa_bib');
-    </script>
-    </div>
-    </div>
-
-    <div class="paper" id="fslda_2016">
-    <img class="paper" title="Fast Supervised LDA for Discovering Micro-Events in Large-Scale Video Datasets" src="teasers/fslda.png" />
-    <p><b id="papertitle">
-    <a href=https://mug.ee.auth.gr/wp-content/uploads/fsLDA.pdf>
-    Fast Supervised LDA for Discovering Micro-Events in Large-Scale Video Datasets
-    </a></b> <br/>
-    <a href=https://www.idiap.ch/~katharas/>Angelos Katharopoulos</a>,
-    <strong> Despoina Paschalidou </strong>,
-    <a href=https://mug.ee.auth.gr/people/christos-diou/>
-    Christos Diou</a>,
-    <a href=https://mug.ee.auth.gr/people/anastasios-delopoulos/>
-    Anastasios Delopoulos</a><br />
-    <em>ACM Multimedia Conference (ACMM) 2016 </em> 
-    <br/>
-
-    <a href="javascript:toggleblock('fslda_2016_abstract')">abstract </a>  &nbsp/&nbsp
-    <a href="http://ldaplusplus.com/">project page </a> &nbsp/&nbsp
-    <a href="https://mug.ee.auth.gr/wp-content/uploads/fsLDA.pdf">pdf </a> &nbsp/&nbsp
-    <a href="https://github.com/angeloskath/supervised-lda">code </a> &nbsp/&nbsp
-    <a href="javascript:toggleblock('fslda_2016_bib')">bibtex </a> </p>
-    <div class="papermeta">
-    <em id="fslda_2016_abstract">This paper introduces fsLDA, a fast variational inference method for supervised LDA, which overcomes the computational limitations of the original supervised LDA and enables its application in large-scale video datasets. In addition to its scalability, our method also overcomes the drawbacks of standard, unsupervised LDA for video, including its focus on dominant but often irrelevant video information (e.g. background, camera motion). As a result, experiments in the UCF11 and UCF101 datasets show that our method consistently outperforms unsupervised LDA in every metric. Furthermore, analysis shows that class-relevant topics of fsLDA lead to sparse video representations and encapsulate high-level information corresponding to parts of video events, which we denote "micro-events".</em>
-    <pre xml:space="preserve" id="fslda_2016_bib">
-    @inproceedings{katharopoulos2016fast,
+}</pre></div></div></div></div><div class="row paper"><div class="image"><img src="teasers/fslda.png" alt="Fast Supervised LDA for Discovering Micro-Events in Large-Scale Video Datasets" /></div><div class="content"><div class="paper-title"><a href="https://mug.ee.auth.gr/wp-content/uploads/fsLDA.pdf">Fast Supervised LDA for Discovering Micro-Events in Large-Scale Video Datasets</a></div><div class="authors"><a href="https://www.idiap.ch/~katharas/" class="author">Angelos Katharopoulos</a>, <strong class="author">Despoina Paschalidou</strong>, <a href="https://mug.ee.auth.gr/people/christos-diou/" class="author">Christos Diou</a>, <a href="https://mug.ee.auth.gr/people/anastasios-delopoulos/" class="author">Anastasios Delopoulos</a></div><div class="conference">ACM Multimedia Conference (ACMM) 2016</div><div class="links"><a href="#" data-index="0">abstract</a>/<a href="http://ldaplusplus.com">project page</a>/<a href="https://mug.ee.auth.gr/wp-content/uploads/fsLDA.pdf">pdf</a>/<a href="data/fslda_poster.pdf">poster</a>/<a href="https://github.com/angeloskath/supervised-lda">code</a>/<a href="#" data-index="5">bibtex</a><div class="link-content" data-index="0">This paper introduces fsLDA, a fast variational inference method for supervised LDA, which overcomes the computational limitations of the original supervised LDA and enables its application in large-scale video datasets. In addition to its scalability, our method also overcomes the drawbacks of standard, unsupervised LDA for video, including its focus on dominant but often irrelevant video information (e.g. background, camera motion). As a result, experiments in the UCF11 and UCF101 datasets show that our method consistently outperforms unsupervised LDA in every metric. Furthermore, analysis shows that class-relevant topics of fsLDA lead to sparse video representations and encapsulate high-level information corresponding to parts of video events, which we denote 'micro-events'</div><div class="link-content" data-index="5"><pre>@inproceedings{katharopoulos2016fast
         title = {Fast Supervised LDA for Discovering Micro-Events in Large-Scale Video Datasets},
         author = {Katharopoulos, Angelos and Paschalidou, Despoina and Diou, Christos and Delopoulos, Anastasios},
         booktitle = {Proceedings of the 2016 ACM on Multimedia Conference},
@@ -255,25 +88,63 @@
         year = {2016},
         url = {http://dl.acm.org/citation.cfm?id=2967237},
         month_numeric = {10}
-      }
-    </pre></td>
-    <script language="javascript" type="text/javascript" xml:space="preserve">
-    hideblock('fslda_2016_abstract');
-    hideblock('fslda_2016_bib');
-    </script>
-    </div>
-    </div>
-    </div>
 
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-143288088-1"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
+}</pre></div></div></div></div><!-- end publication list -->
+        </div>
 
-        gtag('config', 'UA-143288088-1');
-    </script>
-</body>
+        <!-- Javascript for showing and hiding the abstract and bibtex -->
+        <script type="text/javascript">
+            document.querySelectorAll(".links").forEach(function (p) {
+                p.addEventListener("click", function (ev) {
+                    // Make sure that the click is coming from a link
+                    if (ev.target.nodeName != "A") {
+                        return;
+                    }
 
+                    // Find the index of the div to toggle or return
+                    var i = ev.target.dataset["index"];
+                    if (i == undefined) {
+                        return;
+                    }
+
+                    // Make sure to remove something else that was displayed
+                    // and toggle the current one
+                    Array.prototype.forEach.call(
+                        ev.target.parentNode.children,
+                        function (sibling) {
+                            // We don't care about links etc
+                            if (sibling.nodeName != "DIV") {
+                                return;
+                            }
+
+                            // Hide others
+                            if (sibling.dataset["index"] != i) {
+                                sibling.style.display = "none";
+                            }
+
+                            // toggle the correct one
+                            else {
+                                if (sibling.style.display != "block") {
+                                    sibling.style.display = "block";
+                                } else {
+                                    sibling.style.display = "none";
+                                }
+                            }
+                        }
+                    );
+                    ev.preventDefault();
+                });
+            });
+        </script>
+
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-143288088-1"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+
+            gtag('config', 'UA-143288088-1');
+        </script>
+    </body>
 </html>
