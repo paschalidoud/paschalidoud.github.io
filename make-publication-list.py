@@ -171,6 +171,7 @@ publications = [
             Link("pdf", "https://mug.ee.auth.gr/wp-content/uploads/fsLDA.pdf", None, None),
             Link("poster", "data/fslda_poster.pdf", None, None),
             Link("code", "https://github.com/angeloskath/supervised-lda", None, None),
+            Link("blog post", "https://mug.ee.auth.gr/discovering-micro-events-video-data-using-topic-modeling/", None, None),
             Link("bibtex", None, None, """@inproceedings{katharopoulos2016fast
         title = {Fast Supervised LDA for Discovering Micro-Events in Large-Scale Video Datasets},
         author = {Katharopoulos, Angelos and Paschalidou, Despoina and Diou, Christos and Delopoulos, Anastasios},
