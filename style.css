@@ -15,7 +15,7 @@ a {
     color: #0505af;
 }
 .section {
-    max-width: 800px;
+    max-width: 900px;
     margin: 0 auto;
 }
 .section > .title {
@@ -48,10 +48,25 @@ a {
 /**
  * Styling for the publication list
  */
-.paper-title { padding-top: 2.5%; font-weight: bold; }
+.paper-title { padding-top: 2.5%; font-weight: bold;}
 .paper .conference { font-style: italic; }
+.paper .links {text-align: left;}
 .paper .links a:first-child { margin-left: 0px; }
-.paper .links a { margin: 10px; }
+.paper .links a {
+    display: inline-block;
+    width: 70px;
+    margin-right: 10px;
+    margin-bottom:10px;
+    border: 2px solid #1A2B7E;
+    border-radius: 5px;
+    color: #1A2B7E;
+    padding: 1px 6px;
+}
+.paper .links a:hover {
+    background-color: #eee;
+    pointer: cursor;
+    font-weight: bold;
+}
 .paper .links .link-content {
     display: none;
     font-style: italic;

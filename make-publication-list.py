@@ -64,21 +64,22 @@ conferences = {
 publications = [
     Paper(
         "Superquadrics Revisited: Learning 3D Shape Parsing beyond Cuboids",
-        "https://arxiv.org/pdf/1904.09970.pdf",
+        # "https://arxiv.org/pdf/1904.09970.pdf",
+        "http:superquadrics.com",
         "teasers/superquadrics_revisited.png",
         author_list(authors, "despi", "osman", "andreas"),
         conferences["cvpr"],
         2019,
         None,
         [
-            Link("abstract", None, "Abstracting complex 3D shapes with parsimonious part-based representations has been a long standing goal in computer vision. This paper presents a learning-based solution to this problem which goes beyond the traditional 3D cuboid representation by exploiting superquadrics as atomic elements. We demonstrate that superquadrics lead to more expressive 3D scene parses while being easier to learn than 3D cuboid representations. Moreover, we provide an analytical solution to the Chamfer loss which avoids the need for computational expensive reinforcement learning or iterative prediction. Our model learns to parse 3D objects into consistent superquadric representations without supervision. Results on various ShapeNet categories as well as the SURREAL human body dataset demonstrate the flexibility of our model in capturing fine details and complex poses that could not have been modelled using cuboids.", None),
-            Link("project page", "https://avg.is.tuebingen.mpg.de/publications/paschalidou2019cvpr", None, None),
-            Link("pdf", "https://arxiv.org/pdf/1904.09970.pdf", None, None),
-            Link("poster", "data/Paschalidou2019CVPR_poster.pdf", None, None),
-            Link("code", "https://github.com/paschalidoud/superquadric_parsing", None, None),
-            Link("blog post", "https://autonomousvision.github.io/superquadrics-revisited/", None, None),
-            Link("video", "https://www.youtube.com/watch?v=eaZHYOsv9Lw", None, None),
-            Link("bibtex", None, None, """@inproceedings{Paschalidou2019CVPR,
+            Link("Abstract", None, "Abstracting complex 3D shapes with parsimonious part-based representations has been a long standing goal in computer vision. This paper presents a learning-based solution to this problem which goes beyond the traditional 3D cuboid representation by exploiting superquadrics as atomic elements. We demonstrate that superquadrics lead to more expressive 3D scene parses while being easier to learn than 3D cuboid representations. Moreover, we provide an analytical solution to the Chamfer loss which avoids the need for computational expensive reinforcement learning or iterative prediction. Our model learns to parse 3D objects into consistent superquadric representations without supervision. Results on various ShapeNet categories as well as the SURREAL human body dataset demonstrate the flexibility of our model in capturing fine details and complex poses that could not have been modelled using cuboids.", None),
+            # Link("Project page", "https://avg.is.tuebingen.mpg.de/publications/paschalidou2019cvpr", None, None),
+            Link("Paper", "https://arxiv.org/pdf/1904.09970.pdf", None, None),
+            Link("Poster", "data/Paschalidou2019CVPR_poster.pdf", None, None),
+            Link("Code", "https://github.com/paschalidoud/superquadric_parsing", None, None),
+            Link("Blog post", "https://autonomousvision.github.io/superquadrics-revisited/", None, None),
+            Link("Video", "https://www.youtube.com/watch?v=eaZHYOsv9Lw", None, None),
+            Link("Bibtex", None, None, """@inproceedings{Paschalidou2019CVPR,
     title = {Superquadrics Revisited: Learning 3D Shape Parsing beyond Cuboids},
     author = {Paschalidou, Despoina and Ulusoy, Ali Osman and Geiger, Andreas},
     booktitle = {Proceedings IEEE Conf. on Computer Vision and Pattern Recognition (CVPR)},
@@ -89,19 +90,20 @@ publications = [
     ),
     Paper(
         "PointFlowNet: Learning Representations for Rigid Motion Estimation from Point Clouds",
-        "http://www.cvlibs.net/publications/Behl2019CVPR.pdf",
+        "https://avg.is.tuebingen.mpg.de/publications/behl2019cvpr",
+        # "http://www.cvlibs.net/publications/Behl2019CVPR.pdf",
         "teasers/pointflownet.png",
         author_list(authors, "aseem", "despi", "simon", "andreas"),
         conferences["cvpr"],
         2019,
         None,
         [
-            Link("abstract", None, "Despite significant progress in image-based 3D scene flow estimation, the performance of such approaches has not yet reached the fidelity required by many applications. Simultaneously, these applications are often not restricted to image-based estimation: laser scanners provide a popular alternative to traditional cameras, for example in the context of self-driving cars, as they directly yield a 3D point cloud. In this paper, we propose to estimate 3D motion from such unstructured point clouds using a deep neural network. In a single forward pass, our model jointly predicts 3D scene flow as well as the 3D bounding box and rigid body motion of objects in the scene. While the prospect of estimating 3D scene flow from unstructured point clouds is promising, it is also a challenging task. We show that the traditional global representation of rigid body motion prohibits inference by CNNs, and propose a translation equivariant representation to circumvent this problem. For training our deep network, a large dataset is required. Because of this, we augment real scans from KITTI with virtual objects, realistically modeling occlusions and simulating sensor noise. A thorough comparison with classic and learning-based techniques highlights the robustness of the proposed approach.", None),
-            Link("project page", "https://avg.is.tuebingen.mpg.de/publications/behl2019cvpr", None, None),
-            Link("pdf", "http://www.cvlibs.net/publications/Behl2019CVPR.pdf", None, None),
-            Link("code", "https://github.com/aseembehl/pointflownet", None, None),
-            Link("video", "https://youtu.be/cjJhzYCUNTY", None, None),
-            Link("bibtex", None, None, """@inproceedings{Behl2019CVPR,
+            Link("Abstract", None, "Despite significant progress in image-based 3D scene flow estimation, the performance of such approaches has not yet reached the fidelity required by many applications. Simultaneously, these applications are often not restricted to image-based estimation: laser scanners provide a popular alternative to traditional cameras, for example in the context of self-driving cars, as they directly yield a 3D point cloud. In this paper, we propose to estimate 3D motion from such unstructured point clouds using a deep neural network. In a single forward pass, our model jointly predicts 3D scene flow as well as the 3D bounding box and rigid body motion of objects in the scene. While the prospect of estimating 3D scene flow from unstructured point clouds is promising, it is also a challenging task. We show that the traditional global representation of rigid body motion prohibits inference by CNNs, and propose a translation equivariant representation to circumvent this problem. For training our deep network, a large dataset is required. Because of this, we augment real scans from KITTI with virtual objects, realistically modeling occlusions and simulating sensor noise. A thorough comparison with classic and learning-based techniques highlights the robustness of the proposed approach.", None),
+            # Link("Project page", "https://avg.is.tuebingen.mpg.de/publications/behl2019cvpr", None, None),
+            Link("Paper", "http://www.cvlibs.net/publications/Behl2019CVPR.pdf", None, None),
+            Link("Code", "https://github.com/aseembehl/pointflownet", None, None),
+            Link("Video", "https://youtu.be/cjJhzYCUNTY", None, None),
+            Link("Bibtex", None, None, """@inproceedings{Behl2019CVPR,
     title = {PointFlowNet: Learning Representations for Rigid Motion Estimation from Point Clouds },
     author = {Behl, Aseem and Paschalidou, Despoina and Donne, Simon and Geiger, Andreas},
     booktitle = {Proceedings IEEE Conf. on Computer Vision and Pattern Recognition (CVPR)},
@@ -112,20 +114,21 @@ publications = [
     ),
     Paper(
         "RayNet: Learning Volumetric 3D Reconstruction with Ray Potentials",
-        "http://openaccess.thecvf.com/content_cvpr_2018/papers/Paschalidou_RayNet_Learning_Volumetric_CVPR_2018_paper.pdf",
+        # "http://openaccess.thecvf.com/content_cvpr_2018/papers/Paschalidou_RayNet_Learning_Volumetric_CVPR_2018_paper.pdf",
+        "http://raynet-mvs.com",
         "teasers/raynet.png",
         author_list(authors, "despi", "osman", "caro", "luc", "andreas"),
         conferences["cvpr"],
         2018,
         None,
         [
-            Link("abstract", None, "In this paper, we consider the problem of reconstructing a dense 3D model using images captured from different views. Recent methods based on convolutional neural networks (CNN) allow learning the entire task from data. However, they do not incorporate the physics of image formation such as perspective geometry and occlusion. Instead, classical approaches based on Markov Random Fields (MRF) with ray-potentials explicitly model these physical processes, but they cannot cope with large surface appearance variations across different viewpoints. In this paper, we propose RayNet, which combines the strengths of both frameworks. RayNet integrates a CNN that learns view-invariant feature representations with an MRF that explicitly encodes the physics of perspective projection and occlusion. We train RayNet end-to-end using empirical risk minimization. We thoroughly evaluate our approach on challenging real-world datasets and demonstrate its benefits over a piece-wise trained baseline, hand-crafted models as well as other learning-based approaches.", None),
-            Link("project page", "http://raynet-mvs.com", None, None),
-            Link("pdf", "http://openaccess.thecvf.com/content_cvpr_2018/papers/Paschalidou_RayNet_Learning_Volumetric_CVPR_2018_paper.pdf", None, None),
-            Link("poster", "data/Paschalidou2018CVPR_poster.pdf", None, None),
-            Link("code", "http://github.com/paschalidoud/raynet", None, None),
-            Link("video", "https://www.youtube.com/watch?v=PZ0u1VZLLkU&feature=youtu.be", None, None),
-            Link("bibtex", None, None, """@inproceedings{Paschalidou2018CVPR,
+            Link("Abstract", None, "In this paper, we consider the problem of reconstructing a dense 3D model using images captured from different views. Recent methods based on convolutional neural networks (CNN) allow learning the entire task from data. However, they do not incorporate the physics of image formation such as perspective geometry and occlusion. Instead, classical approaches based on Markov Random Fields (MRF) with ray-potentials explicitly model these physical processes, but they cannot cope with large surface appearance variations across different viewpoints. In this paper, we propose RayNet, which combines the strengths of both frameworks. RayNet integrates a CNN that learns view-invariant feature representations with an MRF that explicitly encodes the physics of perspective projection and occlusion. We train RayNet end-to-end using empirical risk minimization. We thoroughly evaluate our approach on challenging real-world datasets and demonstrate its benefits over a piece-wise trained baseline, hand-crafted models as well as other learning-based approaches.", None),
+            # Link("Project page", "http://raynet-mvs.com", None, None),
+            Link("Paper", "http://openaccess.thecvf.com/content_cvpr_2018/papers/Paschalidou_RayNet_Learning_Volumetric_CVPR_2018_paper.pdf", None, None),
+            Link("Poster", "data/Paschalidou2018CVPR_poster.pdf", None, None),
+            Link("Code", "http://github.com/paschalidoud/raynet", None, None),
+            Link("Video", "https://www.youtube.com/watch?v=PZ0u1VZLLkU&feature=youtu.be", None, None),
+            Link("Bibtex", None, None, """@inproceedings{Paschalidou2018CVPR,
       title = {RayNet: Learning Volumetric 3D Reconstruction with Ray Potentials},
       author = {Paschalidou, Despoina and Ulusoy, Ali Osman and Schmitt, Carolin and Gool, Luc and Geiger, Andreas},
       booktitle = {IEEE Conference on Computer Vision and Pattern Recognition (CVPR)},
@@ -143,36 +146,36 @@ publications = [
         2017,
         None,
         [
-            Link("abstract", None, "This paper introduces a family of local feature aggregation functions and a novel method to estimate their parameters, such that they generate optimal representations for classification (or any task that can be expressed as a cost function minimization problem). To achieve that, we compose the local feature aggregation function with the classifier cost function and we backpropagate the gradient of this cost function in order to update the local feature aggregation function parameters. Experiments on synthetic datasets indicate that our method discovers parameters that model the class-relevant information in addition to the local feature space. Further experiments on a variety of motion and visual descriptors, both on image and video datasets, show that our method outperforms other state-of-the-art local feature aggregation functions, such as Bag of Words, Fisher Vectors and VLAD, by a large margin.", None),
-            Link("pdf", "https://arxiv.org/pdf/1706.08580.pdf", None, None),
-            Link("poster", "data/eusipco_poster.pdf", None, None),
-            Link("code", "https://github.com/paschalidoud/feature-aggregation", None, None),
-            Link("bibtex", None, None, """@inproceedings{katharopoulos2017learning
+            Link("Abstract", None, "This paper introduces a family of local feature aggregation functions and a novel method to estimate their parameters, such that they generate optimal representations for classification (or any task that can be expressed as a cost function minimization problem). To achieve that, we compose the local feature aggregation function with the classifier cost function and we backpropagate the gradient of this cost function in order to update the local feature aggregation function parameters. Experiments on synthetic datasets indicate that our method discovers parameters that model the class-relevant information in addition to the local feature space. Further experiments on a variety of motion and visual descriptors, both on image and video datasets, show that our method outperforms other state-of-the-art local feature aggregation functions, such as Bag of Words, Fisher Vectors and VLAD, by a large margin.", None),
+            Link("Paper", "https://arxiv.org/pdf/1706.08580.pdf", None, None),
+            Link("Poster", "data/eusipco_poster.pdf", None, None),
+            Link("Code", "https://github.com/paschalidoud/feature-aggregation", None, None),
+            Link("Bibtex", None, None, """@inproceedings{katharopoulos2017learning
       title = {Learning local feature aggregation functions with backpropagation},
       author = {Paschalidou, Despoina and Katharopoulos, Angelos and Diou, Christos and Delopoulos, Anastasios},
       publisher = {IEEE},
       month = aug,
       year = {2017},
-      url = {http://ieeexplore.ieee.org/abstract/document/8081307/},
+      url = {http://ieeexplore.ieee.org/Abstract/document/8081307/},
 }""")
         ]
     ),
     Paper(
         "Fast Supervised LDA for Discovering Micro-Events in Large-Scale Video Datasets",
-        "https://mug.ee.auth.gr/wp-content/uploads/fsLDA.pdf",
+        "http://ldaplusplus.com", # "https://mug.ee.auth.gr/wp-content/uploads/fsLDA.pdf",
         "teasers/fslda.png",
         author_list(authors, "angelos", "despi", "diou", "delo"),
         conferences["acmmm"],
         2016,
         None,
         [
-            Link("abstract", None, "This paper introduces fsLDA, a fast variational inference method for supervised LDA, which overcomes the computational limitations of the original supervised LDA and enables its application in large-scale video datasets. In addition to its scalability, our method also overcomes the drawbacks of standard, unsupervised LDA for video, including its focus on dominant but often irrelevant video information (e.g. background, camera motion). As a result, experiments in the UCF11 and UCF101 datasets show that our method consistently outperforms unsupervised LDA in every metric. Furthermore, analysis shows that class-relevant topics of fsLDA lead to sparse video representations and encapsulate high-level information corresponding to parts of video events, which we denote 'micro-events'", None),
-            Link("project page", "http://ldaplusplus.com", None, None),
-            Link("pdf", "https://mug.ee.auth.gr/wp-content/uploads/fsLDA.pdf", None, None),
-            Link("poster", "data/fslda_poster.pdf", None, None),
-            Link("code", "https://github.com/angeloskath/supervised-lda", None, None),
-            Link("blog post", "https://mug.ee.auth.gr/discovering-micro-events-video-data-using-topic-modeling/", None, None),
-            Link("bibtex", None, None, """@inproceedings{katharopoulos2016fast
+            Link("Abstract", None, "This paper introduces fsLDA, a fast variational inference method for supervised LDA, which overcomes the computational limitations of the original supervised LDA and enables its application in large-scale video datasets. In addition to its scalability, our method also overcomes the drawbacks of standard, unsupervised LDA for video, including its focus on dominant but often irrelevant video information (e.g. background, camera motion). As a result, experiments in the UCF11 and UCF101 datasets show that our method consistently outperforms unsupervised LDA in every metric. Furthermore, analysis shows that class-relevant topics of fsLDA lead to sparse video representations and encapsulate high-level information corresponding to parts of video events, which we denote 'micro-events'", None),
+            # Link("Project page", "http://ldaplusplus.com", None, None),
+            Link("Paper", "https://mug.ee.auth.gr/wp-content/uploads/fsLDA.pdf", None, None),
+            Link("Poster", "data/fslda_poster.pdf", None, None),
+            Link("Code", "https://github.com/angeloskath/supervised-lda", None, None),
+            Link("Blog post", "https://mug.ee.auth.gr/discovering-micro-events-video-data-using-topic-modeling/", None, None),
+            Link("Bibtex", None, None, """@inproceedings{katharopoulos2016fast
         title = {Fast Supervised LDA for Discovering Micro-Events in Large-Scale Video Datasets},
         author = {Katharopoulos, Angelos and Paschalidou, Despoina and Diou, Christos and Delopoulos, Anastasios},
         booktitle = {Proceedings of the 2016 ACM on Multimedia Conference},
@@ -220,7 +223,8 @@ def build_publications_list(publications):
                     return '<a href="{}">{}</a>'.format(link.url, link.name)
                 else:
                     return '<a href="#" data-index="{}">{}</a>'.format(i, link.name)
-            return "/".join(
+            # return "/".join(
+            return " ".join(
                 link(i, l) for i, l in enumerate(paper.links)
             )
 
