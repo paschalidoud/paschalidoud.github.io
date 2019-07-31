@@ -220,10 +220,10 @@ def build_publications_list(publications):
         def links_list(paper):
             def link(i, link):
                 if link.url is not None:
-                    return '<a href="{}">{}</a>'.format(link.url, link.name)
+                    # return '<a href="{}">{}</a>'.format(link.url, link.name)
+                    return '<a href="{}" data-type="{}">{}</a>'.format(link.url, link.name, link.name)
                 else:
                     return '<a href="#" data-index="{}">{}</a>'.format(i, link.name)
-            # return "/".join(
             return " ".join(
                 link(i, l) for i, l in enumerate(paper.links)
             )

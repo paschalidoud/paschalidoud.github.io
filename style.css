@@ -49,23 +49,43 @@ a {
  * Styling for the publication list
  */
 .paper-title { padding-top: 2.5%; font-weight: bold;}
-.paper .conference { font-style: italic; }
 .paper .links {text-align: left;}
 .paper .links a:first-child { margin-left: 0px; }
 .paper .links a {
     display: inline-block;
     width: 70px;
-    margin-right: 10px;
+    margin-right: 5px;
     margin-bottom:10px;
-    border: 2px solid #1A2B7E;
     border-radius: 5px;
-    color: #1A2B7E;
     padding: 1px 6px;
+    background-color: #0081af;
+    color: white;
+    font-weight: bold;
+    text-align: center;
 }
 .paper .links a:hover {
-    background-color: #eee;
     pointer: cursor;
+    color: #1A2B7E;
     font-weight: bold;
+}
+
+.paper .links a[data-index="0"] {
+    background-color: #f0ad4e;
+}
+.paper .links a[data-type="Paper"] {
+    background-color: #4a5759;
+}
+.paper .links a[data-type="Code"] {
+    background-color: #edafb8;
+}
+.paper .links a[data-type="Blog post"] {
+    background-color: #06d6a0;
+}
+.paper .links a[data-type="Video"] {
+    background-color: #c3423f;
+}
+.paper .links a[data-type="Poster"] {
+    background-color: #7ebc89;
 }
 .paper .links .link-content {
     display: none;
