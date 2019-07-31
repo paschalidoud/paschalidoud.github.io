@@ -48,7 +48,13 @@ a {
 /**
  * Styling for the publication list
  */
-.paper-title { padding-top: 2.5%; font-weight: bold;}
+.paper-title {
+    padding-top: 2.5%;
+    font-weight: bold;
+    font-size: 11pt;
+}
+.paper-title a {color: #555;}
+.paper-title a:hover {color: #333; font-size: 12pt;}
 .paper .links {text-align: left;}
 .paper .links a:first-child { margin-left: 0px; }
 .paper .links a {
@@ -69,7 +75,7 @@ a {
     font-weight: bold;
 }
 
-.paper .links a[data-index="0"] {
+.paper .links a[data-type="Abstract"] {
     background-color: #f0ad4e;
 }
 .paper .links a[data-type="Paper"] {
@@ -86,6 +92,9 @@ a {
 }
 .paper .links a[data-type="Poster"] {
     background-color: #7ebc89;
+}
+.paper .links a[data-type="Bibtex"] {
+    background-color: #0081af;
 }
 .paper .links .link-content {
     display: none;

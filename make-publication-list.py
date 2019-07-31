@@ -223,7 +223,7 @@ def build_publications_list(publications):
                     # return '<a href="{}">{}</a>'.format(link.url, link.name)
                     return '<a href="{}" data-type="{}">{}</a>'.format(link.url, link.name, link.name)
                 else:
-                    return '<a href="#" data-index="{}">{}</a>'.format(i, link.name)
+                    return '<a href="#" data-type="{}" data-index="{}">{}</a>'.format(link.name, i, link.name)
             return " ".join(
                 link(i, l) for i, l in enumerate(paper.links)
             )
