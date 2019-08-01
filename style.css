@@ -54,7 +54,7 @@ a {
     font-size: 11pt;
 }
 .paper-title a {color: #555;}
-.paper-title a:hover {color: #333; font-size: 12pt;}
+.paper-title a:hover {color: #333;}
 .paper .links {text-align: left;}
 .paper .links a:first-child { margin-left: 0px; }
 .paper .links a {
