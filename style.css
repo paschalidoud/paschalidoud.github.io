@@ -9,6 +9,7 @@ body {
     -moz-hyphens: auto;
     -webkit-hyphens: auto;
     hyphens: auto;
+    font-size: 14px;
 }
 a {
     text-decoration: none;
@@ -53,8 +54,8 @@ a {
     font-weight: bold;
     font-size: 11pt;
 }
-.paper-title a {color: #555;}
-.paper-title a:hover {color: #333; text-decoration: underline}
+.paper-title a {color: #000;}
+.paper-title a:hover {color: #777; text-decoration: underline}
 .paper .links {text-align: left;}
 .paper .links a:first-child { margin-left: 0px; }
 .paper .links a {
@@ -104,6 +105,14 @@ a {
 .paper .links .link-content > pre {
     font-style: normal;
     line-height: 1.2em;
+}
+
+.paper .authors a{
+    color: #555;
+}
+
+.paper .authors a:hover{
+    text-decoration: underline;
 }
 
 /**
