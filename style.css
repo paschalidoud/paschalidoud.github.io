@@ -115,11 +115,11 @@ a {
     text-decoration: underline;
 }
 
-.news_item {
-    display:list-item;
-    padding-top: 32px;
-    padding-bottom: 32px;
+.paper .conference .special {
+    font-weight: bold;
+    color: #af111c;
 }
+
 
 /**
  *  Conditional styles first for mobile (or generally narrow screens) and then

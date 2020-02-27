@@ -146,7 +146,7 @@ publications = [
         author_list(authors, "despi", "osman", "caro", "luc", "andreas"),
         conferences["cvpr"],
         2018,
-        None,
+        "Spotlight Presentation",
         [
             Link("Abstract", None, "In this paper, we consider the problem of reconstructing a dense 3D model using images captured from different views. Recent methods based on convolutional neural networks (CNN) allow learning the entire task from data. However, they do not incorporate the physics of image formation such as perspective geometry and occlusion. Instead, classical approaches based on Markov Random Fields (MRF) with ray-potentials explicitly model these physical processes, but they cannot cope with large surface appearance variations across different viewpoints. In this paper, we propose RayNet, which combines the strengths of both frameworks. RayNet integrates a CNN that learns view-invariant feature representations with an MRF that explicitly encodes the physics of perspective projection and occlusion. We train RayNet end-to-end using empirical risk minimization. We thoroughly evaluate our approach on challenging real-world datasets and demonstrate its benefits over a piece-wise trained baseline, hand-crafted models as well as other learning-based approaches.", None),
             # Link("Project page", "http://raynet-mvs.com", None, None),
@@ -240,7 +240,10 @@ def build_publications_list(publications):
         return ", ".join(author(a) for a in paper.authors)
 
     def conference(paper):
-        return '{} {}'.format(paper.conference.name, paper.year)
+        cf = '{}, {}'.format(paper.conference.name, paper.year)
+        if paper.special is not None:
+            cf = cf + '<span class="special">   ({})</span>'.format(paper.special)
+        return cf
 
     def links(paper):
         def links_list(paper):
