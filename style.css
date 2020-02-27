@@ -115,6 +115,12 @@ a {
     text-decoration: underline;
 }
 
+.news_item {
+    display:list-item;
+    padding-top: 32px;
+    padding-bottom: 32px;
+}
+
 /**
  *  Conditional styles first for mobile (or generally narrow screens) and then
  *  for the rest

@@ -63,6 +63,32 @@ conferences = {
 }
 publications = [
     Paper(
+        "Learning Unsupervised Hierarchical Part Decomposition of 3D Objects from a Single RGB Image",
+        # "https://arxiv.org/pdf/1904.09970.pdf",
+        "http:superquadrics.com",
+        "teasers/hierarchical_primitives.png",
+        author_list(authors, "despi", "luc", "andreas"),
+        conferences["cvpr"],
+        2020,
+        None,
+        [
+            Link("Abstract", None, "Humans perceive the 3D world as a set of distinct objects that are characterized by various low-level (geometry, reflectance) and high-level (connectivity, adjacency, symmetry) properties. Recent methods based on convolutional neural networks (CNNs) demonstrated impressive progress in 3D reconstruction, even when using a single 2D image as input. However, the majority of these methods focuses on recovering the local 3D geometry of an object without considering its part-based decomposition or relations between parts. We address this challenging problem by proposing a novel formulation that allows to jointly recover the geometry of a 3D object as a set of primitives as well as their latent hierarchical structure without part-level supervision. Our model recovers the higher level structural decomposition of various objects in the form of a binary tree of primitives, where simple parts are represented with fewer primitives and more complex parts are modeled with more components. Our experiments on the ShapeNet and D-FAUST datasets demonstrate that considering the organization of parts indeed facilitates reasoning about 3D geometry.", None),
+            # Link("Project page", "https://avg.is.tuebingen.mpg.de/publications/paschalidou2019cvpr", None, None),
+            Link("Paper", "https://paschalidoud.github.io/", None, None),
+            # Link("Poster", "data/Paschalidou2019CVPR_poster.pdf", None, None),
+            Link("Code", "https://github.com/paschalidoud/hierarchical_primitives", None, None),
+            # Link("Blog post", "https://autonomousvision.github.io/superquadrics-revisited/", None, None),
+            # Link("Video", "https://www.youtube.com/watch?v=eaZHYOsv9Lw", None, None),
+            Link("Bibtex", None, None, """@inproceedings{Paschalidou2020CVPR,
+    title = {Learning Unsupervised Hierarhical Part Decomposition of 3D Objects from a Single RGB Image},
+    author = {Paschalidou, Despoina and Luc van Gool and Geiger, Andreas},
+    booktitle = {Proceedings IEEE Conf. on Computer Vision and Pattern Recognition (CVPR)},
+    month = jun,
+    year = {2020},
+}""")
+        ]
+    ),
+    Paper(
         "Superquadrics Revisited: Learning 3D Shape Parsing beyond Cuboids",
         # "https://arxiv.org/pdf/1904.09970.pdf",
         "http:superquadrics.com",
