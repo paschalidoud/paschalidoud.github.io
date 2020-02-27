@@ -66,7 +66,7 @@ publications = [
         "Learning Unsupervised Hierarchical Part Decomposition of 3D Objects from a Single RGB Image",
         # "https://arxiv.org/pdf/1904.09970.pdf",
         "http:superquadrics.com",
-        "teasers/hierarchical_primitives.png",
+        "teasers/hierarchical_primitives_2.png",
         author_list(authors, "despi", "luc", "andreas"),
         conferences["cvpr"],
         2020,
