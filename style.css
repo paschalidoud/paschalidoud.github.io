@@ -120,6 +120,26 @@ a {
     color: #af111c;
 }
 
+/**
+ * Styling for the news list
+ */
+.news_item {
+    padding-bottom:10px;
+    padding-left:25px;
+}
+.news_item .ul {list-style-type:square;}
+
+.news-date {
+    font-weight:bold
+}
+.news-text {
+    color: #1a1a1a;
+    padding-left:5px;
+}
+
+/**
+ * Styling for the font icons
+ */
 .icon {
     font-size: 36px;
 }
