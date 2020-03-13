@@ -124,7 +124,7 @@ a {
  * Styling for the news list
  */
 .news_item {
-    padding-bottom:10px;
+    padding-bottom:25px;
     padding-left:25px;
 }
 .news_item .ul {list-style-type:square;}
