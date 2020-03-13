@@ -120,6 +120,9 @@ a {
     color: #af111c;
 }
 
+.icon {
+    font-size: 36px;
+}
 
 /**
  *  Conditional styles first for mobile (or generally narrow screens) and then
