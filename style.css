@@ -88,7 +88,7 @@ a {
 .paper .links a[data-type="Code"] {
     background-color: #edafb8;
 }
-.paper .links a[data-type="Blog post"] {
+.paper .links a[data-type="Blog"] {
     background-color: #06d6a0;
 }
 .paper .links a[data-type="Slides"] {
