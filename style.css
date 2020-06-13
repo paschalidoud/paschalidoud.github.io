@@ -82,6 +82,10 @@ a {
 .paper .links a[data-type="Abstract"] {
     background-color: #f0ad4e;
 }
+.paper .links a[data-type="Project page"] {
+    background-color: #daa6f7;
+    width: 110px;
+}
 .paper .links a[data-type="Paper"] {
     background-color: #4a5759;
 }
@@ -113,10 +117,15 @@ a {
     line-height: 1.2em;
 }
 
-.paper .authors a{
+.paper .authors .author:first-child {
+    padding-left: 0px;
+}
+.paper .authors .author {
+    padding-left: 7px;
+}
+.paper .authors a {
     color: #555;
 }
-
 .paper .authors a:hover{
     text-decoration: underline;
 }

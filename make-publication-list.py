@@ -64,7 +64,6 @@ conferences = {
 publications = [
     Paper(
         "Learning Unsupervised Hierarchical Part Decomposition of 3D Objects from a Single RGB Image",
-        # "https://arxiv.org/pdf/1904.09970.pdf",
         "http:superquadrics.com/hierarchical_primitives",
         "teasers/hierarchical_primitives.png",
         author_list(authors, "despi", "luc", "andreas"),
@@ -73,7 +72,7 @@ publications = [
         None,
         [
             Link("Abstract", None, "Humans perceive the 3D world as a set of distinct objects that are characterized by various low-level (geometry, reflectance) and high-level (connectivity, adjacency, symmetry) properties. Recent methods based on convolutional neural networks (CNNs) demonstrated impressive progress in 3D reconstruction, even when using a single 2D image as input. However, the majority of these methods focuses on recovering the local 3D geometry of an object without considering its part-based decomposition or relations between parts. We address this challenging problem by proposing a novel formulation that allows to jointly recover the geometry of a 3D object as a set of primitives as well as their latent hierarchical structure without part-level supervision. Our model recovers the higher level structural decomposition of various objects in the form of a binary tree of primitives, where simple parts are represented with fewer primitives and more complex parts are modeled with more components. Our experiments on the ShapeNet and D-FAUST datasets demonstrate that considering the organization of parts indeed facilitates reasoning about 3D geometry.", None),
-            # Link("Project page", "https://avg.is.tuebingen.mpg.de/publications/paschalidou2019cvpr", None, None),
+            Link("Project page", "http:superquadrics.com/hierarchical_primitives", None, None),
             Link("Paper", "https://arxiv.org/pdf/2004.01176.pdf", None, None),
             Link("Poster", "data/Paschalidou2020CVPR_poster.pdf", None, None),
             Link("Code", "https://github.com/paschalidoud/hierarchical_primitives", None, None),
@@ -100,7 +99,7 @@ publications = [
         None,
         [
             Link("Abstract", None, "Abstracting complex 3D shapes with parsimonious part-based representations has been a long standing goal in computer vision. This paper presents a learning-based solution to this problem which goes beyond the traditional 3D cuboid representation by exploiting superquadrics as atomic elements. We demonstrate that superquadrics lead to more expressive 3D scene parses while being easier to learn than 3D cuboid representations. Moreover, we provide an analytical solution to the Chamfer loss which avoids the need for computational expensive reinforcement learning or iterative prediction. Our model learns to parse 3D objects into consistent superquadric representations without supervision. Results on various ShapeNet categories as well as the SURREAL human body dataset demonstrate the flexibility of our model in capturing fine details and complex poses that could not have been modelled using cuboids.", None),
-            # Link("Project page", "https://avg.is.tuebingen.mpg.de/publications/paschalidou2019cvpr", None, None),
+            Link("Project page", "http:superquadrics.com/learnable-superquadrics.html", None, None),
             Link("Paper", "https://arxiv.org/pdf/1904.09970.pdf", None, None),
             Link("Poster", "data/Paschalidou2019CVPR_poster.pdf", None, None),
             Link("Code", "https://github.com/paschalidoud/superquadric_parsing", None, None),
