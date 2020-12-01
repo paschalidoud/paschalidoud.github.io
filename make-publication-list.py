@@ -242,7 +242,7 @@ def build_publications_list(publications):
     def conference(paper):
         cf = '{}, {}'.format(paper.conference.name, paper.year)
         if paper.special is not None:
-            cf = cf + '<span class="special">   ({})</span>'.format(paper.special)
+            cf = cf + '<div class="special">   ({})</div>'.format(paper.special)
         return cf
 
     def links(paper):
@@ -273,15 +273,15 @@ def build_publications_list(publications):
                     '<div class="image">{}</div>'
                     '<div class="content">'
                         '<div class="paper-title">{}</div>'
-                        '<div class="authors">{}</div>'
                         '<div class="conference">{}</div>'
+                        '<div class="authors">{}</div>'
                         '<div class="links">{}</div>'
                     '</div>'
                 '</div>').format(
                     image(p),
                     title(p),
-                    authors(p),
                     conference(p),
+                    authors(p),
                     links(p)
                 )
 

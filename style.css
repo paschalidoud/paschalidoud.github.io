@@ -55,7 +55,7 @@ a {
 .paper-title {
     padding-top: 2.5%;
     font-weight: bold;
-    font-size: 11pt;
+    font-size: 13pt;
 }
 .paper-title a {color: #000;}
 .paper-title a:hover {color: #777; text-decoration: underline}
@@ -130,9 +130,16 @@ a {
     text-decoration: underline;
 }
 
+.paper .conference {
+    font-size: 12pt;
+    padding-bottom: 15px;
+}
+
 .paper .conference .special {
     font-weight: bold;
-    color: #af111c;
+    color: #ff0000;
+    font-size: 12pt;
+    padding-bottom: 15px;
 }
 
 /**
@@ -149,6 +156,21 @@ a {
 .news-text {
     color: #1a1a1a;
     padding-left:5px;
+}
+
+/**
+ * Styling for presentation list
+ */
+.presentation-title {
+    padding-top: 2.5%;
+    font-size: 13pt;
+}
+.presentation-title a {color: #000;}
+.presentation-title a:hover {color: #777; text-decoration: underline}
+
+.presentation .details {
+    font-size: 12pt;
+    padding-bottom: 15px;
 }
 
 /**
