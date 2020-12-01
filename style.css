@@ -2,14 +2,14 @@ body {
     padding-top: 30px;
     background-color: #fff;
     font-family: "Arvo", serif;
+    /*font-family: "Lato", Verdana, Helvetica, sans-serif;*/
     color: #1a1a1a;
-    font-size: 10pt;
+    font-size: 11pt;
     line-height: 1.8em;
     text-align: justify;
     -moz-hyphens: auto;
     -webkit-hyphens: auto;
     hyphens: auto;
-    font-size: 14px;
 }
 a {
     text-decoration: none;
@@ -21,8 +21,7 @@ a {
 }
 .section > .title {
     font-size: 18pt;
-    font-family: "Roboto", sans-serif;
-    color: #313436;
+    color: #414446;
     clear: both;
 }
 .section > .title > span {
@@ -54,11 +53,11 @@ a {
  */
 .paper-title {
     padding-top: 2.5%;
-    font-weight: bold;
-    font-size: 13pt;
+    font-size: 11pt;
+    color: #818181;
 }
 .paper-title a {color: #000;}
-.paper-title a:hover {color: #777; text-decoration: underline}
+.paper-title a:hover {color: #777;}
 .paper .links {text-align: left;}
 .paper .links a:first-child { margin-left: 0px; }
 .paper .links a {
@@ -119,6 +118,7 @@ a {
 
 .paper .authors .author:first-child {
     padding-left: 0px;
+    font-size: 11pt;
 }
 .paper .authors .author {
     padding-left: 7px;
@@ -131,7 +131,7 @@ a {
 }
 
 .paper .conference {
-    font-size: 12pt;
+    font-size: 11pt;
     padding-bottom: 15px;
 }
 
