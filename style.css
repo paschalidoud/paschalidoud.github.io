@@ -154,9 +154,7 @@ a {
 /**
  * Styling for the font icons
  */
-.icon {
-    font-size: 36px;
-}
+.ai-2x {font-size: 2em;}
 
 /**
  *  Conditional styles first for mobile (or generally narrow screens) and then
