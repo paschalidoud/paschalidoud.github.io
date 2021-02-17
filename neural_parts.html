@@ -1,0 +1,151 @@
+<!Doctype html>
+<html lang="en">
+    <head>
+        <title>Neural Parts: Learning Expressive 3D Shape Abstractions with Invertible Neural Networks</title>
+
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <meta name="author" content="Despoina Paschalidou">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="icon" type="image/png" href="data/bunny.png"/>
+
+        <link rel="stylesheet" type="text/css" href="style_project_page.css?cache=7733391418498779679">
+        <link href="https://fonts.googleapis.com/css?family=Arvo|Roboto&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="https://cdn.rawgit.com/jpswalsh/academicons/master/css/academicons.min.css">
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+        <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    </head>
+    <body>
+        <div class="section">
+            <h1 class="project-title">
+                Neural Parts: Learning Expressive 3D Shape Abstractions<br />
+                with Invertible Neural Networks
+            </h1>
+            <div class="authors">
+                <a href=https://paschalidoud.github.io/>
+                    Despoina Paschalidou <sup>1,5,6</sup>
+                </a>
+                <a href=https://angeloskath.github.io/>
+                    Angelos Katharopoulos <sup>3,4</sup>
+                </a>
+                <a href=http://cvlibs.net/>
+                    Andreas Geiger <sup>1,2,5</sup>
+                </a>
+                <a href=https://www.cs.utoronto.ca/~fidler/>
+                    Sanja Fidler <sup>6,7,8</sup>
+                </a>
+            </div>
+
+            <div class="affiliations">
+                <span><sup>1</sup> Autonomous Vision Group, MPI for
+                    Intelligent Systems Tübingen</span>
+                <span><sup>2</sup> University of Tübingen</span> <br/>
+                <span><sup>3</sup> Idiap Research Institute, Switzerland</span>
+                <span><sup>4</sup> École Polytechique Fédérale de Lausanne (EPFL)</span> <br/>
+                <span><sup>5</sup> Max Planck ETH Center for Learning Systems</span>
+                <span><sup>6</sup> NVIDIA</span>
+                <span><sup>7</sup> University of Toronto</span>
+                <span><sup>8</sup> Vector Institute</span>
+            </div>
+
+            <div class="project-conference">
+                <!CVPR 2020>
+            </div>
+
+            <div class="project-icons">
+                <a href="https://arxiv.org/pdf/2004.01176.pdf">
+                    <i class="fa fa-file"></i> <br/>
+                    Paper
+                </a>
+                <a href="https://github.com/paschalidoud/neural_parts">
+                    <i class="fa fa-github"></i> <br/>
+                    Code
+                </a>
+                <a href="https://www.youtube.com/watch?v=QgD0NHbWVlU&vq=hd1080&autoplay=1">
+                    <i class="fa fa-youtube-play"></i> <br/>
+                    Video
+                </a>
+                <!--<a href="https://paschalidoud.github.io/data/Paschalidou2020CVPR_poster.pdf">
+                    <i class="fa fa-picture-o"></i> <br/>
+                    Poster
+                </a>
+                <a href="http://www.cvlibs.net/publications/Paschalidou2020CVPR_slides.pdf">
+                    <i class="fa fa-file-powerpoint-o"></i> <br/>
+                    Slides
+                </a>
+                <a href="https://autonomousvision.github.io/hierarchical-primitives/">
+                    <i class="fa fa-newspaper-o"></i> <br/>
+                    Blog
+                </a>-->
+            </div>
+
+            <div class="teaser-image">
+                <img src="projects/neural_parts/teaser.png" style="width:100%;">
+                <p class="caption">Our model learns to parse 3D objects into
+                geometrically accurate and semantically consistent part arrangements <strong>
+                without any part-level supervision</strong>. Our evaluations on ShapeNet objects,
+                D-FAUST humans and FreiHAND hands demonstrate that our primitives can capture complex
+                geometries and thus simultaneously achieve geometrically accurate as well as
+                interpretable reconstructions using an order of magnitude fewer primitives than
+                state-of-the-art shape abstraction methods.</p>
+                <figure style="width: 49%;">
+                    <video class="centered" width="100%" controls muted loop autoplay>
+                        <source src="projects/neural_parts/motivation_cvxnet.mp4" type="video/mp4"/>
+                    </video>
+                    <p class="caption">Existing primitive-based methods rely on
+                    simple shapes for decomposing complex 3D shapes into
+                    parts. As a result, they <strong>require a large number of primitives</strong>
+                    for extracting accurate reconstructions. However, this results in <strong>
+                    less interpretable shape abstractions</strong>, namely
+                    <strong>primitives are not semantically meaningfull parts</strong>.</p>
+                </figure>
+                <figure style="width: 49%;">
+                    <video class="centered" width="100%" controls muted loop autoplay>
+                        <source src="projects/neural_parts/motivation_ours.mp4" type="video/mp4"/>
+                    </video>
+                    <p class="caption">Neural Parts is a novel 3D primitive representation that can 
+                    <strong>represent arbitrarily complex genus-zero shapes
+                    </strong> and thus yield more <strong>geometrically accurate</strong> and
+                    <strong>semantically meaningful</strong> shape abstractions compared to simpler primitives.</p>
+                </figure>
+            </div>
+
+            <div class="section-title">Approach Overview</div>
+            <div class="content">
+                <div style="width:60%; display:inline-block; vertical-align:top;"><p>Primitive-based representations seek to infer
+                <strong>semantically consistent part arrangements across
+                different object instances</strong>. Existing primitive-based
+                methods rely on simple shapes for decomposing complex objects
+                into parts such as cuboids, superquadrics, spheres or
+                convexes. <strong>Due to their simple parametrization, these primitives
+                have limited expressivity and cannot capture arbitrarily
+                complex geometries</strong>. Therefore, <strong>existing part-based methods
+                require a large number of primitives for extracting
+                geometrically accurate reconstructions</strong>. However, using <strong>more
+                primitives comes at the expense of less interpretable
+                reconstructions</strong>. Namely, a primitive is not an identifiable
+                part anymore.</p></div>
+                <div style="width:38%; display:inline-block; vertical-align:top;"><img src="projects/neural_parts/convexes_vs_nps.png" style="width:100%;"></div>
+                <p>We introduce a novel 3D primitive representation that is
+                defined as <strong>a deformation betweek shapes</strong> and is
+                <strong>parametrized as a learned homeomorphic mapping</strong>
+                implemented with an <strong>Invertible Neural Network
+                (INN)</strong>. Using an INN allows us to efficiently compute
+                the implicit and explicit representation of the predicted shape
+                and impose various constraints on the predicted parts.
+                </p>
+                <img src="projects/neural_parts/architecture.png" style="width:100%;">
+                <p class="caption">We introduce a </p>
+            </div>
+
+            <div class="section-title">Results</div>
+                <div class="content">
+                </div>
+
+            <div class="section-title">Acknowledgements</div>
+            <div class="content">
+                This research was supported by the Max Planck ETH Center for
+                Learning Systems.
+            </div>
+        </div>
+    </body>
