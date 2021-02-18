@@ -189,6 +189,12 @@ h1.project-title {
     width: 90%;
     margin: 0 auto;
 }
+p.caption {
+    line-height: 130%;
+    width: 90%;
+    margin: 0 auto;
+    font-size: 10pt;
+}
 .abstract {
     font-size: 16px;
     margin-bottom: 20px;

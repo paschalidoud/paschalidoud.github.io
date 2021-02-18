@@ -57,14 +57,14 @@
                     <i class="fa fa-file"></i> <br/>
                     Paper
                 </a>
-                <a href="https://github.com/paschalidoud/neural_parts">
+                <a href="https://paschalidoud.github.io/neural_parts">
                     <i class="fa fa-github"></i> <br/>
-                    Code
+                    Code (TBD)
                 </a>
-                <a href="https://www.youtube.com/watch?v=QgD0NHbWVlU&vq=hd1080&autoplay=1">
+                <!--<a href="https://www.youtube.com/watch?v=QgD0NHbWVlU&vq=hd1080&autoplay=1">
                     <i class="fa fa-youtube-play"></i> <br/>
                     Video
-                </a>
+                </a>-->
                 <!--<a href="https://paschalidoud.github.io/data/Paschalidou2020CVPR_poster.pdf">
                     <i class="fa fa-picture-o"></i> <br/>
                     Poster
@@ -97,7 +97,7 @@
                     parts. As a result, they <strong>require a large number of primitives</strong>
                     for extracting accurate reconstructions. However, this results in <strong>
                     less interpretable shape abstractions</strong>, namely
-                    <strong>primitives are not semantically meaningfull parts</strong>.</p>
+                    <strong>primitives are not semantically meaningful parts</strong>.</p>
                 </figure>
                 <figure style="width: 49%;">
                     <video class="centered" width="100%" controls muted loop autoplay>
@@ -130,12 +130,33 @@
                 defined as <strong>a deformation betweek shapes</strong> and is
                 <strong>parametrized as a learned homeomorphic mapping</strong>
                 implemented with an <strong>Invertible Neural Network
-                (INN)</strong>. Using an INN allows us to efficiently compute
+                (INN)</strong>. We argue that a primitive should be a non
+                trivial genus-zero shape with well defined implicit and explicit representations. Using an INN allows us to efficiently compute
                 the implicit and explicit representation of the predicted shape
-                and impose various constraints on the predicted parts.
+                and impose various constraints on the predicted parts. In contrast to prior work,
+                that directly predict the primitive parameters (i.e. centroids and sizes for cuboids
+                and superquadrics and hyperplanes for convexes), we employ the INN to fully define each primitive.
+                This allows us to have primitives that capture arbitrarily
+                complex geometries, hence the ability of our model to parse
+                objects into expressive shape abstractions that are more
+                geometrically accurate using an order of magnitude fewer
+                primitives compared to approaches that rely on simple convex
+                shape primitives.
                 </p>
                 <img src="projects/neural_parts/architecture.png" style="width:100%;">
-                <p class="caption">We introduce a </p>
+                <p class="caption">Given an input image and a watertight mesh
+                of the target object we seek to learn a representation with M
+                primitives that best describes the target object. We define our
+                primitives via a deformation between shapes that is
+                parametrized as a learned homeomorphism implemented with an
+                Invertible Neural Network (INN). For each primitive, we seek to
+                learn a homeomorphism between the 3D space of a simple
+                genus-zero shape and the 3D space of the target object, such
+                that the deformed shape matches a part of the target object. Due
+                to its simple implicit surface definition and tesselation, we
+                employ a sphere as our genus-zero shape. Note that using an INN
+                allows us to efficiently compute the implicit and explicit representation of
+                the predicted shape and impose various constraints on the predicted parts.</p>
             </div>
 
             <div class="section-title">Results</div>
@@ -145,7 +166,8 @@
             <div class="section-title">Acknowledgements</div>
             <div class="content">
                 This research was supported by the Max Planck ETH Center for
-                Learning Systems.
+                Learning Systems. We would like to thank <a href=https://kangxue.org/>Kangxue Yin </a>for
+                providing the 3D models for the animal dataset.
             </div>
         </div>
     </body>
