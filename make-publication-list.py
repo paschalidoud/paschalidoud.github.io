@@ -80,7 +80,7 @@ publications = [
             Link("Slides", "http://www.cvlibs.net/publications/Paschalidou2020CVPR_slides.pdf", None, None),
             Link("Video", "https://www.youtube.com/watch?v=QgD0NHbWVlU&vq=hd1080&autoplay=1", None, None),
             Link("Bibtex", None, None, """@inproceedings{Paschalidou2020CVPR,
-    title = {Learning Unsupervised Hierarhical Part Decomposition of 3D Objects from a Single RGB Image},
+    title = {Learning Unsupervised Hierarchical Part Decomposition of 3D Objects from a Single RGB Image},
     author = {Paschalidou, Despoina and Luc van Gool and Geiger, Andreas},
     booktitle = {Proceedings IEEE Conf. on Computer Vision and Pattern Recognition (CVPR)},
     month = jun,
