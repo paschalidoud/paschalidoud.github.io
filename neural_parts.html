@@ -14,6 +14,32 @@
         <link rel="stylesheet" href="https://cdn.rawgit.com/jpswalsh/academicons/master/css/academicons.min.css">
         <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
         <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+        <style type="text/css">
+            .render_large {
+                display: inline-block;
+                width: 45%;
+                vertical-align: middle;
+            }
+            .render_small {
+                display: inline-block;
+                width: 50%;
+                vertical-align: middle;
+            }
+            .render_window {
+                display: inline-block;
+                vertical-align: middle;
+                box-shadow: 1px 0px 5px black;
+                margin-right: 10px;
+                margin-bottom: 10px;
+            }
+            .progress {
+                background: #666;
+                position: relative;
+                height: 5px;
+                margin-bottom: -5px;
+                display: none;
+            }
+        </style>
     </head>
     <body>
         <div class="section">
@@ -49,7 +75,7 @@
             </div>
 
             <div class="project-conference">
-                <!CVPR 2020>
+                CVPR 2021
             </div>
 
             <div class="project-icons">
@@ -160,8 +186,66 @@
             </div>
 
             <div class="section-title">Results</div>
-                <div class="content">
+            <div class="content">
+                In the following interactive visualization, the naming of the
+                parts has been done manually. However, <strong>the model had no part
+                supervision during training</strong>. The semantic parts have
+                emerged naturally from reconstructing the geometry.
+                <h3>Animals</h3>
+                <div id="animals">
+                    <div class="controls">
+                        Show
+                        <input type="checkbox" id="animals_all" checked><label for="animals_all">all parts</label>
+                        <input type="checkbox" id="animals_head"><label for="animals_head">heads</label>
+                        <input type="checkbox" id="animals_neck"><label for="animals_neck">necks</label>
+                        <input type="checkbox" id="animals_legs"><label for="animals_legs">legs</label>
+                    </div>
+                    <div class="render_large">
+                        <div data-size="400" class="render_window"></div>
+                    </div>
+                    <div class="render_small">
+                        <div data-size="200" class="render_window"></div><div data-size="200" class="render_window"></div><div data-size="200" class="render_window"></div><div data-size="200" class="render_window"></div>
+                    </div>
                 </div>
+
+                <h3>Humans</h3>
+                <div id="humans">
+                    <div class="controls">
+                        Show
+                        <input type="checkbox" id="humans_all" checked><label for="humans_all">all parts</label>
+                        <input type="checkbox" id="humans_head"><label for="humans_head">heads</label>
+                        <input type="checkbox" id="humans_body"><label for="humans_body">bodies</label>
+                        <input type="checkbox" id="humans_left_hand"><label for="humans_left_hand">left-arms</label>
+                        <input type="checkbox" id="humans_right_hand"><label for="humans_right_hand">right-arms</label>
+                        <input type="checkbox" id="humans_left_leg"><label for="humans_left_leg">left-legs</label>
+                        <input type="checkbox" id="humans_right_leg"><label for="humans_right_leg">right-legs</label>
+                    </div>
+                    <div class="render_large">
+                        <div data-size="400" class="render_window"></div>
+                    </div>
+                    <div class="render_small">
+                        <div data-size="200" class="render_window"></div><div data-size="200" class="render_window"></div><div data-size="200" class="render_window"></div><div data-size="200" class="render_window"></div>
+                    </div>
+                </div>
+
+                <!--
+                <h3>Planes</h3>
+                <div id="animals">
+                    <div class="controls">
+                        Show
+                        <input type="checkbox" id="animals_all" checked><label for="animals_all">all parts</label>
+                        <input type="checkbox" id="animals_head" checked><label for="animals_head">heads</label>
+                        <input type="checkbox" id="animals_neck" checked><label for="animals_neck">necks</label>
+                        <input type="checkbox" id="animals_legs" checked><label for="animals_legs">legs</label>
+                    </div>
+                    <div class="render_large">
+                        <div data-size="400" class="render_window"></div>
+                    </div>
+                    <div class="render_small">
+                        <div data-size="200" class="render_window"></div><div data-size="200" class="render_window"></div><div data-size="200" class="render_window"></div><div data-size="200" class="render_window"></div>
+                    </div>
+                </div>-->
+            </div>
 
             <div class="section-title">Acknowledgements</div>
             <div class="content">
@@ -170,4 +254,247 @@
                 providing the 3D models for the animal dataset.
             </div>
         </div>
+
+        <script type="module">
+
+            import * as THREE from "https://unpkg.com/three/build/three.module.js";
+            import { OrbitControls } from "https://unpkg.com/three/examples/jsm/controls/OrbitControls.js";
+            import {OBJLoader} from "https://unpkg.com/three/examples/jsm/loaders/OBJLoader.js";
+
+            function progress_bar() {
+                var el = document.createElement("div");
+                el.classList.add("progress");
+
+                return {
+                    domElement: el,
+                    update: function (percent) {
+                        percent = Math.min(1, Math.max(0, percent));
+                        el.style.display = "block";
+                        el.style.width = Math.round(percent * 100) + "%";
+                    },
+                    hide: function () {
+                        el.style.display = "none";
+                    }
+                };
+            }
+
+            function show_object(el, prefix, N) {
+                const scene = new THREE.Scene();
+                const renderer = new THREE.WebGLRenderer();
+                const camera = new THREE.PerspectiveCamera(75, 1, 0.1, 1000);
+                const controls = new OrbitControls(camera, renderer.domElement);
+
+                camera.position.set(0.5, 0.5, 0.5);
+                controls.target.set(0, 0, 0);
+                controls.autoRotate = true;
+                controls.autoRotateSpeed = 4;
+                scene.background = new THREE.Color("white");
+                var size = el.dataset.size;
+                renderer.setSize(size, size);
+                var progress = progress_bar();
+                el.appendChild(progress.domElement);
+                el.appendChild(renderer.domElement);
+
+                const amb_light = new THREE.AmbientLight(0x606060); // soft white light
+                scene.add(amb_light);
+                const hem_light = new THREE.HemisphereLight(0xffffbb, 0x080820, 0.5);
+                scene.add(hem_light);
+
+                const colors = [
+                    0x1f77b4,
+                    0xaec7e8,
+                    0xff7f0e,
+                    0xffbb78,
+                    0x2ca02c,
+                    0x98df8a,
+                    0xd62728,
+                    0xff9896,
+                    0x9467bd,
+                    0xc5b0d5,
+                    0x8c564b,
+                    0xc49c94,
+                    0xe377c2,
+                    0xf7b6d2,
+                    0x7f7f7f,
+                    0xc7c7c7,
+                    0xbcbd22,
+                    0xdbdb8d,
+                    0x17becf,
+                    0x9edae5
+                ];
+                function animate() {
+                    requestAnimationFrame(animate);
+
+                    controls.update();
+                    renderer.render(scene, camera);
+                }
+
+                const loader = new OBJLoader();
+                var meshes = [];
+                var progresses = [];
+                var loaded = 0;
+                function load_part(part_idx) {
+                    progresses[part_idx] = 0;
+                    loader.load(
+                        prefix + "/part_00" + i + ".obj",
+                        function (object) {
+                            var g = object.children[0].geometry;
+                            var m = new THREE.MeshLambertMaterial({color: colors[part_idx]});
+                            m.transparent = true;
+                            var mesh = new THREE.Mesh(g, m);
+                            meshes[part_idx] = mesh;
+                            scene.add(mesh);
+
+                            loaded++;
+                            if (loaded == N) {
+                                progress.hide();
+                            }
+                        },
+                        function (event) {
+                            progresses[part_idx] = event.loaded / event.total;
+                            var total_progress = 0;
+                            for (var i=0; i<progresses.length; i++) {
+                                total_progress += progresses[i] / progresses.length;
+                            }
+                            progress.update(total_progress);
+                        }
+                    )
+                }
+                for (var i=0; i<N; i++) {
+                    load_part(i);
+                }
+                animate();
+
+                return {
+                    meshes: meshes,
+                    show: function (indices) {
+                        for (var i=0; i<N; i++) {
+                            meshes[i].material.opacity = 0.5;
+                            //meshes[i].visible = false;
+                        }
+                        for (var i=0; i<indices.length; i++) {
+                            meshes[indices[i]].material.opacity = 1;
+                            //meshes[indices[i]].visible = true;
+                        }
+                    },
+                    show_all: function () {
+                        for (var i=0; i<N; i++) {
+                            meshes[i].material.opacity = 1;
+                            //meshes[i].visible = true;
+                        }
+                    },
+                    set_size: function(width, height) {
+                        renderer.setSize(width, height);
+                    }
+                };
+            }
+
+            function show_group(elements, objects, N) {
+                var controls = [];
+                for (var i=0; i<objects.length; i++) {
+                    controls.push(show_object(elements[i], objects[i], N));
+                }
+
+                return {
+                    controls: controls,
+                    show: function (indices) {
+                        for (var i=0; i<controls.length; i++) {
+                            controls[i].show(indices);
+                        }
+                    },
+                    show_all: function () {
+                        for (var i=0; i<controls.length; i++) {
+                            controls[i].show_all();
+                        }
+                    }
+                };
+            }
+
+            // Animals
+            var animal_control = show_group(
+                document.getElementById("animals").getElementsByClassName("render_window"),
+                [
+                    "projects/neural_parts/objects/animals/1422165",
+                    "projects/neural_parts/objects/animals/692032",
+                    "projects/neural_parts/objects/animals/626525",
+                    "projects/neural_parts/objects/animals/745737",
+                    "projects/neural_parts/objects/animals/721005"
+                ],
+                8
+            );
+            var animal_checkboxes = document.querySelectorAll("#animals .controls input");
+            document.querySelector("#animals .controls").addEventListener(
+                "change",
+                function (ev) {
+                    if (ev.target.id == "animals_all") {
+                        Array.prototype.filter.call(
+                            animal_checkboxes,
+                            (el) => el.id != "animals_all"
+                        ).forEach(function (el) {el.checked = false;});
+                    } else if (ev.target.checked) {
+                        animal_checkboxes[0].checked = false;
+                    }
+
+                    var ids = new Set();
+                    if (animal_checkboxes[0].checked) {
+                        ids = new Set([0, 1, 2, 3, 4, 5, 6, 7]);
+                    }
+                    if (animal_checkboxes[1].checked) {
+                        ids.add(3);
+                    }
+                    if (animal_checkboxes[2].checked) {
+                        ids.add(4);
+                    }
+                    if (animal_checkboxes[3].checked) {
+                        ids.add(2);
+                        ids.add(6);
+                        ids.add(7);
+                    }
+
+                    animal_control.show(Array.from(ids));
+                }
+            );
+
+            // Humans
+            var human_control = show_group(
+                document.getElementById("humans").getElementsByClassName("render_window"),
+                [
+                    "projects/neural_parts/objects/humans/50020_knees_00136",
+                    "projects/neural_parts/objects/humans/50009_jumping_jacks_00140",
+                    "projects/neural_parts/objects/humans/50002_jumping_jacks_00038",
+                    "projects/neural_parts/objects/humans/50009_one_leg_jump_00075",
+                    //"projects/neural_parts/objects/humans/50004_running_on_spot_00220",
+                    "projects/neural_parts/objects/humans/50022_punching_00069"
+                ],
+                6
+            );
+            var human_checkboxes = document.querySelectorAll("#humans .controls input");
+            document.querySelector("#humans .controls").addEventListener(
+                "change",
+                function (ev) {
+                    if (ev.target.id == "humans_all") {
+                        Array.prototype.filter.call(
+                            human_checkboxes,
+                            (el) => el.id != "humans_all"
+                        ).forEach(function (el) {el.checked = false;});
+                    } else if (ev.target.checked) {
+                        human_checkboxes[0].checked = false;
+                    }
+
+                    var ids = new Set();
+                    if (human_checkboxes[0].checked) {
+                        ids = new Set([0, 1, 2, 3, 4, 5]);
+                    }
+                    var part_ids = [1, 2, 0, 4, 3, 5];
+                    for (var i=1; i<human_checkboxes.length; i++) {
+                        if (human_checkboxes[i].checked) {
+                            ids.add(part_ids[i-1]);
+                        }
+                    }
+
+                    human_control.show(Array.from(ids));
+                }
+            );
+        </script>
     </body>
+</html>
