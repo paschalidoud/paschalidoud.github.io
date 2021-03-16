@@ -15,15 +15,29 @@
         <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
         <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
         <style type="text/css">
-            .render_large {
-                display: inline-block;
-                width: 45%;
-                vertical-align: middle;
+            .side-text {
+                width:60%;
+                display:inline-block;
+                vertical-align:top;
             }
-            .render_small {
+            .side-image {
+                width: 38%;
                 display: inline-block;
-                width: 50%;
-                vertical-align: middle;
+                vertical-align: top;
+            }
+            .controls {
+                margin-bottom: 10px;
+            }
+            .left-controls {
+                display: inline-block;
+                vertical-align: top;
+                width: 80%;
+            }
+            .right-controls {
+                display: inline-block;
+                vertical-align: top;
+                width: 19%;
+                text-align: right;
             }
             .render_window {
                 display: inline-block;
@@ -31,6 +45,7 @@
                 box-shadow: 1px 0px 5px black;
                 margin-right: 10px;
                 margin-bottom: 10px;
+                width: calc(33% - 10px);
             }
             .progress {
                 background: #666;
@@ -38,6 +53,25 @@
                 height: 5px;
                 margin-bottom: -5px;
                 display: none;
+            }
+
+            @media (max-width: 400px) {
+                .render_window {
+                    display: block;
+                    width: 90%;
+                    margin: 10px auto;
+                }
+            }
+            @media (max-width: 700px) {
+                .side-image {
+                    display: block;
+                    width: 80%;
+                    margin: 10px auto;
+                }
+                .side-text {
+                    display: block;
+                    width: 100%;
+                }
             }
         </style>
     </head>
@@ -138,7 +172,7 @@
 
             <div class="section-title">Approach Overview</div>
             <div class="content">
-                <div style="width:60%; display:inline-block; vertical-align:top;"><p>Primitive-based representations seek to infer
+                <div class="side-text"><p>Primitive-based representations seek to infer
                 <strong>semantically consistent part arrangements across
                 different object instances</strong>. Existing primitive-based
                 methods rely on simple shapes for decomposing complex objects
@@ -151,7 +185,7 @@
                 primitives comes at the expense of less interpretable
                 reconstructions</strong>. Namely, a primitive is not an identifiable
                 part anymore.</p></div>
-                <div style="width:38%; display:inline-block; vertical-align:top;"><img src="projects/neural_parts/convexes_vs_nps.png" style="width:100%;"></div>
+                <div class="side-image"><img src="projects/neural_parts/convexes_vs_nps.png" style="width:100%;"></div>
                 <p>We introduce a novel 3D primitive representation that is
                 defined as <strong>a deformation betweek shapes</strong> and is
                 <strong>parametrized as a learned homeomorphic mapping</strong>
@@ -194,37 +228,41 @@
                 <h3>Animals</h3>
                 <div id="animals">
                     <div class="controls">
-                        Show
-                        <input type="checkbox" id="animals_all" checked><label for="animals_all">all parts</label>
-                        <input type="checkbox" id="animals_head"><label for="animals_head">heads</label>
-                        <input type="checkbox" id="animals_neck"><label for="animals_neck">necks</label>
-                        <input type="checkbox" id="animals_legs"><label for="animals_legs">legs</label>
+                        <div class="left-controls">
+                            Show
+                            <input type="checkbox" id="animals_all" checked><label for="animals_all">all parts</label>
+                            <input type="checkbox" id="animals_head"><label for="animals_head">heads</label>
+                            <input type="checkbox" id="animals_neck"><label for="animals_neck">necks</label>
+                            <input type="checkbox" id="animals_legs"><label for="animals_legs">legs</label>
+                        </div>
+                        <div class="right-controls">
+                            <button>Randomize</button>
+                        </div>
                     </div>
-                    <div class="render_large">
-                        <div data-size="400" class="render_window"></div>
-                    </div>
-                    <div class="render_small">
-                        <div data-size="200" class="render_window"></div><div data-size="200" class="render_window"></div><div data-size="200" class="render_window"></div><div data-size="200" class="render_window"></div>
+                    <div class="render_container">
+                        <div data-size="400" class="render_window"></div><div data-size="400" class="render_window"></div><div data-size="400" class="render_window"></div>
                     </div>
                 </div>
 
                 <h3>Humans</h3>
                 <div id="humans">
                     <div class="controls">
-                        Show
-                        <input type="checkbox" id="humans_all" checked><label for="humans_all">all parts</label>
-                        <input type="checkbox" id="humans_head"><label for="humans_head">heads</label>
-                        <input type="checkbox" id="humans_body"><label for="humans_body">bodies</label>
-                        <input type="checkbox" id="humans_left_hand"><label for="humans_left_hand">left-arms</label>
-                        <input type="checkbox" id="humans_right_hand"><label for="humans_right_hand">right-arms</label>
-                        <input type="checkbox" id="humans_left_leg"><label for="humans_left_leg">left-legs</label>
-                        <input type="checkbox" id="humans_right_leg"><label for="humans_right_leg">right-legs</label>
+                        <div class="left-controls">
+                            Show
+                            <input type="checkbox" id="humans_all" checked><label for="humans_all">all parts</label>
+                            <input type="checkbox" id="humans_head"><label for="humans_head">heads</label>
+                            <input type="checkbox" id="humans_body"><label for="humans_body">bodies</label>
+                            <input type="checkbox" id="humans_left_hand"><label for="humans_left_hand">left-arms</label>
+                            <input type="checkbox" id="humans_right_hand"><label for="humans_right_hand">right-arms</label>
+                            <input type="checkbox" id="humans_left_leg"><label for="humans_left_leg">left-legs</label>
+                            <input type="checkbox" id="humans_right_leg"><label for="humans_right_leg">right-legs</label>
+                        </div>
+                        <div class="right-controls">
+                            <button>Randomize</button>
+                        </div>
                     </div>
-                    <div class="render_large">
-                        <div data-size="400" class="render_window"></div>
-                    </div>
-                    <div class="render_small">
-                        <div data-size="200" class="render_window"></div><div data-size="200" class="render_window"></div><div data-size="200" class="render_window"></div><div data-size="200" class="render_window"></div>
+                    <div class="render_container">
+                        <div data-size="400" class="render_window"></div><div data-size="400" class="render_window"></div><div data-size="400" class="render_window"></div>
                     </div>
                 </div>
 
@@ -260,6 +298,21 @@
             import * as THREE from "https://unpkg.com/three/build/three.module.js";
             import { OrbitControls } from "https://unpkg.com/three/examples/jsm/controls/OrbitControls.js";
             import {OBJLoader} from "https://unpkg.com/three/examples/jsm/loaders/OBJLoader.js";
+
+            function random_choice(arr, n) {
+                var index_set = {};
+                var choice = [];
+                while (choice.length < n) {
+                    var idx = Math.floor(Math.random() * arr.length);
+                    if (index_set[idx] !== undefined) {
+                        continue;
+                    }
+                    index_set[idx] = 0;
+                    choice.push(idx);
+                }
+
+                return choice.map(x => arr[x]);
+            }
 
             function progress_bar() {
                 var el = document.createElement("div");
@@ -322,8 +375,14 @@
                     0x17becf,
                     0x9edae5
                 ];
+                var previous_canvas_size = size;
                 function animate() {
                     requestAnimationFrame(animate);
+                    if (el.offsetWidth != previous_canvas_size) {
+                        previous_canvas_size = el.offsetWidth;
+                        renderer.domElement.style.width = previous_canvas_size + "px";
+                        renderer.domElement.style.height = previous_canvas_size + "px";
+                    }
 
                     controls.update();
                     renderer.render(scene, camera);
@@ -411,15 +470,16 @@
             }
 
             // Animals
+            var animals = [
+                "projects/neural_parts/objects/animals/1422165",
+                "projects/neural_parts/objects/animals/692032",
+                "projects/neural_parts/objects/animals/626525",
+                "projects/neural_parts/objects/animals/745737",
+                "projects/neural_parts/objects/animals/721005"
+            ];
             var animal_control = show_group(
                 document.getElementById("animals").getElementsByClassName("render_window"),
-                [
-                    "projects/neural_parts/objects/animals/1422165",
-                    "projects/neural_parts/objects/animals/692032",
-                    "projects/neural_parts/objects/animals/626525",
-                    "projects/neural_parts/objects/animals/745737",
-                    "projects/neural_parts/objects/animals/721005"
-                ],
+                [animals[0], animals[1], animals[2]],
                 8
             );
             var animal_checkboxes = document.querySelectorAll("#animals .controls input");
@@ -454,18 +514,32 @@
                     animal_control.show(Array.from(ids));
                 }
             );
+            document.querySelector("#animals .controls button").addEventListener(
+                "click",
+                function (ev) {
+                    var new_animals = random_choice(animals, 3);
+                    var render_windows = document.getElementById("animals").getElementsByClassName("render_window");
+                    Array.prototype.forEach.call(render_windows, function (r) {r.innerHTML = "";});
+                    animal_control = show_group(
+                        render_windows,
+                        new_animals,
+                        8
+                    );
+                }
+            );
 
             // Humans
+            var humans = [
+                "projects/neural_parts/objects/humans/50020_knees_00136",
+                "projects/neural_parts/objects/humans/50009_jumping_jacks_00140",
+                "projects/neural_parts/objects/humans/50002_jumping_jacks_00038",
+                "projects/neural_parts/objects/humans/50009_one_leg_jump_00075",
+                "projects/neural_parts/objects/humans/50004_running_on_spot_00220",
+                "projects/neural_parts/objects/humans/50022_punching_00069"
+            ];
             var human_control = show_group(
                 document.getElementById("humans").getElementsByClassName("render_window"),
-                [
-                    "projects/neural_parts/objects/humans/50020_knees_00136",
-                    "projects/neural_parts/objects/humans/50009_jumping_jacks_00140",
-                    "projects/neural_parts/objects/humans/50002_jumping_jacks_00038",
-                    "projects/neural_parts/objects/humans/50009_one_leg_jump_00075",
-                    //"projects/neural_parts/objects/humans/50004_running_on_spot_00220",
-                    "projects/neural_parts/objects/humans/50022_punching_00069"
-                ],
+                [humans[0], humans[1], humans[2]],
                 6
             );
             var human_checkboxes = document.querySelectorAll("#humans .controls input");
@@ -493,6 +567,19 @@
                     }
 
                     human_control.show(Array.from(ids));
+                }
+            );
+            document.querySelector("#humans .controls button").addEventListener(
+                "click",
+                function (ev) {
+                    var new_humans = random_choice(humans, 3);
+                    var render_windows = document.getElementById("humans").getElementsByClassName("render_window");
+                    Array.prototype.forEach.call(render_windows, function (r) {r.innerHTML = "";});
+                    animal_control = show_group(
+                        render_windows,
+                        new_humans,
+                        6
+                    );
                 }
             );
         </script>
