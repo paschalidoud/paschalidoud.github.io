@@ -12,8 +12,10 @@
         <link href="https://fonts.googleapis.com/css?family=Arvo|Roboto&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         <link rel="stylesheet" href="https://cdn.rawgit.com/jpswalsh/academicons/master/css/academicons.min.css">
+        <link rel="stylesheet" href="https://unpkg.com/@glidejs/glide/dist/css/glide.core.min.css">
         <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
         <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+        <script src="https://unpkg.com/@glidejs/glide"></script>
         <style type="text/css">
             .side-text {
                 width:60%;
@@ -53,6 +55,13 @@
                 height: 5px;
                 margin-bottom: -5px;
                 display: none;
+            }
+            .glide__slide img {width: 90%;}
+            .glide__bullets {
+                text-align: center;
+            }
+            .glide__bullet--active {
+                color: #aaa; 
             }
 
             @media (max-width: 400px) {
@@ -288,6 +297,55 @@
                 </div>
             </div>
 
+            <div class="section-title">Comparison to Primitive-based Methods</div>
+            <div class="content">
+                <p>
+                    We compare the representation power of Neural Parts to
+                    other primitive-based methods by evaluating the
+                    reconstruction quality with varying number of primitives on
+                    three datasets. We observe that our model is <strong>more
+                    geometrically accurate, more semantically consistent and
+                    yields more meaningful parts</strong> (i.e. primitives are
+                    identifiable parts such as thumbs, legs, wings, tires,
+                    etc.) compared to simpler primitives.
+                </p>
+                <div class="glide">
+                    <div class="glide__bullets" data-glide-el="controls[nav]">
+                        <button class="glide__bullet" data-glide-dir="=0">Humans</button>
+                        <button class="glide__bullet" data-glide-dir="=1">Hands</button>
+                        <button class="glide__bullet" data-glide-dir="=2">Chairs</button>
+                        <button class="glide__bullet" data-glide-dir="=3">Planes</button>
+                        <button class="glide__bullet" data-glide-dir="=4">Cars</button>
+                        <button class="glide__bullet" data-glide-dir="=5">Lamps</button>
+                    </div>
+                    <div class="glide__track" data-glide-el="track">
+                        <ul class="glide__slides">
+                            <li class="glide__slide"><img src="projects/neural_parts/comparison/humans.png"></li>
+                            <li class="glide__slide"><img src="projects/neural_parts/comparison/hands.png"></li>
+                            <li class="glide__slide"><img src="projects/neural_parts/comparison/chairs.png"></li>
+                            <li class="glide__slide"><img src="projects/neural_parts/comparison/planes.png"></li>
+                            <li class="glide__slide"><img src="projects/neural_parts/comparison/cars.png"></li>
+                            <li class="glide__slide"><img src="projects/neural_parts/comparison/lamps.png"></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section-title">Semantic Consistency</div>
+            <div class="content">
+                We observe that Neural Parts consistently use the same
+                primitive for representing the same object part regardless of
+                the breadth of the part's motion. Notably, this
+                <strong>temporal consistency is an emergent property</strong>
+                of our method and <strong>not one that is enforced with any
+                kind of loss</strong>.
+                <video class="centered" width="100%" controls muted loop autoplay>
+                    <source
+                        src="projects/neural_parts/semantic-consistency-shorter.mp4"
+                        type="video/mp4" />
+                </video>
+            </div>
+
             <div class="section-title">Acknowledgements</div>
             <div class="content">
                 This research was supported by the Max Planck ETH Center for
@@ -297,11 +355,11 @@
         </div>
 
         <script type="module">
-
             import * as THREE from "https://unpkg.com/three/build/three.module.js";
             import { OrbitControls } from "https://unpkg.com/three/examples/jsm/controls/OrbitControls.js";
             import {OBJLoader} from "https://unpkg.com/three/examples/jsm/loaders/OBJLoader.js";
 
+            // Render the predictions
             function random_choice(arr, n) {
                 var index_set = {};
                 var choice = [];
@@ -757,6 +815,15 @@
                     );
                 }
             );
+        </script>
+        <script>
+            // Make the carousel for the comparisons
+            var glide = new Glide(".glide", {
+                type: "carousel",
+                startAt: 0,
+                perView: 1,
+                autoplay: 2000
+            }).mount();
         </script>
     </body>
 </html>
