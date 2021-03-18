@@ -48,11 +48,12 @@ authors = {
     "despi": Author("Despoina Paschalidou", ""),
     "osman": Author("Ali Osman Ulusoy", "https://scholar.google.de/citations?user=fkqdDEEAAAAJ&hl=en"),
     "andreas": Author("Andreas Geiger", "http://www.cvlibs.net/"),
+    "sanja": Author("Sanja Fidler", "https://www.cs.utoronto.ca/~fidler/"),
     "aseem": Author("Aseem Behl", "http://aseembehl.github.io/"),
     "simon": Author("Simon Donné", "https://donnessime.github.io/"),
     "caro": Author("Carolin Schmitt", "https://avg.is.tuebingen.mpg.de/person/cschmitt"),
     "luc": Author("Luc van Gool", "https://ee.ethz.ch/the-department/faculty/professors/person-detail.OTAyMzM=.TGlzdC80MTEsMTA1ODA0MjU5.html"),
-    "angelos": Author("Angelos Katharopoulos", "https://www.idiap.ch/~katharas/"),
+    "angelos": Author("Angelos Katharopoulos", "https://angeloskath.github.io/"),
     "diou": Author("Christos Diou", "https://mug.ee.auth.gr/people/christos-diou/"),
     "delo": Author("Anastasios Delopoulos", "https://mug.ee.auth.gr/people/anastasios-delopoulos/")
 }
@@ -62,6 +63,27 @@ conferences = {
     "acmmm": Conference("ACM Multimedia Conference (ACMM)")
 }
 publications = [
+    Paper(
+        "Neural Parts: Learning Expressive 3D Shape Abstractions with Invertible Neural Networks",
+        "https://paschalidoud.github.io/neural_parts",
+        "teasers/neural_parts.png",
+        author_list(authors, "despi", "angelos", "andreas", "sanja"),
+        conferences["cvpr"],
+        2021,
+        None,
+        [   Link("Abstract", None, "Impressive progress in 3D shape extraction led to representations that can capture object geometries with high fidelity. In parallel, primitive-based methods seek to represent objects as semantically consistent part arrangements. However, due to the simplicity of existing primitive representations, these methods fail to accurately reconstruct 3D shapes using a small number of primitives/parts. We address the trade-off between reconstruction quality and number of parts with Neural Parts, a novel 3D primitive representation that defines primitives using an Invertible Neural Network (INN) which implements homeomorphic mappings between a sphere and the target object. The INN allows us to compute the inverse mapping of the homeomorphism, which in turn, enables the efficient computation of both the implicit surface function of a primitive and its mesh, without any additional post-processing. Our model learns to parse 3D objects into semantically consistent part arrangements without any part-level supervision. Evaluations on ShapeNet, D-FAUST and FreiHAND demonstrate that our primitives can capture complex geometries and thus simultaneously achieve geometrically accurate as well as interpretable reconstructions using an order of magnitude fewer primitives than state-of-the-art shape abstraction methods.", None),
+            Link("Project page", "https://paschalidoud.github.io/neural_parts", None, None),
+            Link("Paper", "https://paschalidoud.github.io/neural_parts", None, None),
+            Link("Code", "https://github.com/paschalidoud/neural_parts", None, None),
+            Link("Bibtex", None, None, """@inproceedings{Paschalidou2021CVPR,
+    title = {Neural Parts: Learning Expressive 3D Shape Abstractions with Invertible Neural Networks},
+    author = {Paschalidou, Despoina and Katharopoulos, Angelos and Geiger, Andreas and Fidler, Sanja},
+    booktitle = {Proceedings IEEE Conf. on Computer Vision and Pattern Recognition (CVPR)},
+    month = jun,
+    year = {2021}
+}""")
+        ]
+    ),
     Paper(
         "Learning Unsupervised Hierarchical Part Decomposition of 3D Objects from a Single RGB Image",
         "http:superquadrics.com/hierarchical_primitives",
