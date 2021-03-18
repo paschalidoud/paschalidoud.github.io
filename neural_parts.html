@@ -236,24 +236,6 @@
                 parts has been done manually. However, <strong>the model had no part
                 supervision during training</strong>. The semantic parts have
                 emerged naturally from reconstructing the geometry.
-                <h3>Animals</h3>
-                <div id="animals">
-                    <div class="controls">
-                        <div class="left-controls">
-                            Show
-                            <input type="checkbox" id="animals_all" checked><label for="animals_all">all parts</label>
-                            <input type="checkbox" id="animals_head"><label for="animals_head">heads</label>
-                            <input type="checkbox" id="animals_neck"><label for="animals_neck">necks</label>
-                            <input type="checkbox" id="animals_legs"><label for="animals_legs">legs</label>
-                        </div>
-                        <div class="right-controls">
-                            <button>Randomize</button>
-                        </div>
-                    </div>
-                    <div class="render_container">
-                        <div data-size="400" class="render_window"></div><div data-size="400" class="render_window"></div><div data-size="400" class="render_window"></div>
-                    </div>
-                </div>
 
                 <h3>Humans</h3>
                 <div id="humans">
@@ -351,8 +333,7 @@
             <div class="section-title">Acknowledgements</div>
             <div class="content">
                 This research was supported by the Max Planck ETH Center for
-                Learning Systems. We would like to thank <a href=https://kangxue.org/>Kangxue Yin </a>for
-                providing the 3D models for the animal dataset.
+                Learning Systems.
             </div>
         </div>
 
@@ -538,122 +519,6 @@
                     }
                 };
             }
-
-            // Animals
-            var animals = [
-                "https://superquadrics.com/neural_parts/animals/1054871",
-                "https://superquadrics.com/neural_parts/animals/1064253",
-                "https://superquadrics.com/neural_parts/animals/1073771",
-                "https://superquadrics.com/neural_parts/animals/1075891",
-                "https://superquadrics.com/neural_parts/animals/1081642",
-                "https://superquadrics.com/neural_parts/animals/1082837",
-                "https://superquadrics.com/neural_parts/animals/1084744",
-                "https://superquadrics.com/neural_parts/animals/1087913",
-                "https://superquadrics.com/neural_parts/animals/1099205",
-                "https://superquadrics.com/neural_parts/animals/1102545",
-                "https://superquadrics.com/neural_parts/animals/1115233",
-                "https://superquadrics.com/neural_parts/animals/1115282",
-                "https://superquadrics.com/neural_parts/animals/1115455",
-                "https://superquadrics.com/neural_parts/animals/1117733",
-                "https://superquadrics.com/neural_parts/animals/1143677",
-                "https://superquadrics.com/neural_parts/animals/1144086",
-                "https://superquadrics.com/neural_parts/animals/1154491",
-                "https://superquadrics.com/neural_parts/animals/1194213",
-                "https://superquadrics.com/neural_parts/animals/1196189",
-                "https://superquadrics.com/neural_parts/animals/1196407",
-                "https://superquadrics.com/neural_parts/animals/1196814",
-                "https://superquadrics.com/neural_parts/animals/1204025",
-                "https://superquadrics.com/neural_parts/animals/1211192",
-                "https://superquadrics.com/neural_parts/animals/1212493",
-                "https://superquadrics.com/neural_parts/animals/1212905",
-                "https://superquadrics.com/neural_parts/animals/1213507",
-                "https://superquadrics.com/neural_parts/animals/1214522",
-                "https://superquadrics.com/neural_parts/animals/1236872",
-                "https://superquadrics.com/neural_parts/animals/1239247",
-                "https://superquadrics.com/neural_parts/animals/1239422",
-                "https://superquadrics.com/neural_parts/animals/1253495",
-                "https://superquadrics.com/neural_parts/animals/1256828",
-                "https://superquadrics.com/neural_parts/animals/1272091",
-                "https://superquadrics.com/neural_parts/animals/1296906",
-                "https://superquadrics.com/neural_parts/animals/1299595",
-                "https://superquadrics.com/neural_parts/animals/1355846",
-                "https://superquadrics.com/neural_parts/animals/1406156",
-                "https://superquadrics.com/neural_parts/animals/1422165",
-                "https://superquadrics.com/neural_parts/animals/1435590",
-                "https://superquadrics.com/neural_parts/animals/1448848",
-                "https://superquadrics.com/neural_parts/animals/362352",
-                "https://superquadrics.com/neural_parts/animals/373849",
-                "https://superquadrics.com/neural_parts/animals/423913",
-                "https://superquadrics.com/neural_parts/animals/429828",
-                "https://superquadrics.com/neural_parts/animals/454445",
-                "https://superquadrics.com/neural_parts/animals/459632",
-                "https://superquadrics.com/neural_parts/animals/472921",
-                "https://superquadrics.com/neural_parts/animals/510739",
-                "https://superquadrics.com/neural_parts/animals/612196",
-                "https://superquadrics.com/neural_parts/animals/626525",
-                "https://superquadrics.com/neural_parts/animals/667176",
-                "https://superquadrics.com/neural_parts/animals/692032",
-                "https://superquadrics.com/neural_parts/animals/693033",
-                "https://superquadrics.com/neural_parts/animals/694850",
-                "https://superquadrics.com/neural_parts/animals/694851",
-                "https://superquadrics.com/neural_parts/animals/709703",
-                "https://superquadrics.com/neural_parts/animals/713820",
-                "https://superquadrics.com/neural_parts/animals/721005",
-                "https://superquadrics.com/neural_parts/animals/745737",
-            ];
-
-            var animal_control = show_group(
-                document.getElementById("animals").getElementsByClassName("render_window"),
-                [animals[37], animals[51], animals[57]],
-                8
-            );
-            var animal_checkboxes = document.querySelectorAll("#animals .controls input");
-            reset_checkboxes(animal_checkboxes);
-            document.querySelector("#animals .controls").addEventListener(
-                "change",
-                function (ev) {
-                    if (ev.target.id == "animals_all") {
-                        Array.prototype.filter.call(
-                            animal_checkboxes,
-                            (el) => el.id != "animals_all"
-                        ).forEach(function (el) {el.checked = false;});
-                    } else if (ev.target.checked) {
-                        animal_checkboxes[0].checked = false;
-                    }
-
-                    var ids = new Set();
-                    if (animal_checkboxes[0].checked) {
-                        ids = new Set([0, 1, 2, 3, 4, 5, 6, 7]);
-                    }
-                    if (animal_checkboxes[1].checked) {
-                        ids.add(3);
-                    }
-                    if (animal_checkboxes[2].checked) {
-                        ids.add(4);
-                    }
-                    if (animal_checkboxes[3].checked) {
-                        ids.add(2);
-                        ids.add(6);
-                        ids.add(7);
-                    }
-
-                    animal_control.show(Array.from(ids));
-                }
-            );
-            document.querySelector("#animals .controls button").addEventListener(
-                "click",
-                function (ev) {
-                    reset_checkboxes(animal_checkboxes);
-                    var new_animals = random_choice(animals, 3);
-                    var render_windows = document.getElementById("animals").getElementsByClassName("render_window");
-                    Array.prototype.forEach.call(render_windows, function (r) {r.innerHTML = "";});
-                    animal_control = show_group(
-                        render_windows,
-                        new_animals,
-                        8
-                    );
-                }
-            );
 
             // Humans
             var humans = [
