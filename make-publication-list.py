@@ -76,6 +76,7 @@ publications = [
             Link("Paper", "https://arxiv.org/pdf/2103.10429.pdf", None, None),
             Link("Poster", "data/Paschalidou2021CVPR_poster.pdf", None, None),
             Link("Code", "https://github.com/paschalidoud/neural_parts", None, None),
+            Link("Blog", "https://autonomousvision.github.io/neural-parts/", None, None),
             Link("Slides", "http://www.cvlibs.net/publications/Paschalidou2021CVPR_slides.pdf", None, None),
             Link("Video", "https://www.youtube.com/watch?v=6WK3B0IZJsw", None, None),
             Link("Bibtex", None, None, """@inproceedings{Paschalidou2021CVPR,
