@@ -1,5 +1,4 @@
 body {
-    padding-top: 30px;
     background-color: #fff;
     font-family: "Arvo", serif;
     /*font-family: "Lato", Verdana, Helvetica, sans-serif;*/
@@ -14,6 +13,11 @@ body {
 a {
     text-decoration: none;
     color: #0505af;
+}
+.header {
+    padding-top: 0px;
+    background-color: #ccc;
+    margin: 0 auto;
 }
 .section {
     max-width: 900px;
