@@ -9,19 +9,53 @@ body {
     -moz-hyphens: auto;
     -webkit-hyphens: auto;
     hyphens: auto;
+    margin: 0;
 }
 a {
     text-decoration: none;
     color: #0505af;
 }
 .header {
-    padding-top: 0px;
-    background-color: #ccc;
-    margin: 0 auto;
+    padding: 12px 0px 12px 0px;
+    margin: 0px 0px 12px 0px;
+    border-bottom: 2px solid #999;
+    background: #eee;
+    position: sticky;
+    top: 0px;
+}
+.myname {
+    display: inline-block;
+    font-size: 18pt;
+    width: 50%;
+}
+.menu {
+    display: inline-block;
+    width: 49%;
+    text-align: right;
+}
+.menu ul {
+    margin: 0;
+    padding: 0;
+    display: inline-block;
+}
+.menu li {
+    display: inline-block;
+    font-size: 14pt;
+}
+.menu li a {
+    color: #414446;
+}
+.menu li:after {
+    content: "•";
+    margin: 0px 10px 0px 10px;
+}
+.menu li:last-child:after {
+    content: "";
 }
 .section {
     max-width: 900px;
     margin: 0 auto;
+    padding: 0px 4px 0px 4px;
 }
 .section > .title {
     font-size: 18pt;
@@ -43,6 +77,10 @@ a {
 }
 .section .image img {
     width: 100%;
+    padding-top: 8px;
+}
+#profile-photo {
+    padding-top: 0px;
 }
 #profile-photo img {
     border-radius: 30px;
@@ -178,6 +216,64 @@ a {
 }
 
 /**
+ * Styling for the presentations page
+ */
+.talks {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 15px 4px 0px 4px;
+}
+.presentation-title {
+    padding-top: 2.5%;
+    padding-bottom: 10px;
+    font-size: 14pt;
+}
+.paper .location {
+    font-size: 12pt;
+    padding-bottom: 15px;
+    padding-top:10px;
+}
+.paper .location .special {
+    font-weight: bold;
+    color: #ff0000;
+    font-size: 12pt;
+    padding-bottom: 15px;
+}
+.talks .links a {
+    display: inline-block;
+    width: 70px;
+    margin-right: 5px;
+    margin-bottom:10px;
+    border-radius: 5px;
+    padding: 1px 6px;
+    background-color: #0081af;
+    color: black;
+    font-weight: bold;
+    text-align: center;
+    border: 2px solid black;
+}
+.talks .links a[data-type="Slides"] {
+    background-color: #ffffff;
+}
+.talks .links a[data-type="Video"] {
+    background-color: #ffffff;
+}
+
+.year_divider {
+    width: 900px;
+    padding: 12px 0px 12px 0px;
+    margin: 0px 0px 12px 0px;
+    border-bottom: 3px outset #999;
+    background: #fff;
+}
+.year_divider span {
+    width: 100%;
+    display: inline-block;
+    text-align: right;
+    font-size: 20pt;
+}
+
+/**
  * Styling for the font icons
  */
 .ai-2x {font-size: 2em;}
@@ -198,6 +294,18 @@ a {
         width: 80%;
         padding: 0;
         margin: 0 auto;
+    }
+    #profile-photo { padding-top: 20px; }
+    .myname {
+        display: block;
+        width: 100%;
+        text-align: center;
+        margin-bottom: 10px;
+    }
+    .menu {
+        display: block;
+        width: 100%;
+        text-align: center;
     }
 }
 @media (min-width: 500px) {
