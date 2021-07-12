@@ -222,3 +222,21 @@ video {
     display: block;
     margin: auto;
 }
+
+.column {
+    float: left;
+    width: 24%;
+    margin: 1px;
+}
+.column img {
+    width: 100%;
+}
+.row {
+    margin-top:1px;
+    margin-bottom:2px;
+}
+.row::after {
+    content: "";
+    clear: both;
+    display: table;
+}
