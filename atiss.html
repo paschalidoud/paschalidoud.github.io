@@ -258,11 +258,14 @@
 
             <div class="section-title">Scene Synthesis Results</div>
             <div class="content">
-            <p>In the following, we show examples of generated bedrooms (first
-            row), living rooms (second row), dining rooms (third row) and
-            libraries (fourth row) using our model conditioned on various floor
-            plans.  We can easily notice that our model consistently generates
-            plausible room arrangements.
+            <p>Our model can be used to generate furniture arrangements
+            conditioned on a floor plan and a specific room type. In the
+            following, we show examples of generated bedrooms (first row),
+            living rooms (second row), dining rooms (third row) and libraries
+            (fourth row) using our model conditioned on various floor plans.
+            We can easily notice that our model consistently generates
+            plausible room arrangements that preserve the functional properties
+            of all objects in the scene.
             </p>
             <div class="row">
                 <div class="column"><img src="projects/atiss/ours_Bedroom-1989.gif"></div>
@@ -316,11 +319,53 @@
                 <div class="column"><img src="projects/atiss/scene_completion/complete_Bedroom-48127_000.gif"></div>
                 <div class="column"><img src="projects/atiss/scene_completion/complete_Bedroom-48127_001.gif"></div>
             </div>
+            </div>
 
             <div class="section-title">Object Suggestion Results</div>
+            <div class="content">
+            <p>Our model can also be used to provide object suggestions given a
+            scene and <strong>user specified location constraints</strong>. In
+            particular, a user specifies a region of acceptable positions to
+            place an object (here marked as a red box) and our model suggests
+            suitable objects to be placed inside this area of valid locations.
+            In case the user specifies a region that intersects with other objects in
+            the scene and our model cannot suggest a meaningful object to be
+            placed there, it simply suggests to add nothing (see first column).
+            </p>
+            <div class="row">
+                <div class="column"><img src="projects/atiss/object_suggestion/input_Bedroom-664_000.gif"></div>
+                <div class="column"><img src="projects/atiss/object_suggestion/input_LivingDiningRoom-74931_004.gif"></div>
+                <div class="column"><img src="projects/atiss/object_suggestion/input_SecondBedroom_11769_000.gif"></div>
+                <div class="column"><img src="projects/atiss/object_suggestion/input_MasterBedroom_12988_003.gif"></div>
+            </div>
+            <div class="row">
+                <div class="column"><img src="projects/atiss/object_suggestion/suggestion_Bedroom-664_000.gif"></div>
+                <div class="column"><img src="projects/atiss/object_suggestion/suggestion_LivingDiningRoom-74931_004.gif"></div>
+                <div class="column"><img src="projects/atiss/object_suggestion/suggestion_SecondBedroom_11769_000.gif"></div>
+                <div class="column"><img src="projects/atiss/object_suggestion/suggestion_MasterBedroom_12988_003.gif"></div>
+            </div>
             </div>
 
             <div class="section-title">Failure Cases Correction Results</div>
+            <div class="content">
+            <p>Another useful application of our model is its ability to
+            identify unnatural furniture layouts and reposition the problematic
+            objects such that they preserve their functional properties. The
+            problematic object, as identified by our model, is highlighted with
+            green. As soon as a problematic object is identified, our model repositions it in a more suitable location.
+            </p>
+            <div class="row">
+                <div class="column"><img src="projects/atiss/failure_correction/failure_Bedroom-123453_000.gif"></div>
+                <div class="column"><img src="projects/atiss/failure_correction/failure_Bedroom-6376_000.gif"></div>
+                <div class="column"><img src="projects/atiss/failure_correction/failure_Bedroom-30225_000.gif"></div>
+                <div class="column"><img src="projects/atiss/failure_correction/failure_LivingDiningRoom-35325_000.gif"></div>
+            </div>
+            <div class="row">
+                <div class="column"><img src="projects/atiss/failure_correction/fixed_Bedroom-123453_000.gif"></div>
+                <div class="column"><img src="projects/atiss/failure_correction/fixed_Bedroom-6376_000.gif"></div>
+                <div class="column"><img src="projects/atiss/failure_correction/fixed_Bedroom-30225_000.gif"></div>
+                <div class="column"><img src="projects/atiss/failure_correction/fixed_LivingDiningRoom-35325_000.gif"></div>
+            </div>
             </div>
 
     </body>
