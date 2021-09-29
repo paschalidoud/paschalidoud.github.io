@@ -69,13 +69,14 @@ conferences = {
 publications = [
     Paper(
         "ATISS: Autoregressive Transformers for Indoor Scene Synthesis",
-        "https://paschalidoud.github.io/",
+        "https://nv-tlabs.github.io/ATISS/",
         "teasers/atiss.png",
         author_list(authors, "despi", "amlan", "masha", "karsten", "andreas", "sanja"),
         conferences["neurips"],
         2021,
         None,
         [   Link("Abstract", None, "The ability to synthesize realistic and diverse indoor furniture layouts automatically or based on partial input, unlocks many applications, from better interactive 3D tools to data synthesis for training and simulation. In this paper, we present ATISS, a novel autoregressive transformer architecture for creating diverse and plausible synthetic indoor environments, given only the room type and its floor plan. In contrast to prior work, which poses scene synthesis as sequence generation, our model generates rooms as unordered sets of objects. We argue that this formulation is more natural, as it makes ATISS generally useful beyond fully automatic room layout synthesis. For example, the same trained model can be used in interactive applications for general scene completion, partial room re-arrangement with any objects specified by the user, as well as object suggestions for any partial room. To enable this, our model leverages the permutation equivariance of the transformer when conditioning on the partial scene, and is trained to be permutation-invariant across object orderings. Our model is trained end-to-end as an autoregressive generative model using only labeled 3D bounding boxes as supervision. Evaluations on four room types in the 3D-FRONT dataset demonstrate that our model consistently generates plausible room layouts that are more realistic than existing methods. In addition, it has fewer parameters, is simpler to implement and train and runs up to 8x faster than existing methods.", None),
+            Link("Project page", "https://nv-tlabs.github.io/ATISS/#", None, None),
             Link("Bibtex", None, None, """@inproceedings{Paschalidou2021NEURIPS,
   author = {Despoina Paschalidou and Amlan Kar and Maria Shugrina and Karsten Kreis and Andreas Geiger and Sanja Fidler},
   title = {ATISS: Autoregressive Transformers for Indoor Scene Synthesis},
