@@ -28,6 +28,11 @@ a {
     font-size: 18pt;
     width: 50%;
 }
+.myname a {
+    font-size: 18pt;
+    color: #1a1a1a;
+    width: 50%;
+}
 .menu {
     display: inline-block;
     width: 49%;
