@@ -79,6 +79,7 @@ publications = [
             Link("Project page", "https://nv-tlabs.github.io/ATISS/#", None, None),
             Link("Paper", "https://arxiv.org/pdf/2110.03675.pdf", None, None),
             Link("Poster", "data/Paschalidou2021NEURIPS_poster.pdf", None, None),
+            Link("Slides", "data/Paschalidou2021NEURIPS_slides.pdf", None, None),
             Link("Code", "https://github.com/nv-tlabs/atiss", None, None),
             Link("Bibtex", None, None, """@inproceedings{Paschalidou2021NEURIPS,
   author = {Despoina Paschalidou and Amlan Kar and Maria Shugrina and Karsten Kreis and Andreas Geiger and Sanja Fidler},
