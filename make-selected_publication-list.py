@@ -81,6 +81,7 @@ publications = [
             Link("Poster", "data/Paschalidou2021NEURIPS_poster.pdf", None, None),
             Link("Slides", "data/Paschalidou2021NEURIPS_slides.pdf", None, None),
             Link("Code", "https://github.com/nv-tlabs/atiss", None, None),
+            Link("Video", "https://www.youtube.com/watch?v=VNY0BFMi2j4", None, None),
             Link("Bibtex", None, None, """@inproceedings{Paschalidou2021NEURIPS,
   author = {Despoina Paschalidou and Amlan Kar and Maria Shugrina and Karsten Kreis and Andreas Geiger and Sanja Fidler},
   title = {ATISS: Autoregressive Transformers for Indoor Scene Synthesis},
