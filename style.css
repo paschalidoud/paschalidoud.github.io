@@ -147,6 +147,9 @@ a {
 .paper .links a[data-type="Video"] {
     background-color: #c3423f;
 }
+.paper .links a[data-type="Podcast"] {
+    background-color: #9b6d99;
+}
 .paper .links a[data-type="Poster"] {
     background-color: #7ebc89;
 }

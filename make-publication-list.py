@@ -106,6 +106,7 @@ publications = [
             Link("Blog", "https://autonomousvision.github.io/neural-parts/", None, None),
             Link("Slides", "http://www.cvlibs.net/publications/Paschalidou2021CVPR_slides.pdf", None, None),
             Link("Video", "https://www.youtube.com/watch?v=6WK3B0IZJsw", None, None),
+            Link("Podcast", "https://www.itzikbs.com/neural-parts-learning-expressive-3d-shape-abstractions-with-invertible-neural-networks", None, None),
             Link("Bibtex", None, None, """@inproceedings{Paschalidou2021CVPR,
     title = {Neural Parts: Learning Expressive 3D Shape Abstractions with Invertible Neural Networks},
     author = {Paschalidou, Despoina and Katharopoulos, Angelos and Geiger, Andreas and Fidler, Sanja},
