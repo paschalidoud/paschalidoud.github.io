@@ -55,6 +55,11 @@ authors = {
     "hao": Author("Hao Tang", ""),
     "gordon": Author("Gordon Wetzstein", "https://stanford.edu/~gordonwz/"),
     "radu": Author("Radu Timofte", "http://people.ee.ethz.ch/~timofter/"),
+    "boxiao": Author("Boxiao Pan", "https://cs.stanford.edu/~bxpan/"),
+    "will": Author("Bokui Shen", "https://cs.stanford.edu/people/bshen88/"),
+    "davis": Author("Davis Rempe", "https://davrempe.github.io/"),
+    "kaichun": Author("Kaichun Mo", "https://cs.stanford.edu/~kaichun/"),
+    "yanchao": Author("Yanchao Yang", "https://yanchaoyang.github.io/"),
     "amlan": Author("Amlan Kar", "https://amlankar.github.io/"),
     "masha": Author("Maria Shugrina", "http://shumash.com/"),
     "karsten": Author("Karsten Kreis", "https://scholar.google.de/citations?user=rFd-DiAAAAAJ&hl=de"),
@@ -75,6 +80,25 @@ conferences = {
 }
 publications = [
     Paper(
+        "COPILOT: Human Collision Prediction and Localization from Multi-view Egocentric Videos",
+        "https://sites.google.com/stanford.edu/copilot",
+        "teasers/copilot.jpg",
+        author_list(authors, "boxiao", "will", "davis", "despi", "kaichun", "yanchao", "leo"),
+        conferences["arxiv"],
+        2022,
+        None,
+        [   Link("Abstract", None, "To produce safe human motions, assistive wearable exoskeletons must be equipped with a perception system that enables anticipating potential collisions from egocentric observations. However, previous approaches to exoskeleton perception greatly simplify the problem to specific types of environments, limiting their scalability. In this paper, we propose the challenging and novel problem of predicting human-scene collisions for diverse environments from multi-view egocentric RGB videos captured from an exoskeleton. By classifying which body joints will collide with the environment and predicting a collision region heatmap that localizes potential collisions in the environment, we aim to develop an exoskeleton perception system that generalizes to complex real-world scenes and provides actionable outputs for downstream control. We propose COPILOT, a video transformer-based model that performs both collision prediction and localization simultaneously, leveraging multi-view video inputs via a proposed joint space-time-viewpoint attention operation. To train and evaluate the model, we build a synthetic data generation framework to simulate virtual humans moving in photo-realistic 3D environments. This framework is then used to establish a dataset consisting of 8.6M egocentric RGBD frames to enable future work on the problem. Extensive experiments suggest that our model achieves promising performance and generalizes to unseen scenes as well as real world. We apply COPILOT to a downstream collision avoidance task, and successfully reduce collision cases by 29% on unseen scenes using a simple closed-loop control algorithm.", None),
+            Link("Project page", "https://sites.google.com/stanford.edu/copilot", None, None),
+            Link("Paper", "https://arxiv.org/pdf/2210.01781.pdf", None, None),
+            Link("Bibtex", None, None, """@article{Pan2022ARXIV,
+  author = {Boxiao Pan, Bokui Shen, Davis Rempe, Despoina Paschalidou, Kaichun Mo, Yanchao Yang, Leonidas J Guibas},
+  title = {COPILOT: Human Collision Prediction and Localization from Multi-view Egocentric Videos},
+  booktitle = {arXiv preprint},
+  year = {2022}
+}""")
+        ]
+    ),
+    Paper(
         "3D-Aware Video Generation",
         "https://sherwinbahmani.github.io/3dvidgen/",
         "teasers/3dvidgen.png",
@@ -86,7 +110,7 @@ publications = [
             Link("Project page", "https://sherwinbahmani.github.io/3dvidgen/", None, None),
             Link("Paper", "https://arxiv.org/pdf/2206.14797.pdf", None, None),
             Link("Code", "https://github.com/sherwinbahmani/3dvideogeneration/", None, None),
-            Link("Bibtex", None, None, """@inproceedings{Bahmani2022ARXIV,
+            Link("Bibtex", None, None, """@article{Bahmani2022ARXIV,
   author = {Bahmani, Sherwin and Park, Jeong Joon and Paschalidou, Despoina and Tang, Hao and Wetzstein, Gordon and Guibas, Leonidas and Van Gool, Luc and Timofte, Radu},
   title = {3D-Aware Video Generation},
   booktitle = {arXiv preprint},
