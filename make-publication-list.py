@@ -49,6 +49,12 @@ authors = {
     "osman": Author("Ali Osman Ulusoy", "https://scholar.google.de/citations?user=fkqdDEEAAAAJ&hl=en"),
     "andreas": Author("Andreas Geiger", "http://www.cvlibs.net/"),
     "sanja": Author("Sanja Fidler", "https://www.cs.utoronto.ca/~fidler/"),
+    "leo": Author("Leonidas Guibas", "https://geometry.stanford.edu/member/guibas/"),
+    "sherwin": Author("Sherwin Bahmani", "https://sherwinbahmani.github.io/"),
+    "jj": Author("Jeong Joon Park", "https://jjparkcv.github.io/"),
+    "hao": Author("Hao Tang", ""),
+    "gordon": Author("Gordon Wetzstein", "https://stanford.edu/~gordonwz/"),
+    "radu": Author("Radu Timofte", "http://people.ee.ethz.ch/~timofter/"),
     "amlan": Author("Amlan Kar", "https://amlankar.github.io/"),
     "masha": Author("Maria Shugrina", "http://shumash.com/"),
     "karsten": Author("Karsten Kreis", "https://scholar.google.de/citations?user=rFd-DiAAAAAJ&hl=de"),
@@ -64,9 +70,30 @@ conferences = {
     "neurips": Conference("Advances in Neural Information Processing Systems (NeurIPS)"),
     "cvpr": Conference("Computer Vision and Pattern Recognition (CVPR)"),
     "eusipco": Conference("European Signal Processing Conference (EUSIPCO)"),
-    "acmmm": Conference("ACM Multimedia Conference (ACMM)")
+    "acmmm": Conference("ACM Multimedia Conference (ACMM)"),
+    "arxiv": Conference("arXiv")
 }
 publications = [
+    Paper(
+        "3D-Aware Video Generation",
+        "https://sherwinbahmani.github.io/3dvidgen/",
+        "teasers/3dvidgen.png",
+        author_list(authors, "sherwin", "jj", "despi", "hao", "gordon", "leo", "luc", "radu"),
+        conferences["arxiv"],
+        2022,
+        None,
+        [   Link("Abstract", None, "Generative models have emerged as an essential building block for many image synthesis and editing tasks. Recent advances in this field have also enabled high-quality 3D or video content to be generated that exhibits either multi-view or temporal consistency. With our work, we explore 4D generative adversarial networks (GANs) that learn unconditional generation of 3D-aware videos. By combining neural implicit representations with time-aware discriminator, we develop a GAN framework that synthesizes 3D video supervised only with monocular videos. We show that our method learns a rich embedding of decomposable 3D structures and motions that enables new visual effects of spatio-temporal renderings while producing imagery with quality comparable to that of existing 3D or video GANs.", None),
+            Link("Project page", "https://sherwinbahmani.github.io/3dvidgen/", None, None),
+            Link("Paper", "https://arxiv.org/pdf/2206.14797.pdf", None, None),
+            Link("Code", "https://github.com/sherwinbahmani/3dvideogeneration/", None, None),
+            Link("Bibtex", None, None, """@inproceedings{Bahmani2022ARXIV,
+  author = {Bahmani, Sherwin and Park, Jeong Joon and Paschalidou, Despoina and Tang, Hao and Wetzstein, Gordon and Guibas, Leonidas and Van Gool, Luc and Timofte, Radu},
+  title = {3D-Aware Video Generation},
+  booktitle = {arXiv preprint},
+  year = {2022}
+}""")
+        ]
+    ),
     Paper(
         "ATISS: Autoregressive Transformers for Indoor Scene Synthesis",
         "https://nv-tlabs.github.io/ATISS/#",
