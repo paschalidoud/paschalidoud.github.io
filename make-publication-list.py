@@ -50,9 +50,17 @@ authors = {
     "andreas": Author("Andreas Geiger", "http://www.cvlibs.net/"),
     "sanja": Author("Sanja Fidler", "https://www.cs.utoronto.ca/~fidler/"),
     "leo": Author("Leonidas Guibas", "https://geometry.stanford.edu/member/guibas/"),
+    "konstantinos": Author("Konstantinos Tertikas", "https://ktertikas.github.io/"),
+    "zhen": Author("Zhen Wang", "https://zhenwangwz.github.io/"),
+    "shijie": Author("Shijie Zhou", "https://www.linkedin.com/in/shijie-zhou-ucla"),
     "sherwin": Author("Sherwin Bahmani", "https://sherwinbahmani.github.io/"),
     "jj": Author("Jeong Joon Park", "https://jjparkcv.github.io/"),
+    "suya": Author("Suya You", ""),
     "hao": Author("Hao Tang", ""),
+    "achuta": Author("Achuta Kadambi", "https://www.ee.ucla.edu/achuta-kadambi/"),
+    "mika": Author("Mikaela Angelina Uy", ""),
+    "yannis": Author("Yannis Avrithis", "https://avrithis.net/"),
+    "emiris": Author("Ioannis Emiris", "https://cgi.di.uoa.gr/~emiris/index-eng.html"),
     "gordon": Author("Gordon Wetzstein", "https://stanford.edu/~gordonwz/"),
     "radu": Author("Radu Timofte", "http://people.ee.ethz.ch/~timofter/"),
     "boxiao": Author("Boxiao Pan", "https://cs.stanford.edu/~bxpan/"),
@@ -79,6 +87,46 @@ conferences = {
     "arxiv": Conference("arXiv")
 }
 publications = [
+    
+    Paper(
+        "PartNeRF: Generating Part-Aware Editable 3D Shapes without 3D Supervision",
+        "",
+        "teasers/partnerf_2.png",
+        author_list(authors, "konstantinos", "despi", "boxiao", "jj", "mika", "emiris", "yannis", "leo"),
+        conferences["cvpr"],
+        2023,
+        None,
+        [   Link("Abstract", None, "Impressive progress in generative models and implicit representations gave rise to methods that can generate 3D shapes of high quality. However, being able to locally control and edit shapes is another essential property that can unlock several content creation applications. Local control can be achieved with part-aware models, but existing methods require 3D supervision and cannot produce textures. In this work, we devise PartNeRF, a novel part-aware generative model for editable 3D shape synthesis that does not require any explicit 3D supervision. Our model generates objects as a set of locally defined NeRFs, augmented with an affine transformation. This enables several editing operations such as applying transformations on parts, mixing parts from different objects etc. To ensure distinct, manipulable parts we enforce a hard assignment of rays to parts that makes sure that the color of each ray is only determined by a single NeRF. As a result, altering one part does not affect the appearance of the others. Evaluations on various ShapeNet categories demonstrate the ability of our model to generate editable 3D objects of improved fidelity, compared to previous part-based generative approaches that require 3D supervision or models relying on NeRFs.", None),
+            Link("Bibtex", None, None, """@InProceedings{Tertikas2023CVPR,
+  author    = {Konstantinos Tertikas and Despoina Paschalidou and Boxiao Pan and Jeong Joon Park and Mikaela Angelina Uy and Ioannis Emiris and Yannis Avrithis and Leonidas Guibas},
+  title     = {PartNeRF: Generating Part-Aware Editable 3D Shapes without 3D Supervision},
+  booktitle = {Proceedings IEEE Conf. on Computer Vision and Pattern Recognition (CVPR)},
+  year      = {2023}
+}""")
+        ]
+    ),
+    Paper(
+        "ALTO: Alternating Latent Topologies for Implicit 3D Reconstruction",
+        "https://visual.ee.ucla.edu/alto.htm/",
+        "teasers/alto_teaser.png",
+        author_list(authors, "zhen", "shijie", "jj", "despi", "suya", "gordon", "leo", "achuta"),
+        conferences["cvpr"],
+        2023,
+        None,
+        [   Link("Abstract", None, "This work introduces alternating latent topologies (ALTO) for high-fidelity reconstruction of implicit 3D surfaces from noisy point clouds. Previous work identifies that the spatial arrangement of latent encodings is important to recover detail. One school of thought is to encode a latent vector for each point (point latents). Another school of thought is to project point latents into a grid (grid latents) which could be a voxel grid or triplane grid. Each school of thought has tradeoffs. Grid latents are coarse and lose high-frequency detail. In contrast, point latents preserve detail. However, point latents are more difficult to decode into a surface, and quality and runtime suffer. In this paper, we propose ALTO to sequentially alternate between geometric representations, before converging to an easy-to-decode latent. We find that this preserves spatial expressiveness and makes decoding lightweight. We validate ALTO on implicit 3D recovery and observe not only a performance improvement over the state-of-the-art, but a runtime improvement of 3-10×.", None),
+            Link("Project page", "https://visual.ee.ucla.edu/alto.htm/", None, None),
+            Link("Paper", "https://arxiv.org/pdf/2212.04096.pdf", None, None),
+            Link("Slides", "slides/presentation_alto.pdf", None, None),
+            Link("Code", "https://github.com/wzhen1/ALTO", None, None),
+            Link("Bibtex", None, None, """@inproceedings{Zhen2023CVPR,
+    title = {ALTO: Alternating Latent Topologies for Implicit 3D Reconstruction},
+    author = {Wang, Zhen and Zhou, Shijie and Park, Jeong Joon and Paschalidou, Despoina and You, Suya and Wetzstein, Gordon and Guibas, Leonidas and Kadambi, Achuta},
+    booktitle = {Proceedings IEEE Conf. on Computer Vision and Pattern Recognition (CVPR)},
+    year = {2023}
+}""")
+        ]
+    ),
+
     Paper(
         "COPILOT: Human Collision Prediction and Localization from Multi-view Egocentric Videos",
         "https://sites.google.com/stanford.edu/copilot",
