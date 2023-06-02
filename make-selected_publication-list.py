@@ -114,6 +114,7 @@ publications = [
             Link("Poster", "data/Zhen2023CVPR_poster.pdf", None, None),
             Link("Slides", "slides/presentation_alto.pdf", None, None),
             Link("Code", "https://github.com/wzhen1/ALTO", None, None),
+            Link("Video", "https://www.youtube.com/watch?v=EsnE4dEIArY", None, None),
             Link("Bibtex", None, None, """@inproceedings{Zhen2023CVPR,
     title = {ALTO: Alternating Latent Topologies for Implicit 3D Reconstruction},
     author = {Wang, Zhen and Zhou, Shijie and Park, Jeong Joon and Paschalidou, Despoina and You, Suya and Wetzstein, Gordon and Guibas, Leonidas and Kadambi, Achuta},
