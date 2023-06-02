@@ -84,9 +84,30 @@ conferences = {
     "cvpr": Conference("Computer Vision and Pattern Recognition (CVPR)"),
     "eusipco": Conference("European Signal Processing Conference (EUSIPCO)"),
     "acmmm": Conference("ACM Multimedia Conference (ACMM)"),
+    "tmlr": Conference("Transactions on Machine Learning Research (TMLR)"),
     "arxiv": Conference("arXiv")
 }
 publications = [
+    Paper(
+        "3D-Aware Video Generation",
+        "https://sherwinbahmani.github.io/3dvidgen/",
+        "teasers/3dvidgen.png",
+        author_list(authors, "sherwin", "jj", "despi", "hao", "gordon", "leo", "luc", "radu"),
+        conferences["tmlr"],
+        2023,
+        None,
+        [   Link("Abstract", None, "Generative models have emerged as an essential building block for many image synthesis and editing tasks. Recent advances in this field have also enabled high-quality 3D or video content to be generated that exhibits either multi-view or temporal consistency. With our work, we explore 4D generative adversarial networks (GANs) that learn unconditional generation of 3D-aware videos. By combining neural implicit representations with time-aware discriminator, we develop a GAN framework that synthesizes 3D video supervised only with monocular videos. We show that our method learns a rich embedding of decomposable 3D structures and motions that enables new visual effects of spatio-temporal renderings while producing imagery with quality comparable to that of existing 3D or video GANs.", None),
+            Link("Project page", "https://sherwinbahmani.github.io/3dvidgen/", None, None),
+            Link("Paper", "https://arxiv.org/pdf/2206.14797.pdf", None, None),
+            Link("Code", "https://github.com/sherwinbahmani/3dvideogeneration/", None, None),
+            Link("Bibtex", None, None, """@article{Bahmani2022ARXIV,
+  author = {Bahmani, Sherwin and Park, Jeong Joon and Paschalidou, Despoina and Tang, Hao and Wetzstein, Gordon and Guibas, Leonidas and Van Gool, Luc and Timofte, Radu},
+  title = {3D-Aware Video Generation},
+  booktitle = {arXiv preprint},
+  year = {2022}
+}""")
+        ]
+    ),
     
     Paper(
         "PartNeRF: Generating Part-Aware Editable 3D Shapes without 3D Supervision",
@@ -147,26 +168,6 @@ publications = [
             Link("Bibtex", None, None, """@article{Pan2022ARXIV,
   author = {Boxiao Pan, Bokui Shen, Davis Rempe, Despoina Paschalidou, Kaichun Mo, Yanchao Yang, Leonidas J Guibas},
   title = {COPILOT: Human Collision Prediction and Localization from Multi-view Egocentric Videos},
-  booktitle = {arXiv preprint},
-  year = {2022}
-}""")
-        ]
-    ),
-    Paper(
-        "3D-Aware Video Generation",
-        "https://sherwinbahmani.github.io/3dvidgen/",
-        "teasers/3dvidgen.png",
-        author_list(authors, "sherwin", "jj", "despi", "hao", "gordon", "leo", "luc", "radu"),
-        conferences["arxiv"],
-        2022,
-        None,
-        [   Link("Abstract", None, "Generative models have emerged as an essential building block for many image synthesis and editing tasks. Recent advances in this field have also enabled high-quality 3D or video content to be generated that exhibits either multi-view or temporal consistency. With our work, we explore 4D generative adversarial networks (GANs) that learn unconditional generation of 3D-aware videos. By combining neural implicit representations with time-aware discriminator, we develop a GAN framework that synthesizes 3D video supervised only with monocular videos. We show that our method learns a rich embedding of decomposable 3D structures and motions that enables new visual effects of spatio-temporal renderings while producing imagery with quality comparable to that of existing 3D or video GANs.", None),
-            Link("Project page", "https://sherwinbahmani.github.io/3dvidgen/", None, None),
-            Link("Paper", "https://arxiv.org/pdf/2206.14797.pdf", None, None),
-            Link("Code", "https://github.com/sherwinbahmani/3dvideogeneration/", None, None),
-            Link("Bibtex", None, None, """@article{Bahmani2022ARXIV,
-  author = {Bahmani, Sherwin and Park, Jeong Joon and Paschalidou, Despoina and Tang, Hao and Wetzstein, Gordon and Guibas, Leonidas and Van Gool, Luc and Timofte, Radu},
-  title = {3D-Aware Video Generation},
   booktitle = {arXiv preprint},
   year = {2022}
 }""")
