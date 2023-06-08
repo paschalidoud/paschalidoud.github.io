@@ -121,6 +121,7 @@ publications = [
             Link("Project page", "https://ktertikas.github.io/part_nerf", None, None),
             Link("Paper", "https://arxiv.org/pdf/2303.09554.pdf", None, None),
             Link("Poster", "data/Tertikas2023CVPR_poster.pdf", None, None),
+            Link("Slides", "slides/Tertikas2023CVPR_slides.pdf", None, None),
             Link("Code", "https://github.com/ktertikas/part_nerf", None, None),
             Link("Bibtex", None, None, """@InProceedings{Tertikas2023CVPR,
   author    = {Konstantinos Tertikas and Despoina Paschalidou and Boxiao Pan and Jeong Joon Park and Mikaela Angelina Uy and Ioannis Emiris and Yannis Avrithis and Leonidas Guibas},
