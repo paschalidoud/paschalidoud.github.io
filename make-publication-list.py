@@ -57,6 +57,8 @@ authors = {
     "jj": Author("Jeong Joon Park", ""),
     "suya": Author("Suya You", ""),
     "hao": Author("Hao Tang", ""),
+    "xingguang": Author("Xingguang Yan", "http://yanxg.art/"),
+    "andrea": Author("Andrea Tagliasacchi", "https://taiya.github.io/"),
     "achuta": Author("Achuta Kadambi", "https://www.ee.ucla.edu/achuta-kadambi/"),
     "mika": Author("Mikaela Angelina Uy", ""),
     "yannis": Author("Yannis Avrithis", "https://avrithis.net/"),
@@ -82,12 +84,55 @@ authors = {
 conferences = {
     "neurips": Conference("Advances in Neural Information Processing Systems (NeurIPS)"),
     "cvpr": Conference("Computer Vision and Pattern Recognition (CVPR)"),
+    "iccv": Conference("International Conference on Computer Vision (ICCV)"),
     "eusipco": Conference("European Signal Processing Conference (EUSIPCO)"),
     "acmmm": Conference("ACM Multimedia Conference (ACMM)"),
     "tmlr": Conference("Transactions on Machine Learning Research (TMLR)"),
     "arxiv": Conference("arXiv")
 }
 publications = [
+    Paper(
+        "CC3D: Layout-Conditioned Generation of Compositional 3D Scenes",
+        "https://sherwinbahmani.github.io/cc3d/",
+        "teasers/cc3d_teaser_2.png",
+        author_list(authors, "sherwin", "jj", "despi", "xingguang", "gordon", "leo", "andrea"),
+        conferences["iccv"],
+        2023,
+        None,
+        [   Link("Abstract", None, "In this work, we introduce CC3D, a conditional generative model that synthesizes complex 3D scenes conditioned on 2D semantic scene layouts, trained using single-view images. Different from most existing 3D GANs that limit their applicability to aligned single objects, we focus on generating complex scenes with multiple objects, by modeling the compositional nature of 3D scenes. By devising a 2D layoutbased approach for 3D synthesis and implementing a new 3D field representation with a stronger geometric inductive bias, we have created a 3D GAN that is both efficient and of high quality, while allowing for a more controllable generation process. Our evaluations on synthetic 3D-FRONT and real-world KITTI-360 datasets demonstrate that our model generates scenes of improved visual and geometric quality in comparison to previous works.", None),
+            Link("Project page", "https://sherwinbahmani.github.io/cc3d/", None, None),
+            Link("Paper", "https://arxiv.org/pdf/2303.12074.pdf", None, None),
+            Link("Code", "https://github.com/sherwinbahmani/cc3d", None, None),
+            Link("Bibtex", None, None, """@InProceedings{Bahmani2023ICCV
+  author = {Bahmani, Sherwin and Park, Jeong Joon and Paschalidou, Despoina and Yan, Xingguang and Wetzstein, Gordon and Guibas, Leonidas and Tagliasacchi, Andrea},
+  title = {CC3D: Layout-Conditioned Generation of Compositional 3D Scenes},
+  booktitle = {International Conference on Computer Vision (ICCV)}},
+  year = {2023}
+}""")
+        ]
+    ),
+
+    Paper(
+        "COPILOT: Human Collision Prediction and Localization from Multi-view Egocentric Videos",
+        "https://sites.google.com/stanford.edu/copilot",
+        "teasers/copilot.jpg",
+        author_list(authors, "boxiao", "will", "davis", "despi", "kaichun", "yanchao", "leo"),
+        conferences["iccv"],
+        2023,
+        None,
+        [   Link("Abstract", None, "The ability to forecast human-environment collisions from egocentric observations is vital to enable collision avoidance in applications such as VR, AR, and wearable assistive robotics. In this work, we introduce the challenging problem of predicting collisions in diverse environments from multi-view egocentric videos captured from body-mounted cameras. Solving this problem requires a generalizable perception system that can classify which human body joints will collide and estimate a collision region heatmap to localize collisions in the environment. To achieve this, we propose a transformer-based model called COPILOT to perform collision prediction and localization simultaneously, which accumulates information across multi-view inputs through a novel 4D space-time-viewpoint attention mechanism. To train our model and enable future research on this task, we develop a synthetic data generation framework that produces egocentric videos of virtual humans moving and colliding within diverse 3D environments. This framework is then used to establish a large-scale dataset consisting of 8.6M egocentric RGBD frames. Extensive experiments show that COPILOT generalizes to unseen synthetic as well as real-world scenes. We further demonstrate COPILOT outputs are useful for downstream collision avoidance through simple closed-loop control." , None),
+            Link("Project page", "https://sites.google.com/stanford.edu/copilot", None, None),
+            Link("Paper", "https://arxiv.org/pdf/2210.01781.pdf", None, None),
+            Link("Video", "https://www.youtube.com/watch?v=lxRTPeac8Oo", None, None),
+            Link("Bibtex", None, None, """@InProceedings{Pan2023ICCV,
+  author = {Boxiao Pan, Bokui Shen, Davis Rempe, Despoina Paschalidou, Kaichun Mo, Yanchao Yang, Leonidas J Guibas},
+  title = {COPILOT: Human Collision Prediction and Localization from Multi-view Egocentric Videos},
+  booktitle = {International Conference on Computer Vision (ICCV)}},
+  year = {2023}
+}""")
+        ]
+    ),
+
     Paper(
         "3D-Aware Video Generation",
         "https://sherwinbahmani.github.io/3dvidgen/",
@@ -100,7 +145,7 @@ publications = [
             Link("Project page", "https://sherwinbahmani.github.io/3dvidgen/", None, None),
             Link("Paper", "https://arxiv.org/pdf/2206.14797.pdf", None, None),
             Link("Code", "https://github.com/sherwinbahmani/3dvideogeneration/", None, None),
-            Link("Bibtex", None, None, """@article{Bahmani2022ARXIV,
+            Link("Bibtex", None, None, """@InProceedings{Bahmani2022TMLR,
   author = {Bahmani, Sherwin and Park, Jeong Joon and Paschalidou, Despoina and Tang, Hao and Wetzstein, Gordon and Guibas, Leonidas and Van Gool, Luc and Timofte, Radu},
   title = {3D-Aware Video Generation},
   booktitle = {arXiv preprint},
@@ -146,7 +191,7 @@ publications = [
             Link("Slides", "slides/presentation_alto.pdf", None, None),
             Link("Code", "https://github.com/wzhen1/ALTO", None, None),
             Link("Video", "https://www.youtube.com/watch?v=EsnE4dEIArY", None, None),
-            Link("Bibtex", None, None, """@inproceedings{Zhen2023CVPR,
+            Link("Bibtex", None, None, """@InProceedings{Zhen2023CVPR,
     title = {ALTO: Alternating Latent Topologies for Implicit 3D Reconstruction},
     author = {Wang, Zhen and Zhou, Shijie and Park, Jeong Joon and Paschalidou, Despoina and You, Suya and Wetzstein, Gordon and Guibas, Leonidas and Kadambi, Achuta},
     booktitle = {Proceedings IEEE Conf. on Computer Vision and Pattern Recognition (CVPR)},
@@ -155,25 +200,6 @@ publications = [
         ]
     ),
 
-    Paper(
-        "COPILOT: Human Collision Prediction and Localization from Multi-view Egocentric Videos",
-        "https://sites.google.com/stanford.edu/copilot",
-        "teasers/copilot.jpg",
-        author_list(authors, "boxiao", "will", "davis", "despi", "kaichun", "yanchao", "leo"),
-        conferences["arxiv"],
-        2022,
-        None,
-        [   Link("Abstract", None, "To produce safe human motions, assistive wearable exoskeletons must be equipped with a perception system that enables anticipating potential collisions from egocentric observations. However, previous approaches to exoskeleton perception greatly simplify the problem to specific types of environments, limiting their scalability. In this paper, we propose the challenging and novel problem of predicting human-scene collisions for diverse environments from multi-view egocentric RGB videos captured from an exoskeleton. By classifying which body joints will collide with the environment and predicting a collision region heatmap that localizes potential collisions in the environment, we aim to develop an exoskeleton perception system that generalizes to complex real-world scenes and provides actionable outputs for downstream control. We propose COPILOT, a video transformer-based model that performs both collision prediction and localization simultaneously, leveraging multi-view video inputs via a proposed joint space-time-viewpoint attention operation. To train and evaluate the model, we build a synthetic data generation framework to simulate virtual humans moving in photo-realistic 3D environments. This framework is then used to establish a dataset consisting of 8.6M egocentric RGBD frames to enable future work on the problem. Extensive experiments suggest that our model achieves promising performance and generalizes to unseen scenes as well as real world. We apply COPILOT to a downstream collision avoidance task, and successfully reduce collision cases by 29% on unseen scenes using a simple closed-loop control algorithm.", None),
-            Link("Project page", "https://sites.google.com/stanford.edu/copilot", None, None),
-            Link("Paper", "https://arxiv.org/pdf/2210.01781.pdf", None, None),
-            Link("Bibtex", None, None, """@article{Pan2022ARXIV,
-  author = {Boxiao Pan, Bokui Shen, Davis Rempe, Despoina Paschalidou, Kaichun Mo, Yanchao Yang, Leonidas J Guibas},
-  title = {COPILOT: Human Collision Prediction and Localization from Multi-view Egocentric Videos},
-  booktitle = {arXiv preprint},
-  year = {2022}
-}""")
-        ]
-    ),
     Paper(
         "ATISS: Autoregressive Transformers for Indoor Scene Synthesis",
         "https://nv-tlabs.github.io/ATISS/#",
@@ -189,7 +215,7 @@ publications = [
             Link("Slides", "data/Paschalidou2021NEURIPS_slides.pdf", None, None),
             Link("Code", "https://github.com/nv-tlabs/atiss", None, None),
             Link("Video", "https://www.youtube.com/watch?v=VNY0BFMi2j4", None, None),
-            Link("Bibtex", None, None, """@inproceedings{Paschalidou2021NEURIPS,
+            Link("Bibtex", None, None, """@InProceedings{Paschalidou2021NEURIPS,
   author = {Despoina Paschalidou and Amlan Kar and Maria Shugrina and Karsten Kreis and Andreas Geiger and Sanja Fidler},
   title = {ATISS: Autoregressive Transformers for Indoor Scene Synthesis},
   booktitle = {Advances in Neural Information Processing Systems (NeurIPS)},
@@ -214,7 +240,7 @@ publications = [
             Link("Slides", "http://www.cvlibs.net/publications/Paschalidou2021CVPR_slides.pdf", None, None),
             Link("Video", "https://www.youtube.com/watch?v=6WK3B0IZJsw", None, None),
             Link("Podcast", "https://www.itzikbs.com/neural-parts-learning-expressive-3d-shape-abstractions-with-invertible-neural-networks", None, None),
-            Link("Bibtex", None, None, """@inproceedings{Paschalidou2021CVPR,
+            Link("Bibtex", None, None, """@InProceedings{Paschalidou2021CVPR,
     title = {Neural Parts: Learning Expressive 3D Shape Abstractions with Invertible Neural Networks},
     author = {Paschalidou, Despoina and Katharopoulos, Angelos and Geiger, Andreas and Fidler, Sanja},
     booktitle = {Proceedings IEEE Conf. on Computer Vision and Pattern Recognition (CVPR)},
@@ -240,7 +266,7 @@ publications = [
             Link("Blog", "https://autonomousvision.github.io/hierarchical-primitives/", None, None),
             Link("Slides", "http://www.cvlibs.net/publications/Paschalidou2020CVPR_slides.pdf", None, None),
             Link("Video", "https://www.youtube.com/watch?v=QgD0NHbWVlU&vq=hd1080&autoplay=1", None, None),
-            Link("Bibtex", None, None, """@inproceedings{Paschalidou2020CVPR,
+            Link("Bibtex", None, None, """@InProceedings{Paschalidou2020CVPR,
     title = {Learning Unsupervised Hierarchical Part Decomposition of 3D Objects from a Single RGB Image},
     author = {Paschalidou, Despoina and Luc van Gool and Geiger, Andreas},
     booktitle = {Proceedings IEEE Conf. on Computer Vision and Pattern Recognition (CVPR)},
@@ -266,7 +292,7 @@ publications = [
             Link("Code", "https://github.com/paschalidoud/superquadric_parsing", None, None),
             Link("Blog", "https://autonomousvision.github.io/superquadrics-revisited/", None, None),
             Link("Video", "https://www.youtube.com/watch?v=eaZHYOsv9Lw", None, None),
-            Link("Bibtex", None, None, """@inproceedings{Paschalidou2019CVPR,
+            Link("Bibtex", None, None, """@InProceedings{Paschalidou2019CVPR,
     title = {Superquadrics Revisited: Learning 3D Shape Parsing beyond Cuboids},
     author = {Paschalidou, Despoina and Ulusoy, Ali Osman and Geiger, Andreas},
     booktitle = {Proceedings IEEE Conf. on Computer Vision and Pattern Recognition (CVPR)},
@@ -290,7 +316,7 @@ publications = [
             Link("Paper", "http://www.cvlibs.net/publications/Behl2019CVPR.pdf", None, None),
             Link("Code", "https://github.com/aseembehl/pointflownet", None, None),
             Link("Video", "https://youtu.be/cjJhzYCUNTY", None, None),
-            Link("Bibtex", None, None, """@inproceedings{Behl2019CVPR,
+            Link("Bibtex", None, None, """@InProceedings{Behl2019CVPR,
     title = {PointFlowNet: Learning Representations for Rigid Motion Estimation from Point Clouds },
     author = {Behl, Aseem and Paschalidou, Despoina and Donne, Simon and Geiger, Andreas},
     booktitle = {Proceedings IEEE Conf. on Computer Vision and Pattern Recognition (CVPR)},
@@ -315,7 +341,7 @@ publications = [
             Link("Poster", "data/Paschalidou2018CVPR_poster.pdf", None, None),
             Link("Code", "http://github.com/paschalidoud/raynet", None, None),
             Link("Video", "https://www.youtube.com/watch?v=PZ0u1VZLLkU&feature=youtu.be", None, None),
-            Link("Bibtex", None, None, """@inproceedings{Paschalidou2018CVPR,
+            Link("Bibtex", None, None, """@InProceedings{Paschalidou2018CVPR,
       title = {RayNet: Learning Volumetric 3D Reconstruction with Ray Potentials},
       author = {Paschalidou, Despoina and Ulusoy, Ali Osman and Schmitt, Carolin and Gool, Luc and Geiger, Andreas},
       booktitle = {IEEE Conference on Computer Vision and Pattern Recognition (CVPR)},
@@ -337,7 +363,7 @@ publications = [
             Link("Paper", "https://arxiv.org/pdf/1706.08580.pdf", None, None),
             Link("Poster", "data/eusipco_poster.pdf", None, None),
             Link("Code", "https://github.com/paschalidoud/feature-aggregation", None, None),
-            Link("Bibtex", None, None, """@inproceedings{katharopoulos2017learning
+            Link("Bibtex", None, None, """@InProceedings{katharopoulos2017learning
       title = {Learning local feature aggregation functions with backpropagation},
       author = {Paschalidou, Despoina and Katharopoulos, Angelos and Diou, Christos and Delopoulos, Anastasios},
       publisher = {IEEE},
@@ -362,7 +388,7 @@ publications = [
             Link("Poster", "data/fslda_poster.pdf", None, None),
             Link("Code", "https://github.com/angeloskath/supervised-lda", None, None),
             Link("Blog", "https://mug.ee.auth.gr/discovering-micro-events-video-data-using-topic-modeling/", None, None),
-            Link("Bibtex", None, None, """@inproceedings{katharopoulos2016fast
+            Link("Bibtex", None, None, """@InProceedings{katharopoulos2016fast
         title = {Fast Supervised LDA for Discovering Micro-Events in Large-Scale Video Datasets},
         author = {Katharopoulos, Angelos and Paschalidou, Despoina and Diou, Christos and Delopoulos, Anastasios},
         booktitle = {Proceedings of the 2016 ACM on Multimedia Conference},
