@@ -50,6 +50,8 @@ authors = {
     "andreas": Author("Andreas Geiger", "http://www.cvlibs.net/"),
     "sanja": Author("Sanja Fidler", "https://www.cs.utoronto.ca/~fidler/"),
     "leo": Author("Leonidas Guibas", "https://geometry.stanford.edu/member/guibas/"),
+    "minhyuk": Author("Minhyuk Sung", "https://mhsung.github.io/"),
+    "alec": Author("Alec Jacobson", "https://www.cs.toronto.edu/~jacobson/"),
     "konstantinos": Author("Konstantinos Tertikas", "https://ktertikas.github.io/"),
     "zhen": Author("Zhen Wang", "https://zhenwangwz.github.io/"),
     "shijie": Author("Shijie Zhou", "https://www.linkedin.com/in/shijie-zhou-ucla"),
@@ -60,7 +62,7 @@ authors = {
     "xingguang": Author("Xingguang Yan", "http://yanxg.art/"),
     "andrea": Author("Andrea Tagliasacchi", "https://taiya.github.io/"),
     "achuta": Author("Achuta Kadambi", "https://www.ee.ucla.edu/achuta-kadambi/"),
-    "mika": Author("Mikaela Angelina Uy", ""),
+    "mika": Author("Mikaela Angelina Uy", "https://mikacuy.github.io/"),
     "yannis": Author("Yannis Avrithis", "https://avrithis.net/"),
     "emiris": Author("Ioannis Emiris", "https://cgi.di.uoa.gr/~emiris/index-eng.html"),
     "gordon": Author("Gordon Wetzstein", "https://stanford.edu/~gordonwz/"),
@@ -76,6 +78,7 @@ authors = {
     "aseem": Author("Aseem Behl", "http://aseembehl.github.io/"),
     "simon": Author("Simon Donné", "https://donnessime.github.io/"),
     "caro": Author("Carolin Schmitt", "https://avg.is.tuebingen.mpg.de/person/cschmitt"),
+    "kunho": Author("Kunho Kim", "https://soulmates2.github.io/CV/"),
     "luc": Author("Luc van Gool", "https://ee.ethz.ch/the-department/faculty/professors/person-detail.OTAyMzM=.TGlzdC80MTEsMTA1ODA0MjU5.html"),
     "angelos": Author("Angelos Katharopoulos", "https://angeloskath.github.io/"),
     "diou": Author("Christos Diou", "https://mug.ee.auth.gr/people/christos-diou/"),
@@ -88,9 +91,31 @@ conferences = {
     "eusipco": Conference("European Signal Processing Conference (EUSIPCO)"),
     "acmmm": Conference("ACM Multimedia Conference (ACMM)"),
     "tmlr": Conference("Transactions on Machine Learning Research (TMLR)"),
+    "pg": Conference("Pacific Graphics"),
     "arxiv": Conference("arXiv")
 }
 publications = [
+    Paper(
+        "OptCtrlPoints: Finding the Optimal Control Points for Biharmonic 3D Shape Deformation",
+        "https://soulmates2.github.io/publications/OptCtrlPoints/",
+        "teasers/optctrl_teaser.png",
+        author_list(authors, "kunho", "mika", "despi", "alec", "leo", "minhyuk"),
+        conferences["pg"],
+        2023,
+        None,
+        [   Link("Abstract", None, "We propose OptCtrlPoints, a data-driven framework designed to identify the optimal sparse set of control points for reproducing target shapes using biharmonic 3D shape deformation. Control-point-based 3D deformation methods are widely utilized for interactive shape editing, and their usability is enhanced when the control points are sparse yet strategically distributed across the shape. With this objective in mind, we introduce a data-driven approach that can determine the most suitable set of control points, assuming that we have a given set of possible shape variations. The challenges associated with this task primarily stem from the computationally demanding nature of the problem. Two main factors contribute to this complexity: solving a large linear system for the biharmonic weight computation and addressing the combinatorial problem of finding the optimal subset of mesh vertices. To overcome these challenges, we propose a reformulation of the biharmonic computation that reduces the matrix size, making it dependent on the number of control points rather than the number of vertices. Additionally, we present an efficient search algorithm that significantly reduces the time complexity while still delivering a nearly optimal solution. Experiments on SMPL, SMAL, and DeformingThings4D datasets demonstrate the efficacy of our method. Our control points achieve better template-to-target fit than FPS, random search, and neural-network-based prediction. We also highlight the significant reduction in computation time from days to approximately 3 minutes.", None),
+            Link("Project page", "https://soulmates2.github.io/publications/OptCtrlPoints/", None, None),
+            Link("Paper", "https://arxiv.org/pdf/2309.12899.pdf", None, None),
+            Link("Bibtex", None, None, """@Article{Kim2023PG,
+      title={OptCtrlPoints: Finding the Optimal Control Points for Biharmonic 3D Shape Deformation}, 
+      author={Kunho Kim and Mikaela Angelina Uy and Despoina Paschalidou and Alec Jacobson and Leonidas J. Guibas and Minhyuk Sung},
+      journal={arXiv preprint arXiv:2309.12899},
+      year={2023},
+    }
+""")
+        ]
+    ),
+
     Paper(
         "CC3D: Layout-Conditioned Generation of Compositional 3D Scenes",
         "https://sherwinbahmani.github.io/cc3d/",
