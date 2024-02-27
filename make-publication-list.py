@@ -59,16 +59,21 @@ authors = {
     "jj": Author("Jeong Joon Park", ""),
     "suya": Author("Suya You", ""),
     "hao": Author("Hao Tang", ""),
+    "ziyu": Author("Ziyu Wan", "http://raywzy.com/"),
+    "ian": Author("Ian Huang", "https://ianhuang0630.github.io/me/"),
+    "hongyu": Author("Hongyu Liu", "https://kumapowerliu.github.io/"),
+    "xiaoyu": Author("Xiaoyu Xiang", "https://engineering.purdue.edu/people/xiaoyu.xiang.1"),
+    "jing": Author("Jing Liao", ""),
     "xingguang": Author("Xingguang Yan", "http://yanxg.art/"),
     "andrea": Author("Andrea Tagliasacchi", "https://taiya.github.io/"),
     "achuta": Author("Achuta Kadambi", "https://www.ee.ucla.edu/achuta-kadambi/"),
-    "mika": Author("Mikaela Angelina Uy", "https://mikacuy.github.io/"),
+    "mika": Author("Mikaela Angelina Uy", ""),
     "yannis": Author("Yannis Avrithis", "https://avrithis.net/"),
     "emiris": Author("Ioannis Emiris", "https://cgi.di.uoa.gr/~emiris/index-eng.html"),
     "gordon": Author("Gordon Wetzstein", "https://stanford.edu/~gordonwz/"),
     "radu": Author("Radu Timofte", "http://people.ee.ethz.ch/~timofter/"),
     "boxiao": Author("Boxiao Pan", "https://cs.stanford.edu/~bxpan/"),
-    "will": Author("Bokui Shen", "https://cs.stanford.edu/people/bshen88/"),
+    "will": Author("Bokui Shen", ""),
     "davis": Author("Davis Rempe", "https://davrempe.github.io/"),
     "kaichun": Author("Kaichun Mo", "https://cs.stanford.edu/~kaichun/"),
     "yanchao": Author("Yanchao Yang", "https://yanchaoyang.github.io/"),
@@ -95,6 +100,29 @@ conferences = {
     "arxiv": Conference("arXiv")
 }
 publications = [
+    Paper(
+        "CAD: Photorealistic 3D Generation via Adversarial Distillation",
+        "http://raywzy.com/CAD/",
+        "teasers/cad_teaser_2.png",
+        author_list(authors, "ziyu", "despi", "ian", "hongyu", "will", "xiaoyu", "jing", "leo"),
+        conferences["cvpr"],
+        2024,
+        None,
+        [   Link("Abstract", None, "The increased demand for 3D data in AR/VR, robotics and gaming applications, gave rise to powerful generative pipelines capable of synthesizing high-quality 3D objects. Most of these models rely on the Score Distillation Sampling (SDS) algorithm to optimize a 3D representation such that the rendered image maintains a high likelihood as evaluated by a pre-trained diffusion model. However, finding a correct mode in the high-dimensional distribution produced by the diffusion model is challenging and often leads to issues such as over-saturation, over-smoothing, and Janus-like artifacts. In this paper, we propose a novel learning paradigm for 3D synthesis that utilizes pre-trained diffusion models. Instead of focusing on mode-seeking, our method directly models the distribution discrepancy between multi-view renderings and diffusion priors in an adversarial manner, which unlocks the generation of high-fidelity and photorealistic 3D content, conditioned on a single image and prompt. Moreover, by harnessing the latent space of GANs and expressive diffusion model priors, our method facilitates a wide variety of 3D applications including single-view reconstruction, high diversity generation and continuous 3D interpolation in the open domain. The experiments demonstrate the superiority of our pipeline compared to previous works in terms of generation quality and diversity.", None),
+            Link("Project page", "http://raywzy.com/CAD/", None, None),
+            Link("Paper", "https://arxiv.org/pdf/2312.06663.pdf", None, None),
+            Link("Code", "https://github.com/raywzy/CAD", None, None),
+            Link("Video", "https://www.youtube.com/watch?v=6slL9YqW9JM", None, None),
+            Link("Bibtex", None, None, """@InProceedings{Wan2024CVPR,
+      title={CAD: Photorealistic 3d generation via adversarial distillation}, 
+      author={Wan, Ziyu and Paschalidou, Despoina and Huang, Ian and Liu, Hongyu and Shen, Bokui and Xiang, Xiaoyu and Liao, Jing and Guibas, Leonidas},
+      booktitle = {Proceedings IEEE Conf. on Computer Vision and Pattern Recognition (CVPR)},
+      year = {2024}
+    }
+""")
+        ]
+    ),
+
     Paper(
         "OptCtrlPoints: Finding the Optimal Control Points for Biharmonic 3D Shape Deformation",
         "https://soulmates2.github.io/publications/OptCtrlPoints/",
