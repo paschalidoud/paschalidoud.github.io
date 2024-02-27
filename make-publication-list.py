@@ -65,6 +65,10 @@ authors = {
     "xiaoyu": Author("Xiaoyu Xiang", "https://engineering.purdue.edu/people/xiaoyu.xiang.1"),
     "jing": Author("Jing Liao", ""),
     "xingguang": Author("Xingguang Yan", "http://yanxg.art/"),
+    "colton": Author("Colton Stearns", "https://coltonstearns.github.io/"),
+    "jiateng": Author("Jiateng Liu", "https://lumos-jiateng.github.io/"),
+    "alex": Author("Alex Fu", ""),
+    "sebastien": Author("Sébastien Mascha", "https://github.com/sebastienmascha"),
     "andrea": Author("Andrea Tagliasacchi", "https://taiya.github.io/"),
     "achuta": Author("Achuta Kadambi", "https://www.ee.ucla.edu/achuta-kadambi/"),
     "mika": Author("Mikaela Angelina Uy", ""),
@@ -116,6 +120,26 @@ publications = [
             Link("Bibtex", None, None, """@InProceedings{Wan2024CVPR,
       title={CAD: Photorealistic 3d generation via adversarial distillation}, 
       author={Wan, Ziyu and Paschalidou, Despoina and Huang, Ian and Liu, Hongyu and Shen, Bokui and Xiang, Xiaoyu and Liao, Jing and Guibas, Leonidas},
+      booktitle = {Proceedings IEEE Conf. on Computer Vision and Pattern Recognition (CVPR)},
+      year = {2024}
+    }
+""")
+        ]
+    ),
+
+    Paper(
+        "CurveCloudNet: Processing Point Clouds with 1D Structure",
+        "",
+        "teasers/curvecloudnet_teaser.png",
+        author_list(authors, "colton", "davis", "alex", "jiateng", "sebastien", "jj", "despi", "leo"),
+        conferences["cvpr"],
+        2024,
+        None,
+        [   Link("Abstract", None, "Modern depth sensors such as LiDAR operate by sweeping laser-beams across the scene, resulting in a point cloud with notable 1D curve-like structures. In this work, we introduce a new point cloud processing scheme and backbone, called CurveCloudNet, which takes advantage of the curve-like structure inherent to these sensors. While existing backbones discard the rich 1D traversal patterns and rely on generic 3D operations, CurveCloudNet parameterizes the point cloud as a collection of polylines (dubbed a curve cloud), establishing a local surface-aware ordering on the points. By reasoning along curves, CurveCloudNet captures lightweight curve-aware priors to efficiently and accurately reason in several diverse 3D environments. We evaluate CurveCloudNet on multiple synthetic and real datasets that exhibit distinct 3D size and structure. We demonstrate that CurveCloudNet outperforms both point-based and sparse-voxel backbones in various segmentation settings, notably scaling to large scenes better than point-based alternatives while exhibiting improved single-object performance over sparse-voxel alternatives. In all, CurveCloudNet is an efficient and accurate backbone that can handle a larger variety of 3D environments than past works.", None),
+            Link("Paper", "https://arxiv.org/pdf/2303.12050.pdf", None, None),
+            Link("Bibtex", None, None, """@InProceedings{Stearns2024CVPR,
+      title={CurveCloudNet: Processing Point Clouds with 1D Structure},
+      author={Stearns, Colton and Rempe, Davis and Fu, Alex and Liu, Jiateng and and Masha, Sebastien and Park, Jeong Joon and Paschalidou, Despoina and Guibas, Leonidas J},
       booktitle = {Proceedings IEEE Conf. on Computer Vision and Pattern Recognition (CVPR)},
       year = {2024}
     }
@@ -222,6 +246,7 @@ publications = [
             Link("Poster", "data/Tertikas2023CVPR_poster.pdf", None, None),
             Link("Slides", "slides/Tertikas2023CVPR_slides.pdf", None, None),
             Link("Code", "https://github.com/ktertikas/part_nerf", None, None),
+            Link("Video", "https://www.youtube.com/watch?v=H5jJryZzRs8", None, None),
             Link("Bibtex", None, None, """@InProceedings{Tertikas2023CVPR,
   author    = {Konstantinos Tertikas and Despoina Paschalidou and Boxiao Pan and Jeong Joon Park and Mikaela Angelina Uy and Ioannis Emiris and Yannis Avrithis and Leonidas Guibas},
   title     = {PartNeRF: Generating Part-Aware Editable 3D Shapes without 3D Supervision},
