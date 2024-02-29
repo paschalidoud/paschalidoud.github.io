@@ -78,6 +78,10 @@ authors = {
     "radu": Author("Radu Timofte", "http://people.ee.ethz.ch/~timofter/"),
     "boxiao": Author("Boxiao Pan", "https://cs.stanford.edu/~bxpan/"),
     "will": Author("Bokui Shen", ""),
+    "gpavlakos": Author("Georgios Pavlakos", "https://geopavlakos.github.io/"),
+    "nicolas": Author("Nicolas Ugrinovic", "https://www.iri.upc.edu/staff/nugrinovic"),
+    "francesco": Author("Francesc Moreno-Noguer", "https://www.iri.upc.edu/people/fmoreno/"),
+    "jordi": Author("Jordi Sanchez-Riera", "https://www.iri.upc.edu/staff/jsanchez"),
     "davis": Author("Davis Rempe", "https://davrempe.github.io/"),
     "kaichun": Author("Kaichun Mo", "https://cs.stanford.edu/~kaichun/"),
     "yanchao": Author("Yanchao Yang", "https://yanchaoyang.github.io/"),
@@ -146,6 +150,26 @@ publications = [
 """)
         ]
     ),
+
+    Paper(
+        "MultiPhys: Multi-Person Physics-aware 3D Motion Estimation",
+        "",
+        "teasers/multiphys_teaser.png",
+        author_list(authors, "nicolas", "boxiao", "gpavlakos", "despi", "will", "jordi", "francesco", "leo"),
+        conferences["cvpr"],
+        2024,
+        None,
+        [   Link("Abstract", None, "We introduce MultiPhys, a method designed for recovering multi-person motion from monocular videos. Our focus lies in capturing coherent spatial placement between pairs of individuals across varying degrees of engagement. MultiPhys, being physically aware, exhibits robustness to jittering, occlusions, and effectively eliminates penetration issues between the two individuals. We devise a pipeline in which the motion estimated by a standard method relying solely on kinematic constraints is fed into a physics simulator in an autoregressive manner. We introduce distinct components that enable our model to harness the simulator's properties without compromising the accuracy of purely kinematic approaches. This results in final body motion estimates that are both kinematically coherent and physically compliant. Through extensive evaluations on three challenging datasets characterized by substantial inter-person interaction, our method significantly reduces errors associated with penetration and foot skating, while performs competitively with the state-of-the-art on motion accuracy and smoothness.", None),
+            Link("Bibtex", None, None, """@InProceedings{Ugrinovic2024CVPR,
+      title={MultiPhys: Multi-Person Physics-aware 3D Motion Estimation},
+      author={Ugrinovic, Nicolás Ugrinovic and Pan, Boxiao and Pavlakos, Georgios and Paschalidou, Despoina and Shen, Bokui and Sanchez-Riera, Jordi and Moreno-Nuger Francesco and Guibas, Leonidas},
+      booktitle = {Proceedings IEEE Conf. on Computer Vision and Pattern Recognition (CVPR)},
+      year = {2024}
+    }
+""")
+        ]
+    ),
+
 
     Paper(
         "OptCtrlPoints: Finding the Optimal Control Points for Biharmonic 3D Shape Deformation",
