@@ -232,11 +232,14 @@ a {
     margin: 0px;
     padding-left: 15px;
 }
-#dropdown:hover {
+#dropdown:hover, #dropdown:active {
     display: block;
 }
 
 #dropdown-container:hover ul#dropdown-list{
+    display: block;
+}
+#dropdown-container:active ul#dropdown-list{
     display: block;
 }
 #dropdown-container ul{
