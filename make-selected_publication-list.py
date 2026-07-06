@@ -84,16 +84,47 @@ authors = {
     "luc": Author("Luc van Gool", "https://ee.ethz.ch/the-department/faculty/professors/person-detail.OTAyMzM=.TGlzdC80MTEsMTA1ODA0MjU5.html"),
     "angelos": Author("Angelos Katharopoulos", "https://angeloskath.github.io/"),
     "diou": Author("Christos Diou", "https://mug.ee.auth.gr/people/christos-diou/"),
-    "delo": Author("Anastasios Delopoulos", "https://mug.ee.auth.gr/people/anastasios-delopoulos/")
+    "delo": Author("Anastasios Delopoulos", "https://mug.ee.auth.gr/people/anastasios-delopoulos/"),
+    "xindi": Author("Xindi Wu", "https://xindiwu.github.io/"),
+    "jungao": Author("Jun Gao", "https://www.cs.toronto.edu/~jungao/"),
+    "torralba": Author("Antonio Torralba", "https://groups.csail.mit.edu/vision/torralbalab/"),
+    "laura": Author("Laura Leal-Taixé", "https://dvl.in.tum.de/team/lealtaixe/"),
+    "olga": Author("Olga Russakovsky", "https://www.cs.princeton.edu/~olgarus/"),
+    "lorraine": Author("Jonathan Lorraine", "https://www.jonlorraine.com/")
 }
 conferences = {
     "neurips": Conference("Advances in Neural Information Processing Systems (NeurIPS)"),
     "cvpr": Conference("Computer Vision and Pattern Recognition (CVPR)"),
     "iccv": Conference("International Conference on Computer Vision (ICCV)"),
     "eusipco": Conference("European Signal Processing Conference (EUSIPCO)"),
-    "acmmm": Conference("ACM Multimedia Conference (ACMM)")
+    "acmmm": Conference("ACM Multimedia Conference (ACMM)"),
+    "icml": Conference("International Conference on Machine Learning (ICML)")
 }
 publications = [
+    Paper(
+        "Motion Attribution for Video Generation",
+        "https://research.nvidia.com/labs/sil/projects/MOTIVE/",
+        "teasers/motive_teaser.png",
+        author_list(authors, "xindi", "despi", "jungao", "torralba", "laura", "olga", "sanja", "lorraine"),
+        conferences["icml"],
+        2026,
+        "Oral, Outstanding Paper Honorable Mention",
+        [   Link("Abstract", None, "Despite the rapid progress of video generation models, the role of data in influencing motion is poorly understood. We present Motive, a motion-centric, gradient-based data attribution framework that scales to modern, large, high-quality video datasets and models, and use it to study which fine-tuning clips improve or degrade temporal dynamics. Our approach isolates temporal dynamics from static appearance via motion-weighted loss masks, yielding efficient and scalable motion-specific influence computation. On text-to-video models, Motive identifies clips that strongly affect motion and guides data curation that improves temporal consistency and physical plausibility. With Motive-selected high-influence data, our method improves both motion smoothness and dynamic degree on VBench, achieving a 74.1% human preference win rate compared with the pretrained base model. This represents the first framework to attribute motion rather than visual appearance in video generative models and to use it to curate fine-tuning data.", None),
+            Link("Project page", "https://research.nvidia.com/labs/sil/projects/MOTIVE/", None, None),
+            Link("Paper", "https://arxiv.org/pdf/2601.08828", None, None),
+            Link("Slides", "https://www.canva.com/design/DAG1yWt_m7M/_exm2P38U7t_TGoN8N2YdQ/view?utm_content=DAG1yWt_m7M&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=h0a72b7c054", None, None),
+            Link("Poster", "https://research.nvidia.com/labs/sil/projects/MOTIVE/poster/poster-horizontal.pdf", None, None),
+            Link("Video", "https://www.youtube.com/watch?v=oMimFdRu39U", None, None),
+            Link("Bibtex", None, None, """@inproceedings{Wu2026ICML,
+      title={Motion Attribution for Video Generation},
+      author={Wu, Xindi and Paschalidou, Despoina and Gao, Jun and Torralba, Antonio and Leal-Taix\\'e, Laura and Russakovsky, Olga and Fidler, Sanja and Lorraine, Jonathan},
+      booktitle={International Conference on Machine Learning (ICML)},
+      year={2026}
+    }
+""")
+        ]
+    ),
+
     Paper(
         "CAD: Photorealistic 3D Generation via Adversarial Distillation",
         "http://raywzy.com/CAD/",
