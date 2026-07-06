@@ -101,7 +101,9 @@ authors = {
     "torralba": Author("Antonio Torralba", "https://groups.csail.mit.edu/vision/torralbalab/"),
     "laura": Author("Laura Leal-Taixé", "https://dvl.in.tum.de/team/lealtaixe/"),
     "olga": Author("Olga Russakovsky", "https://www.cs.princeton.edu/~olgarus/"),
-    "lorraine": Author("Jonathan Lorraine", "https://www.jonlorraine.com/")
+    "lorraine": Author("Jonathan Lorraine", "https://www.jonlorraine.com/"),
+    "sara": Author("Sara Oblak", "https://scholar.google.com/citations?user=kHEdjAMAAAAJ"),
+    "matan": Author("Matan Atzmon", "https://matanatz.github.io/")
 }
 conferences = {
     "neurips": Conference("Advances in Neural Information Processing Systems (NeurIPS)"),
@@ -112,6 +114,7 @@ conferences = {
     "tmlr": Conference("Transactions on Machine Learning Research (TMLR)"),
     "pg": Conference("Pacific Graphics"),
     "icml": Conference("International Conference on Machine Learning (ICML)"),
+    "iclr": Conference("International Conference on Learning Representations (ICLR)"),
     "arxiv": Conference("arXiv")
 }
 publications = [
@@ -134,6 +137,28 @@ publications = [
       author={Wu, Xindi and Paschalidou, Despoina and Gao, Jun and Torralba, Antonio and Leal-Taix\\'e, Laura and Russakovsky, Olga and Fidler, Sanja and Lorraine, Jonathan},
       booktitle={International Conference on Machine Learning (ICML)},
       year={2026}
+    }
+""")
+        ]
+    ),
+
+    Paper(
+        "ReMatching Dynamic Reconstruction Flow",
+        "https://research.nvidia.com/labs/toronto-ai/ReMatchingDynamicReconstructionFlow/",
+        "teasers/rematching_teaser.png",
+        author_list(authors, "sara", "despi", "sanja", "matan"),
+        conferences["iclr"],
+        2025,
+        None,
+        [   Link("Abstract", None, "Reconstructing a dynamic scene from image inputs is a fundamental computer vision task with many downstream applications. Despite recent advancements, existing approaches still struggle to achieve high-quality reconstructions from unseen viewpoints and timestamps. This work introduces the ReMatching framework, designed to improve reconstruction quality by incorporating deformation priors into dynamic reconstruction models. Our approach advocates for velocity-field based priors, for which we suggest a matching procedure that can seamlessly supplement existing dynamic reconstruction pipelines. The framework is highly adaptable and can be applied to various dynamic representations. Moreover, it supports integrating multiple types of model priors and enables combining simpler ones to create more complex classes. Our evaluations on popular benchmarks involving both synthetic and real-world dynamic scenes demonstrate that augmenting current state-of-the-art methods with our approach leads to a clear improvement in reconstruction accuracy.", None),
+            Link("Project page", "https://research.nvidia.com/labs/toronto-ai/ReMatchingDynamicReconstructionFlow/", None, None),
+            Link("Paper", "https://arxiv.org/pdf/2411.00705", None, None),
+            Link("Code", "https://github.com/nv-tlabs/ReMatchingDynamicReconstructionFlow", None, None),
+            Link("Bibtex", None, None, """@inproceedings{Oblak2025ICLR,
+      title={ReMatching Dynamic Reconstruction Flow},
+      author={Oblak, Sara and Paschalidou, Despoina and Fidler, Sanja and Atzmon, Matan},
+      booktitle={International Conference on Learning Representations (ICLR)},
+      year={2025}
     }
 """)
         ]
