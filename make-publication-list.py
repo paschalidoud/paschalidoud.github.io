@@ -103,7 +103,34 @@ authors = {
     "olga": Author("Olga Russakovsky", "https://www.cs.princeton.edu/~olgarus/"),
     "lorraine": Author("Jonathan Lorraine", "https://www.jonlorraine.com/"),
     "sara": Author("Sara Oblak", "https://scholar.google.com/citations?user=kHEdjAMAAAAJ"),
-    "matan": Author("Matan Atzmon", "https://matanatz.github.io/")
+    "matan": Author("Matan Atzmon", "https://matanatz.github.io/"),
+    "aarti": Author("Aarti Basant", "https://www.linkedin.com/in/aartibasant/"),
+    "fangyin": Author("Fangyin Wei", "https://weify627.github.io/"),
+    "ferroni": Author("Francesco Ferroni", "https://www.francescoferroni.com/"),
+    "guillermo": Author("Guillermo Garcia Cobo", "https://scholar.google.com/citations?user=zdWIO6cAAAAJ&hl=en"),
+    "haithem": Author("Haithem Turki", "https://haithemturki.com/"),
+    "huanling": Author("Huan Ling", "https://www.cs.toronto.edu/~linghuan/"),
+    "jaewoo": Author("Jaewoo Seo", "https://scholar.google.com/citations?user=3IOC9IsAAAAJ&hl=en"),
+    "james": Author("James Lucas", "https://www.cs.toronto.edu/~jlucas/"),
+    "jay": Author("Jay Zhangjie Wu", "https://zhangjiewu.github.io/"),
+    "jialiang": Author("Jialiang Wang", "https://sites.google.com/view/jialiangwang/home"),
+    "kaihe": Author("Kai He", "https://www.cs.toronto.edu/~hekai/"),
+    "katarina": Author("Katarina Tothova", "https://scholar.google.com/citations?user=tua-w_UAAAAJ&hl=en"),
+    "kevinxie": Author("Kevin Xie", "https://kevincxie.github.io/"),
+    "michal": Author("Michał Tyszkiewicz", "https://scholar.google.com/citations?user=CZ40rFYAAAAJ&hl=en"),
+    "qiwu": Author("Qi Wu", "https://wilsoncernwq.github.io/"),
+    "riccardo": Author("Riccardo de Lutio", "https://riccardodelutio.github.io/"),
+    "ruilong": Author("Ruilong Li", "https://www.liruilong.cn/"),
+    "seung": Author("Seung Wook Kim", "https://seung-kim.github.io/seungkim/"),
+    "tianchang": Author("Tianchang Shen", "https://www.cs.toronto.edu/~shenti11/"),
+    "tianshi": Author("Tianshi Cao", "https://scholar.google.com/citations?user=CZ9wBBoAAAAJ&hl=en"),
+    "tobias": Author("Tobias Pfaff", "https://tobiaspfaff.com/"),
+    "williamlew": Author("William Lew", "https://www.linkedin.com/in/williamlewww/"),
+    "xuanchi": Author("Xuanchi Ren", "https://xuanchiren.com/"),
+    "yifan": Author("Yifan Lu", "https://yifanlu0227.github.io/"),
+    "yuxuan": Author("Yuxuan Zhang", "https://scholar.google.com/citations?user=Jt5VvNgAAAAJ&hl=en"),
+    "zan": Author("Zan Gojcic", "https://zgojcic.github.io/"),
+    "zian": Author("Zian Wang", "https://www.cs.toronto.edu/~zianwang/")
 }
 conferences = {
     "neurips": Conference("Advances in Neural Information Processing Systems (NeurIPS)"),
@@ -118,6 +145,28 @@ conferences = {
     "arxiv": Conference("arXiv")
 }
 publications = [
+    Paper(
+        "NVIDIA OmniDreams: Real-Time Generative World Model for Closed-Loop Autonomous Vehicle Simulation",
+        "https://research.nvidia.com/labs/sil/projects/omnidreams-blog/",
+        "teasers/omnidreams_teaser.jpg",
+        author_list(authors, "aarti", "amlan", "despi", "fangyin", "ferroni", "guillermo", "haithem", "huanling", "jaewoo", "james", "jay", "jialiang", "lorraine", "jungao", "kaihe", "katarina", "kevinxie", "michal", "qiwu", "riccardo", "ruilong", "sanja", "seung", "tianchang", "tianshi", "tobias", "williamlew", "xindi", "xuanchi", "yifan", "yuxuan", "zan", "zian"),
+        conferences["arxiv"],
+        2026,
+        None,
+        [   Link("Abstract", None, "As autonomous vehicle capabilities advance, the safe evaluation of driving policies in long-tail scenarios remains a critical bottleneck. In closed-loop simulation, the driving policy model actively interacts with the environment, where its actions dynamically update the simulator state and directly influence the next set of generated sensor observations. While recent reconstruction-based neural simulators offer photorealism, they are fundamentally constrained by their initial captured data and struggle to generalize to highly dynamic or novel scenes. To overcome these limitations, we introduce OmniDreams, a foundation generative world model mid- and post-trained from the Cosmos diffusion model to autoregressively generate action-conditioned videos in real time. By leveraging the rich visual priors of Cosmos and mid- and post-training on 21k hours of driving scenarios, OmniDreams synthesizes complex, unobserved phenomena that are hard for traditional simulators to capture, such as extreme weather and unpredictable dynamic agent behaviors. Crucially, it autoregressively conditions its photorealistic sensor generation on past frames, the current simulator state, and immediate driving actions. Deployed in a closed-loop system with the Alpamayo 1 policy model and AlpaSim orchestrator, OmniDreams acts as a highly responsive, reactive environment, providing a scalable and comprehensive solution for training and evaluating next-generation autonomous driving policies. We additionally show preliminary results indicating that a world-action model (WAM) post-trained from OmniDreams achieves strong performance on the Physical AI Autonomous Vehicles NuRec dataset, surpassing the VLA-based Alpamayo 1.5 research policy model while using only 1/5 the total parameters. These results highlight the potential for a real-time world model like OmniDreams to also serve as a backbone for policy architectures.", None),
+            Link("Project page", "https://research.nvidia.com/labs/sil/projects/omnidreams-blog/", None, None),
+            Link("Paper", "https://arxiv.org/pdf/2606.03159", None, None),
+            Link("Code", "https://github.com/nv-tlabs/omni-dreams", None, None),
+            Link("Bibtex", None, None, """@article{Basant2026arXiv,
+      title={NVIDIA OmniDreams: Real-Time Generative World Model for Closed-Loop Autonomous Vehicle Simulation},
+      author={Basant, Aarti and Kar, Amlan and Paschalidou, Despoina and Wei, Fangyin and Ferroni, Francesco and Garcia Cobo, Guillermo and Turki, Haithem and Ling, Huan and Seo, Jaewoo and Lucas, James and Wu, Jay Zhangjie and Wang, Jialiang and Lorraine, Jonathan and Gao, Jun and He, Kai and Tothova, Katarina and Xie, Kevin and Tyszkiewicz, Micha\\l{} and Wu, Qi and de Lutio, Riccardo and Li, Ruilong and Fidler, Sanja and Kim, Seung Wook and Shen, Tianchang and Cao, Tianshi and Pfaff, Tobias and Lew, William and Wu, Xindi and Ren, Xuanchi and Lu, Yifan and Zhang, Yuxuan and Gojcic, Zan and Wang, Zian},
+      journal={arXiv preprint arXiv:2606.03159},
+      year={2026}
+    }
+""")
+        ]
+    ),
+
     Paper(
         "Motion Attribution for Video Generation",
         "https://research.nvidia.com/labs/sil/projects/MOTIVE/",
