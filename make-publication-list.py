@@ -131,7 +131,12 @@ authors = {
     "yuxuan": Author("Yuxuan Zhang", "https://scholar.google.com/citations?user=Jt5VvNgAAAAJ&hl=en"),
     "zan": Author("Zan Gojcic", "https://zgojcic.github.io/"),
     "zian": Author("Zian Wang", "https://www.cs.toronto.edu/~zianwang/"),
-    "songlin": Author("Songlin Li", "")
+    "songlin": Author("Songlin Li", ""),
+    "amir": Author("Amirmojtaba Sabour", ""),
+    "jiahui": Author("Jiahui Huang", "https://huangjh-pub.github.io/"),
+    "gregklar": Author("Greg Klar", "https://scholar.google.com/citations?hl=en&user=WuKqNrgAAAAJ"),
+    "umar": Author("Umar Iqbal", "https://umariqb.github.io/"),
+    "xiaohui": Author("Xiaohui Zeng", "https://www.cs.utoronto.ca/~xiaohui/")
 }
 conferences = {
     "neurips": Conference("Advances in Neural Information Processing Systems (NeurIPS)"),
@@ -229,6 +234,27 @@ publications = [
       title={ReMatching Dynamic Reconstruction Flow},
       author={Oblak, Sara and Paschalidou, Despoina and Fidler, Sanja and Atzmon, Matan},
       booktitle={International Conference on Learning Representations (ICLR)},
+      year={2025}
+    }
+""")
+        ]
+    ),
+
+    Paper(
+        "VideoPanda: Video Panoramic Diffusion with Multi-view Attention",
+        "https://research.nvidia.com/labs/toronto-ai/VideoPanda/",
+        "teasers/videopanda_teaser.png",
+        author_list(authors, "kevinxie", "amir", "jiahui", "despi", "gregklar", "umar", "sanja", "xiaohui"),
+        conferences["arxiv"],
+        2025,
+        None,
+        [   Link("Abstract", None, "Recent breakthroughs in generative models have sparked unprecedented interest in a wide range of downstream applications, particularly in the realm of augmented and virtual reality, where immersive content creation is paramount. While significant progress has been made in generating high quality images and videos, creating coherent panoramic videos still remains an open challenge. In this work, we introduce VideoPanda, a novel approach for synthesizing 360-degree videos conditioned on text or video data. VideoPanda leverages multi-view attention layers to augment a video diffusion model, enabling it to be multi-view aware and capable of generating immersive panoramic content. Our model is jointly trained using three conditions: text-only, single-view video and single-view video with multi-view images. This unified training allows for video synthesis from text and video as well as long video generation using the same model trained once. Extensive evaluations on the WEB360 dataset demonstrate that VideoPanda generates more realistic and coherent 360-degree panoramas across all input conditions compared to existing methods.", None),
+            Link("Project page", "https://research.nvidia.com/labs/toronto-ai/VideoPanda/", None, None),
+            Link("Paper", "https://arxiv.org/pdf/2504.11389", None, None),
+            Link("Bibtex", None, None, """@article{Xie2025arXiv,
+      title={VideoPanda: Video Panoramic Diffusion with Multi-view Attention},
+      author={Xie, Kevin and Sabour, Amirmojtaba and Huang, Jiahui and Paschalidou, Despoina and Klar, Greg and Iqbal, Umar and Fidler, Sanja and Zeng, Xiaohui},
+      journal={arXiv preprint arXiv:2504.11389},
       year={2025}
     }
 """)
