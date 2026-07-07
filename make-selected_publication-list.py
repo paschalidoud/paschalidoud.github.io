@@ -117,7 +117,8 @@ authors = {
     "yifan": Author("Yifan Lu", "https://yifanlu0227.github.io/"),
     "yuxuan": Author("Yuxuan Zhang", "https://scholar.google.com/citations?user=Jt5VvNgAAAAJ&hl=en"),
     "zan": Author("Zan Gojcic", "https://zgojcic.github.io/"),
-    "zian": Author("Zian Wang", "https://www.cs.toronto.edu/~zianwang/")
+    "zian": Author("Zian Wang", "https://www.cs.toronto.edu/~zianwang/"),
+    "songlin": Author("Songlin Li", "")
 }
 conferences = {
     "neurips": Conference("Advances in Neural Information Processing Systems (NeurIPS)"),
@@ -126,6 +127,7 @@ conferences = {
     "eusipco": Conference("European Signal Processing Conference (EUSIPCO)"),
     "acmmm": Conference("ACM Multimedia Conference (ACMM)"),
     "icml": Conference("International Conference on Machine Learning (ICML)"),
+    "threedv": Conference("International Conference on 3D Vision (3DV)"),
     "arxiv": Conference("arXiv")
 }
 publications = [
@@ -169,6 +171,26 @@ publications = [
       title={Motion Attribution for Video Generation},
       author={Wu, Xindi and Paschalidou, Despoina and Gao, Jun and Torralba, Antonio and Leal-Taix\\'e, Laura and Russakovsky, Olga and Fidler, Sanja and Lorraine, Jonathan},
       booktitle={International Conference on Machine Learning (ICML)},
+      year={2026}
+    }
+""")
+        ]
+    ),
+
+    Paper(
+        "PASTA: Controllable Part-Aware Shape Generation with Autoregressive Transformers",
+        "https://arxiv.org/abs/2407.13677",
+        "teasers/pasta_teaser.jpeg",
+        author_list(authors, "songlin", "despi", "leo"),
+        conferences["threedv"],
+        2026,
+        None,
+        [   Link("Abstract", None, "The increased demand for tools that automate the 3D content creation process led to tremendous progress in deep generative models that can generate diverse 3D objects of high fidelity. In this paper, we present PASTA, an autoregressive transformer architecture for generating high quality 3D shapes. PASTA comprises two main components: An autoregressive transformer that generates objects as a sequence of cuboidal primitives and a blending network, implemented with a transformer decoder that composes the sequences of cuboids and synthesizes high quality meshes for each object. Our model is trained in two stages: First we train our autoregressive generative model using only annotated cuboidal parts as supervision and next, we train our blending network using explicit 3D supervision, in the form of watertight meshes. Evaluations on various ShapeNet objects showcase the ability of our model to perform shape generation from diverse inputs e.g. from scratch, from a partial object, from text and images, as well size-guided generation, by explicitly conditioning on a bounding box that defines the object's boundaries. Moreover, as our model considers the underlying part-based structure of a 3D object, we are able to select a specific part and produce shapes with meaningful variations of this part. As evidenced by our experiments, our model generates 3D shapes that are both more realistic and diverse than existing part-based and non part-based methods, while at the same time is simpler to implement and train.", None),
+            Link("Paper", "https://arxiv.org/pdf/2407.13677", None, None),
+            Link("Bibtex", None, None, """@inproceedings{Li20263DV,
+      title={PASTA: Controllable Part-Aware Shape Generation with Autoregressive Transformers},
+      author={Li, Songlin and Paschalidou, Despoina and Guibas, Leonidas},
+      booktitle={International Conference on 3D Vision (3DV)},
       year={2026}
     }
 """)
