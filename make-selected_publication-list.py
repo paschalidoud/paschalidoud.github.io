@@ -160,7 +160,7 @@ publications = [
         author_list(authors, "xindi", "despi", "jungao", "torralba", "laura", "olga", "sanja", "lorraine"),
         conferences["icml"],
         2026,
-        "Oral, Outstanding Paper Honorable Mention",
+        "Oral, Honorable Mention for Outstanding Paper",
         [   Link("Abstract", None, "Despite the rapid progress of video generation models, the role of data in influencing motion is poorly understood. We present Motive, a motion-centric, gradient-based data attribution framework that scales to modern, large, high-quality video datasets and models, and use it to study which fine-tuning clips improve or degrade temporal dynamics. Our approach isolates temporal dynamics from static appearance via motion-weighted loss masks, yielding efficient and scalable motion-specific influence computation. On text-to-video models, Motive identifies clips that strongly affect motion and guides data curation that improves temporal consistency and physical plausibility. With Motive-selected high-influence data, our method improves both motion smoothness and dynamic degree on VBench, achieving a 74.1% human preference win rate compared with the pretrained base model. This represents the first framework to attribute motion rather than visual appearance in video generative models and to use it to curate fine-tuning data.", None),
             Link("Project page", "https://research.nvidia.com/labs/sil/projects/MOTIVE/", None, None),
             Link("Paper", "https://arxiv.org/pdf/2601.08828", None, None),
@@ -323,7 +323,7 @@ publications = [
 
     Paper(
         "CurveCloudNet: Processing Point Clouds with 1D Structure",
-        "",
+        "https://arxiv.org/abs/2303.12050",
         "teasers/curvecloudnet_teaser.png",
         author_list(authors, "colton", "davis", "alex", "jiateng", "sebastien", "jj", "despi", "leo"),
         conferences["cvpr"],
@@ -333,7 +333,7 @@ publications = [
             Link("Paper", "https://arxiv.org/pdf/2303.12050.pdf", None, None),
             Link("Bibtex", None, None, """@InProceedings{Stearns2024CVPR,
       title={CurveCloudNet: Processing Point Clouds with 1D Structure},
-      author={Stearns, Colton and Rempe, Davis and Fu, Alex and Liu, Jiateng and and Masha, Sebastien and Park, Jeong Joon and Paschalidou, Despoina and Guibas, Leonidas J},
+      author={Stearns, Colton and Rempe, Davis and Fu, Alex and Liu, Jiateng and Mascha, Sébastien and Park, Jeong Joon and Paschalidou, Despoina and Guibas, Leonidas J},
       booktitle = {Proceedings IEEE Conf. on Computer Vision and Pattern Recognition (CVPR)},
       year = {2024}
     }
@@ -357,7 +357,7 @@ publications = [
             Link("Bibtex", None, None, """@InProceedings{Bahmani2023ICCV,
   author = {Bahmani, Sherwin and Park, Jeong Joon and Paschalidou, Despoina and Yan, Xingguang and Wetzstein, Gordon and Guibas, Leonidas and Tagliasacchi, Andrea},
   title = {CC3D: Layout-Conditioned Generation of Compositional 3D Scenes},
-  booktitle = {International Conference on Computer Vision (ICCV)}},
+  booktitle = {International Conference on Computer Vision (ICCV)},
   year = {2023}
 }""")
         ]
