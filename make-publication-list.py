@@ -102,6 +102,8 @@ authors = {
     "laura": Author("Laura Leal-Taixé", "https://dvl.in.tum.de/team/lealtaixe/"),
     "olga": Author("Olga Russakovsky", "https://www.cs.princeton.edu/~olgarus/"),
     "lorraine": Author("Jonathan Lorraine", "https://www.jonlorraine.com/"),
+    "sven": Author("Sven Elflein", "https://selflein.github.io/"),
+    "aljosa": Author("Aljoša Ošep", "https://aljosaosep.github.io/"),
     "sara": Author("Sara Oblak", "https://scholar.google.com/citations?user=kHEdjAMAAAAJ"),
     "matan": Author("Matan Atzmon", "https://matanatz.github.io/"),
     "aarti": Author("Aarti Basant", "https://www.linkedin.com/in/aartibasant/"),
@@ -152,6 +154,29 @@ conferences = {
     "arxiv": Conference("arXiv")
 }
 publications = [
+    Paper(
+        "WorldTrace: Addressable Memory for Video World Models",
+        "https://research.nvidia.com/labs/sil/projects/WorldTrace/",
+        "teasers/worldtrace_teaser.jpg",
+        author_list(authors, "xindi", "sven", "james", "olga", "laura", "despi", "lorraine", "aljosa"),
+        conferences["neurips"],
+        2026,
+        None,
+        [   Link("Abstract", None, "We study visual persistence in interactive video world models. These models rely on a Key-Value (KV) cache as a growing visual memory to carry forward previously generated frames. However, we find that models can no longer reliably address stored content once rollouts extend beyond the training horizon, because temporal Rotary Positional Embeddings (RoPE) offsets then fall outside the range seen during training and the model struggles to retrieve the relevant visual information through attention. Moreover, naively compressing the cache in the RoPE-rotated space corrupts memory by averaging together incompatible positional phases. To address this, we propose WorldTrace, a training-free memory framework for long-horizon visual persistence. WorldTrace keeps compressed memory addressable by assigning each summary slot a distinct, in-distribution virtual position. Within this addressable cache, we study two memory compression approaches: WorldTrace-Field compresses history for temporal coherence, while WorldTrace-Landmark stores verbatim scene traces at detected transitions for episodic recall. We further introduce LoopBench, a benchmark evaluating whether a compressed cache can reconstruct a previously visited scene after a long detour. WorldTrace-Field improves temporal consistency by +15.5%, and WorldTrace-Landmark improves episodic recall by +19.5% on LoopBench, extending visually persistent generation without retraining.", None),
+            Link("Project page", "https://research.nvidia.com/labs/sil/projects/WorldTrace/", None, None),
+            Link("Paper", "https://research.nvidia.com/labs/sil/projects/WorldTrace/worldtrace_paper.pdf", None, None),
+            Link("Slides", "https://canva.link/gp06wikrb9gakmr", None, None),
+            Link("Poster", "https://research.nvidia.com/labs/sil/projects/WorldTrace/poster-worldtrace-vertical.pdf", None, None),
+            Link("Bibtex", None, None, """@inproceedings{Wu2026NEURIPS,
+      title={WorldTrace: Addressable Memory for Video World Models},
+      author={Wu, Xindi and Elflein, Sven and Lucas, James and Russakovsky, Olga and Leal-Taix\\'e, Laura and Paschalidou, Despoina and Lorraine, Jonathan and O\\v{s}ep, Aljo\\v{s}a},
+      booktitle={Advances in Neural Information Processing Systems (NeurIPS)},
+      year={2026}
+    }
+""")
+        ]
+    ),
+
     Paper(
         "NVIDIA OmniDreams: Real-Time Generative World Model for Closed-Loop Autonomous Vehicle Simulation",
         "https://research.nvidia.com/labs/sil/projects/omnidreams-blog/",
