@@ -165,6 +165,11 @@ a {
 .paper .links .link-content > pre {
     font-style: normal;
     line-height: 1.2em;
+    white-space: pre-wrap;
+    overflow-wrap: anywhere;
+    max-width: 100%;
+    overflow-x: auto;
+    box-sizing: border-box;
 }
 
 .paper .authors .author:first-child {
