@@ -1,0 +1,90 @@
+/**
+ * Styles shared by every page: colour tokens (light and dark), focus rings and
+ * the BibTeX / code block with its copy button. Layout lives in style.css
+ * (main pages) and style_project_page.css (project pages).
+ */
+:root {
+    color-scheme: light dark;
+    --bg: #fff;
+    --text: #1a1a1a;
+    --text-muted: #555;
+    --text-faint: #818181;
+    --link: #0505af;
+    --surface: #eee;
+    --border: #999;
+    --heading: #313436;
+    --menu: #414446;
+    --title-link: #000;
+    --title-link-hover: #777;
+    --pill-paper: #4a5759;
+    --pill-slides: #581845;
+}
+@media (prefers-color-scheme: dark) {
+    :root {
+        --bg: #16181d;
+        --text: #e6e6e6;
+        --text-muted: #b4b8bf;
+        --text-faint: #a0a6ae;
+        --link: #8ab4ff;
+        --surface: #23262d;
+        --border: #4a4f57;
+        --heading: #e6e6e6;
+        --menu: #c9cdd3;
+        --title-link: #f1f1f1;
+        --title-link-hover: #aeb4bd;
+        --pill-paper: #66797c;
+        --pill-slides: #94387a;
+    }
+}
+
+a:focus-visible,
+button:focus-visible {
+    outline: 2px solid var(--link);
+    outline-offset: 2px;
+}
+
+/**
+ * BibTeX / code blocks. Long lines wrap instead of forcing a horizontal
+ * scroll; the scrollbar only appears if something still does not fit.
+ */
+pre {
+    background-color: var(--surface);
+    color: var(--text);
+    font-size: 14px;
+    font-style: normal;
+    line-height: 1.25em;
+    text-align: left;
+    white-space: pre-wrap;
+    overflow-wrap: anywhere;
+    max-width: 100%;
+    overflow-x: auto;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 12px 16px 12px 20px;
+}
+.code-block {
+    position: relative;
+    margin: 0 0 1em 0;
+}
+.copy-btn {
+    position: absolute;
+    top: 6px;
+    right: 6px;
+    padding: 5px 9px;
+    font: 600 12px/1 "Helvetica Neue", Helvetica, Arial, sans-serif;
+    color: var(--text);
+    background: var(--bg);
+    border: 1px solid var(--border);
+    border-radius: 5px;
+    cursor: pointer;
+    opacity: 0.85;
+}
+.copy-btn:hover,
+.copy-btn:focus-visible {
+    opacity: 1;
+}
+.copy-btn[data-copied] {
+    color: #fff;
+    background: #2e7d32;
+    border-color: #2e7d32;
+}

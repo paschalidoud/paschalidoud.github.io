@@ -1,8 +1,8 @@
 body {
     padding-top: 30px;
-    background-color: #fff;
+    background-color: var(--bg);
     font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
-    color: #1a1a1a;
+    color: var(--text);
     font-size: 10pt;
     line-height: 1.8em;
     text-align: justify;
@@ -12,23 +12,25 @@ body {
 }
 a {
     text-decoration: none;
-    color: #0505af;
+    color: var(--link);
 }
 .section {
     max-width: 950px;
     margin: 0 auto;
+    padding: 0 16px;
+    box-sizing: border-box;
 }
 .section > .title {
     font-size: 18pt;
     font-family: "Roboto", sans-serif;
-    color: #313436;
+    color: var(--heading);
     padding-bottom: 0.3em;
     margin-bottom: 0.8em;
     clear: both;
 }
 .section > .title > span {
     /*border-bottom: 1px solid #313436;*/
-    border-bottom: 2px solid #999;
+    border-bottom: 2px solid var(--border);
     padding-bottom: 4px;
     padding-left: 15px;
     padding-right: 15px;
@@ -54,7 +56,7 @@ a {
     display: block;
     text-align: center;
     padding-top: 1.5em;
-    color: #888888;
+    color: var(--text-faint);
 }
 .section > .page-title{
     text-align: center;
@@ -98,31 +100,25 @@ a {
 .layered-paper-big { /* modified from: http://css-tricks.com/snippets/css/layered-paper/ */
     box-shadow:
             0px 0px 1px 1px rgba(0,0,0,0.35), /* The top layer shadow */
-            5px 5px 0 0px #fff, /* The second layer */
+            5px 5px 0 0px var(--bg), /* The second layer */
             5px 5px 1px 1px rgba(0,0,0,0.35), /* The second layer shadow */
-            10px 10px 0 0px #fff, /* The third layer */
+            10px 10px 0 0px var(--bg), /* The third layer */
             10px 10px 1px 1px rgba(0,0,0,0.35), /* The third layer shadow */
-            15px 15px 0 0px #fff, /* The fourth layer */
+            15px 15px 0 0px var(--bg), /* The fourth layer */
             15px 15px 1px 1px rgba(0,0,0,0.35), /* The fourth layer shadow */
-            20px 20px 0 0px #fff, /* The fifth layer */
+            20px 20px 0 0px var(--bg), /* The fifth layer */
             20px 20px 1px 1px rgba(0,0,0,0.35), /* The fifth layer shadow */
-            25px 25px 0 0px #fff, /* The fifth layer */
+            25px 25px 0 0px var(--bg), /* The fifth layer */
             25px 25px 1px 1px rgba(0,0,0,0.35); /* The fifth layer shadow */
     margin-left: 10px;
     margin-right: 45px;
     margin-bottom: 25px;
     width: 300px;
 }
-.row_paper .bibtex-entries > pre {
-    font-style: normal;
-    line-height: 1.2em;
-    text-align: left;
-    display: none;
-}
 .section-title {
     font-size: 18pt;
     font-family: "Roboto", sans-serif;
-    color: #313436;
+    color: var(--heading);
     padding-bottom: 0.3em;
     margin-bottom: 0.8em;
     text-align: center;
@@ -132,8 +128,7 @@ a {
     display: block;
     height: 2px;
     margin-top: 4px;
-    background: #222;
-    background: linear-gradient(90deg, white 0%, #333 50%, white 100%);
+    background: linear-gradient(90deg, transparent 0%, var(--heading) 50%, transparent 100%);
 }
 h1.project-title {
     font-weight: normal;
@@ -146,7 +141,7 @@ h1.project-title {
     padding: 15px;
 }
 .authors sup {
-    color: #313436;
+    color: var(--heading);
     font-size: 60%;
 }
 .affiliations {
@@ -182,7 +177,7 @@ h1.project-title {
     text-align: center;
     font-style: italic;
     font-size: 14px;
-    color: #000;
+    color: var(--text);
 }
 .teaser-image p.caption {
     line-height: 130%;
@@ -247,15 +242,45 @@ video {
     font-size: 12pt;
     clear: both;
 }
-pre {
-    background-color: #eee;
-    font-size: 14px;
-    white-space: pre-wrap;
-    overflow-wrap: anywhere;
+
+/* Transparent diagrams are drawn for a white page */
+@media (prefers-color-scheme: dark) {
+    .section img {
+        background-color: #fff;
+    }
+}
+
+/* Embedded YouTube players scale with the page instead of a fixed 860px */
+iframe {
     max-width: 100%;
-    overflow-x: auto;
-    box-sizing: border-box;
-    padding-left: 20px;
-    padding-bottom: 10px;
-    margin-top: 0px;
+}
+iframe[src*="youtube"] {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 16 / 9;
+}
+
+@media (max-width: 600px) {
+    body {
+        padding-top: 16px;
+    }
+    h1.project-title {
+        font-size: 26px;
+    }
+    .authors a {
+        font-size: 16px;
+        padding: 8px;
+    }
+    .project-icons a {
+        padding: 0px 10px 0px 10px;
+    }
+    .affiliations {
+        width: 100%;
+    }
+    .teaser-image img {
+        width: 100%;
+    }
+    .layered-paper-big {
+        max-width: calc(100% - 55px);
+    }
 }

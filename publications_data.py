@@ -1,16 +1,11 @@
-#!/usr/bin/env python
 # -*- coding: utf-8 -*-
+"""Single source of truth for the publication lists.
 
-from __future__ import print_function
+Add or edit papers here and run `python3 build.py`. Papers with
+`selected=True` also appear in the "Selected Publications" on the home page.
+"""
 
-import argparse
 from collections import namedtuple
-import sys
-
-
-def _print(args, text, **kwargs):
-    if not args.quiet:
-        print(text, **kwargs)
 
 
 class Author(namedtuple("Author", ["name", "url"])):
@@ -27,9 +22,11 @@ class Paper(namedtuple("Paper", [
         "conference",
         "year",
         "special",
-        "links"
+        "links",
+        "selected"
     ])):
-    pass
+    def __new__(cls, *args, selected=False):
+        return super(Paper, cls).__new__(cls, *args, selected)
 
 
 class Conference(namedtuple("Conference", ["name"])):
@@ -174,7 +171,8 @@ publications = [
       year={2026}
     }
 """)
-        ]
+        ],
+        selected=True
     ),
 
     Paper(
@@ -196,7 +194,8 @@ publications = [
       year={2026}
     }
 """)
-        ]
+        ],
+        selected=True
     ),
 
     Paper(
@@ -220,7 +219,8 @@ publications = [
       year={2026}
     }
 """)
-        ]
+        ],
+        selected=True
     ),
 
     Paper(
@@ -240,7 +240,8 @@ publications = [
       year={2026}
     }
 """)
-        ]
+        ],
+        selected=True
     ),
 
     Paper(
@@ -384,7 +385,8 @@ publications = [
       year={2025}
     }
 """)
-        ]
+        ],
+        selected=True
     ),
 
     Paper(
@@ -407,7 +409,8 @@ publications = [
       year = {2024}
     }
 """)
-        ]
+        ],
+        selected=True
     ),
 
     Paper(
@@ -427,7 +430,8 @@ publications = [
       year = {2024}
     }
 """)
-        ]
+        ],
+        selected=True
     ),
 
     Paper(
@@ -490,7 +494,8 @@ publications = [
   booktitle = {International Conference on Computer Vision (ICCV)},
   year = {2023}
 }""")
-        ]
+        ],
+        selected=True
     ),
 
     Paper(
@@ -556,7 +561,8 @@ publications = [
   booktitle = {Proceedings IEEE Conf. on Computer Vision and Pattern Recognition (CVPR)},
   year      = {2023}
 }""")
-        ]
+        ],
+        selected=True
     ),
     Paper(
         "ALTO: Alternating Latent Topologies for Implicit 3D Reconstruction",
@@ -579,12 +585,13 @@ publications = [
     booktitle = {Proceedings IEEE Conf. on Computer Vision and Pattern Recognition (CVPR)},
     year = {2023}
 }""")
-        ]
+        ],
+        selected=True
     ),
 
     Paper(
         "ATISS: Autoregressive Transformers for Indoor Scene Synthesis",
-        "https://nv-tlabs.github.io/ATISS/#",
+        "https://nv-tlabs.github.io/ATISS/",
         "teasers/atiss.png",
         author_list(authors, "despi", "amlan", "masha", "karsten", "andreas", "sanja"),
         conferences["neurips"],
@@ -603,7 +610,8 @@ publications = [
   booktitle = {Advances in Neural Information Processing Systems (NeurIPS)},
   year = {2021}
 }""")
-        ]
+        ],
+        selected=True
     ),
     Paper(
         "Neural Parts: Learning Expressive 3D Shape Abstractions with Invertible Neural Networks",
@@ -629,7 +637,8 @@ publications = [
     month = jun,
     year = {2021}
 }""")
-        ]
+        ],
+        selected=True
     ),
     Paper(
         "Learning Unsupervised Hierarchical Part Decomposition of 3D Objects from a Single RGB Image",
@@ -655,7 +664,8 @@ publications = [
     month = jun,
     year = {2020},
 }""")
-        ]
+        ],
+        selected=True
     ),
     Paper(
         "Superquadrics Revisited: Learning 3D Shape Parsing beyond Cuboids",
@@ -681,7 +691,8 @@ publications = [
     month = jun,
     year = {2019},
 }""")
-        ]
+        ],
+        selected=True
     ),
     Paper(
         "PointFlowNet: Learning Representations for Rigid Motion Estimation from Point Clouds",
@@ -784,128 +795,3 @@ publications = [
         ]
     ),
 ]
-
-
-def build_publications_list(publications):
-    def image(paper):
-        if paper.image is not None:
-            return '<img src="{}" alt="{}" />'.format(
-                paper.image, paper.title
-            )
-        else:
-            return '&nbsp;'
-
-    def title(paper):
-        return '<a href="{}">{}</a>'.format(paper.url, paper.title)
-
-    def authors(paper):
-        def author(author):
-            if author.is_me:
-                return '<strong class="author">{}</strong>'.format(author.name)
-            else:
-                return '<a href="{}" class="author">{}</a>'.format(
-                    author.url, author.name
-                )
-        return ", ".join(author(a) for a in paper.authors)
-
-    def conference(paper):
-        cf = '{}, {}'.format(paper.conference.name, paper.year)
-        if paper.special is not None:
-            cf = cf + '<div class="special">   ({})</div>'.format(paper.special)
-        return cf
-
-    def links(paper):
-        def links_list(paper):
-            def link(i, link):
-                if link.url is not None:
-                    # return '<a href="{}">{}</a>'.format(link.url, link.name)
-                    return '<a href="{}" data-type="{}">{}</a>'.format(link.url, link.name, link.name)
-                else:
-                    return '<a href="#" data-type="{}" data-index="{}">{}</a>'.format(link.name, i, link.name)
-            return " ".join(
-                link(i, l) for i, l in enumerate(paper.links)
-            )
-
-        def links_content(paper):
-            def content(i, link):
-                if link.url is not None:
-                    return ""
-                return '<div class="link-content" data-index="{}">{}</div>'.format(
-                    i, link.html if link.html is not None
-                       else '<pre>' + link.text + "</pre>"
-                )
-            return "".join(content(i, link) for i, link in enumerate(paper.links))
-        return links_list(paper) + links_content(paper)
-
-    def paper(p):
-        return ('<div class="row paper">'
-                    '<div class="image">{}</div>'
-                    '<div class="content">'
-                        '<div class="paper-title">{}</div>'
-                        '<div class="conference">{}</div>'
-                        '<div class="authors">{}</div>'
-                        '<div class="links">{}</div>'
-                    '</div>'
-                '</div>').format(
-                    image(p),
-                    title(p),
-                    conference(p),
-                    authors(p),
-                    links(p)
-                )
-
-    return "".join(paper(p) for p in publications)
-
-
-def main(argv):
-    parser = argparse.ArgumentParser(
-        description="Create a publication list and insert in into an html file"
-    )
-    parser.add_argument(
-        "file",
-        help="The html file to insert the publications to"
-    )
-
-    parser.add_argument(
-        "--safe", "-s",
-        action="store_true",
-        help="Do not overwrite the file but create one with suffix .new"
-    )
-    parser.add_argument(
-        "--quiet", "-q",
-        action="store_true",
-        help="Do not output anything to stdout/stderr"
-    )
-
-    args = parser.parse_args(argv)
-
-    # Read the file
-    with open(args.file) as f:
-        html = f.read()
-
-    # Find the fence comments
-    start_text = "<!-- start publication list -->"
-    end_text = "<!-- end publication list -->"
-    start = html.find(start_text)
-    end = html.find(end_text, start)
-    if end < start or start < 0:
-        _print(args, "Could not find the fence comments", file=sys.stderr)
-        sys.exit(1)
-
-    # Build the publication list in html
-    replacement = build_publications_list(publications)
-
-    # Update the html and save it
-    html = html[:start+len(start_text)] + replacement + html[end:]
-
-    # If safe is set do not overwrite the input file
-    if args.safe:
-        with open(args.file + ".new", "w") as f:
-            f.write(html)
-    else:
-        with open(args.file, "w") as f:
-            f.write(html)
-
-
-if __name__ == "__main__":
-    main(None)
